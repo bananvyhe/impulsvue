@@ -20,3 +20,4 @@
 
 config/database.yml
 config/cable.yml
+app/assets/javascripts/application.js
