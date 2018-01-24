@@ -3,7 +3,8 @@ Turbolinks.start()
 import Vue from 'vue/dist/vue.esm';
  
 import VueResource from 'vue-resource';
-
+import TurbolinksAdapter from 'vue-turbolinks';
+Vue.use(TurbolinksAdapter)
 Vue.use(VueResource);
 
 document.addEventListener('turbolinks:load', () => {
