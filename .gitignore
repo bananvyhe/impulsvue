@@ -22,3 +22,6 @@ config/database.yml
 config/cable.yml
 app/assets/javascripts/application.js
 app/assets/javascripts/application.js
+app/assets/javascripts/application.js
+build/js/app.js
+build/js/app.js.map

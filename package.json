@@ -3,6 +3,7 @@
   "private": true,
   "dependencies": {
     "element-ui": "^1.4.2",
+    "jquery-ujs": "^1.2.2",
     "postcss-cssnext": "^3.0.2",
     "turbolinks": "^5.0.3",
     "vue": "^2.5.13",

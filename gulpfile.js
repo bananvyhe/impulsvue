@@ -196,6 +196,8 @@ var path = {
 gulp.task('scripts', function() {
 
   return streamqueue({ objectMode: true },
+    gulp.src("src/js/jquery.min.js"),
+    gulp.src("src/js/jquery_ujs.js"),
     gulp.src("src/js/app.js").pipe(babel()),
     gulp.src("src/js/anotherscripts.js")
   )
