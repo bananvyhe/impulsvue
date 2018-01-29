@@ -2,6 +2,7 @@
   "name": "impulsvue",
   "private": true,
   "dependencies": {
+    "axios": "^0.17.1",
     "element-ui": "^1.4.2",
     "jquery-ujs": "^1.2.2",
     "postcss-cssnext": "^3.0.2",
