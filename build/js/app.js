@@ -1,83 +1,18 @@
-var Turbolinks = require("turbolinks")
-Turbolinks.start()
+var Turbolinks = require("turbolinks");
+Turbolinks.start();
+import axios from 'axios';
 import Vue from 'vue/dist/vue.esm';
- 
-import VueResource from 'vue-resource';
-import TurbolinksAdapter from 'vue-turbolinks';
-Vue.use(TurbolinksAdapter)
-Vue.use(VueResource);
+
+import Telpanel from './telpanel.vue';
 
 document.addEventListener('turbolinks:load', () => {
-  console.log('top');
-  Vue.http.headers.common['X-CSRF-Token'] = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
-
-  var element = document.getElementById("team-form");
-  if (element != null) {
-
-    var id = element.dataset.id;
-    var team = JSON.parse(element.dataset.team);
-    var players_attributes = JSON.parse(element.dataset.playersAttributes);
-    players_attributes.forEach(function (player) {
-      player._destroy = null;
-    });
-    team.players_attributes = players_attributes;
-
-    var app = new Vue({
-      el: element,
- 
-      data: function () {
-        return { id: id, team: team };
-      },
-      methods: {
-        addPlayer: function () {
-          this.team.players_attributes.push({
-            id: null,
-            name: "",
-            //position: "",
-            _destroy: null
-          });
-        },
-
-        removePlayer: function (index) {
-          var player = this.team.players_attributes[index];
-
-          if (player.id == null) {
-            this.team.players_attributes.splice(index, 1);
-          } else {
-            this.team.players_attributes[index]._destroy = "1";
-          }
-        },
-
-        undoRemove: function (index) {
-          this.team.players_attributes[index]._destroy = null;
-        },
-
-        saveTeam: function () {
-          // Create a new team
-          if (this.id == null) {
-            this.$http.post('/teams', { team: this.team }).then(response => {
-              Turbolinks.visit(`/teams/${response.body.id}`);
-            }, response => {
-              console.log(response);
-            });
-
-            // Edit an existing team
-          } else {
-            this.$http.put(`/teams/${this.id}`, { team: this.team }).then(response => {
-              Turbolinks.visit(`/teams/${response.body.id}`);
-            }, response => {
-              console.log(response);
-            });
-          }
-        },
-
-        existingTeam: function () {
-          return this.team.id != null;
-        }
-
-      }
-    });
-  }
+  let token = document.getElementsByName('csrf-token')[0].getAttribute('content');
+  axios.defaults.headers.common['X-CSRF-Token'] = token;
+  axios.defaults.headers.common['Accept'] = 'application/json';
+  new Vue({
+    el: '#telpanel',
+    render: h => h(Telpanel)
+  });
 });
 var start = "hello45451245345dfgsdg223";
 console.log(start);
