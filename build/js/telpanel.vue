@@ -1,6 +1,9 @@
 <template>
   <div class="telpanel">
-  <input type="text" v-model="postBody" @change="postPost()"/>
+   
+  	<input type="text" v-model="postBody"/>
+  	<button v-on:click="postPost()">send</button>
+	 	<button v-on:click="editPost()">edit</button>
   <ul v-if="errors && errors.length">
     <li v-for="error of errors">
       {{error.message}}
@@ -21,12 +24,23 @@ export default {
       errors: []
     }
   },
+  created() {
+  	axios.get('/teams')
+	  .then(function (response) {
+	    console.log(response);
+	  })
+	  .catch(function (error) {
+	    console.log(error);
+	  });	
+  },
   methods: {
   	postPost() {
     axios.post(`/teams`, {
       name: this.postBody
     })
-    .then(response => {})
+    .then(response => {
+    	console.log(123);
+    })
     .catch(e => {
       this.errors.push(e)
     })
