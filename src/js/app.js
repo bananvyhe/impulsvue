@@ -63,8 +63,8 @@ document.addEventListener('turbolinks:load', () => {
 
           // Edit an existing team
           } else {
-            this.axios.put(`/teams/${this.id}`, { team: this.team }).then(response => {
-              Turbolinks.visit(`/teams/${response.body.id}`)
+            axios.put(`/teams/${this.id}`, { team: this.team }).then(response => {
+              Turbolinks.visit(`/teams`)
             }, response => {
               console.log(response)
             })
