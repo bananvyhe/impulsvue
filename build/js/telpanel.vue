@@ -16,7 +16,9 @@
 // setTimeout(function(){
 //       $('.tel').css('visibility', 'visible').addClass('slideUpReturn');
 // }, 1300);
+
 import axios from 'axios'
+
 export default {
   data: function () {
     return {
