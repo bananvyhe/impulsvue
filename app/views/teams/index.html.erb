@@ -11,6 +11,12 @@
   </thead>
 
   <tbody>
+    <% if user_signed_in? %>
+      <section>
+        <div id="telpanel">
+        </div>
+      </section>
+    <% end %>
     <% @teams.each do |team| %>
       <tr>
         <td><%= team.name %></td>

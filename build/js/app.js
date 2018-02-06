@@ -14,6 +14,6 @@ document.addEventListener('turbolinks:load', () => {
     render: h => h(Telpanel)
   });
 });
-var start = "hello45451245345dfgsdg223";
+var start = "hello45451245345ssdfgsdg223";
 console.log(start);
 //# sourceMappingURL=app.js.map
