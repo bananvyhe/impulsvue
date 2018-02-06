@@ -55,15 +55,15 @@ document.addEventListener('turbolinks:load', () => {
         saveTeam: function() {
           // Create a new team
           if (this.id == null) {
-            this.$http.post('/teams', { team: this.team }).then(response => {
-              Turbolinks.visit(`/teams/${response.body.id}`)
+             axios.post('/teams', { team: this.team }).then(response => {
+              Turbolinks.visit(`/teams`)
             }, response => {
               console.log(response)
             })
 
           // Edit an existing team
           } else {
-            this.$http.put(`/teams/${this.id}`, { team: this.team }).then(response => {
+            this.axios.put(`/teams/${this.id}`, { team: this.team }).then(response => {
               Turbolinks.visit(`/teams/${response.body.id}`)
             }, response => {
               console.log(response)
