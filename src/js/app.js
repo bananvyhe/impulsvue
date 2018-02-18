@@ -2,6 +2,7 @@ var Turbolinks = require("turbolinks")
 Turbolinks.start()
 import axios from 'axios'
 import Vue from 'vue/dist/vue.esm'
+import store from './store'
 import Telpanel from './telpanel.vue' 
 
 document.addEventListener('turbolinks:load', () => {
@@ -23,6 +24,7 @@ document.addEventListener('turbolinks:load', () => {
     console.log(players_attributes)
     new Vue({
       el: element,
+      store,
         data: function() {
         return { id: id, team: team }
       },
