@@ -2,11 +2,15 @@ const path = require('path');
 
 module.exports = {
   watch: true,      
-  entry: './build/js/app.js',
+  entry: {
+    turbolinks: './src/js/turbolinks.js',
+    application: './build/js/app.js'
+  },
   output: {
-    filename: 'application.js',
+    filename: "[name].js",
     path: path.resolve(__dirname, 'app/assets/javascripts'),
-    publicPath: "app/assets/images"
+    publicPath: "app/assets/images",
+    library: "[name]"
   },
   resolve: {
     alias: {
