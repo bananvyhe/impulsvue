@@ -29,23 +29,28 @@
 // setTimeout(function(){
 //       $('.tel').css('visibility', 'visible').addClass('slideUpReturn');
 // }, 1300);
- var element1 = document.getElementById("team-form")
-console.log(element1);
 import axios from 'axios'
-let id = {value:  ''  };
+
  
+console.log('telpanel');
+var element = document.getElementById("team-form")
+
+if (element != null) {
+ 
+  console.log(element);
+  var id = element.dataset.id
+  var team = JSON.parse(element.dataset.team)
+
+  var players_attributes = JSON.parse(element.dataset.playersAttributes)
+  players_attributes.forEach(function(player) { player._destroy = null })
+  team.players_attributes = players_attributes 
+}
 export default {
-  name: 'telpanel',
+  name: 'telpanel', 
   data: function () {
     return {
       id: id, 
-      team: {
-        name: '',
-        players_attributes: 
-          [{id: '', name: '', _destroy: ''}]
-        
-      }, 
-       
+      team: team, 
       postBody: '',
       errors: []
     }
@@ -60,16 +65,7 @@ export default {
 	  });	
   },
   mounted() {
-    var element = document.getElementById("team-form")
-    this.id = element.dataset.id
-    this.team = JSON.parse(element.dataset.team)
-
-    var players_attributes = JSON.parse(element.dataset.playersAttributes)
-    players_attributes.forEach(function(player) { player._destroy = null })
-    this.team.players_attributes = players_attributes
-    console.log(this.id)
-    console.log(this.team)
-    console.log(players_attributes)
+ 
   },
   updated() {
      
@@ -102,14 +98,14 @@ export default {
           // Create a new team
           if (this.id == null) {
             axios.post('/teams', { team: this.team }).then(response => {
-              Turbolinks.visit(`/teams`)
+             window.location.href = '/teams' ; 
             }, response => {
               console.log(response)
             })
           // Edit an existing team
           } else {
             axios.put(`/teams/${this.id}`, { team: this.team }).then(response => {
-              Turbolinks.visit(`/teams`)
+               window.location.href = '/teams';  
             }, response => {
               console.log(response)
             })
@@ -118,27 +114,7 @@ export default {
         existingTeam: function() {
           return this.team.id != null
         },
-  	postPost() {
-    axios.post(`/teams`, {
-      name: this.postBody
-    })
-    .then(response => {
-    	console.log(123);
-    })
-    .catch(e => {
-      this.errors.push(e)
-    })
-
-    // async / await version (postPost() becomes async postPost())
-    //
-    // try {
-    //   await axios.post(`http://jsonplaceholder.typicode.com/posts`, {
-    //     body: this.postBody
-    //   })
-    // } catch (e) {
-    //   this.errors.push(e)
-    // }
-  }
+ 
   }
   
 }
