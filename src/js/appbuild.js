@@ -1,10 +1,10 @@
- 
+// import TurbolinksAdapter from 'vue-turbolinks';
 import axios from 'axios'
 import Vue from 'vue/dist/vue.esm'
 import store from './store'
-import Telpanel from './telpanel.vue' 
-// import TurbolinksAdapter from 'vue-turbolinks';
+import App from './telpanel.vue' 
 // Vue.use(TurbolinksAdapter)
+
 console.log('firstappb');
 document.addEventListener('DOMContentLoaded', () => {
  let token = document.getElementsByName('csrf-token')[0].getAttribute('content')
@@ -14,11 +14,10 @@ document.addEventListener('DOMContentLoaded', () => {
   console.log('secondappb');
   var element = document.getElementById("team-form")
  	console.log(element);
-
-  Vue.component('telpanel', Telpanel);   
-    new Vue({
+    var app = new Vue({
       el: element,
-      components: {Telpanel},
+      template: '<App/>',
+      components: {App},
       store,
         data: function() {
         return {   }

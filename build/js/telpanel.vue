@@ -30,23 +30,20 @@
 //       $('.tel').css('visibility', 'visible').addClass('slideUpReturn');
 // }, 1300);
 import axios from 'axios'
-
  
 console.log('telpanel');
-var element = document.getElementById("team-form")
 
+var element = document.getElementById("team-form")
 if (element != null) {
- 
   console.log(element);
   var id = element.dataset.id
   var team = JSON.parse(element.dataset.team)
-
   var players_attributes = JSON.parse(element.dataset.playersAttributes)
   players_attributes.forEach(function(player) { player._destroy = null })
   team.players_attributes = players_attributes 
 }
 export default {
-  name: 'telpanel', 
+   
   data: function () {
     return {
       id: id, 
@@ -65,58 +62,54 @@ export default {
 	  });	
   },
   mounted() {
- 
   },
   updated() {
-     
   },
   methods: {
-        addPlayer: function() {
-          this.team.players_attributes.push({
-            id: null,
-            name: "",
-            //position: "",
-            _destroy: null
-          })
-          console.log(this.team.players_attributes)
-          console.log(this.team)
-        },
-        removePlayer: function(index) {
-          var player = this.team.players_attributes[index]
-          if (player.id == null) {
-            this.team.players_attributes.splice(index, 1)
-          } else {
-            this.team.players_attributes[index]._destroy = "1"
-          }
-          console.log(this.team.players_attributes)
-          console.log(this.team)
-        },
-        undoRemove: function(index) {
-          this.team.players_attributes[index]._destroy = null
-        },
-        saveTeam: function() {
-          // Create a new team
-          if (this.id == null) {
-            axios.post('/teams', { team: this.team }).then(response => {
-             window.location.href = '/teams' ; 
-            }, response => {
-              console.log(response)
-            })
-          // Edit an existing team
-          } else {
-            axios.put(`/teams/${this.id}`, { team: this.team }).then(response => {
-               window.location.href = '/teams';  
-            }, response => {
-              console.log(response)
-            })
-          }
-        },
-        existingTeam: function() {
-          return this.team.id != null
-        },
- 
+    addPlayer: function() {
+      this.team.players_attributes.push({
+        id: null,
+        name: "",
+        //position: "",
+        _destroy: null
+      })
+      console.log(this.team.players_attributes)
+      console.log(this.team)
+    },
+    removePlayer: function(index) {
+      var player = this.team.players_attributes[index]
+      if (player.id == null) {
+        this.team.players_attributes.splice(index, 1)
+      } else {
+        this.team.players_attributes[index]._destroy = "1"
+      }
+      console.log(this.team.players_attributes)
+      console.log(this.team)
+    },
+    undoRemove: function(index) {
+      this.team.players_attributes[index]._destroy = null
+    },
+    saveTeam: function() {
+      // Create a new team
+      if (this.id == null) {
+        axios.post('/teams', { team: this.team }).then(response => {
+         window.location.href = '/teams' ; 
+        }, response => {
+          console.log(response)
+        })
+      // Edit an existing team
+      } else {
+        axios.put(`/teams/${this.id}`, { team: this.team }).then(response => {
+           window.location.href = '/teams';  
+        }, response => {
+          console.log(response)
+        })
+      }
+    },
+    existingTeam: function() {
+      return this.team.id != null
+    },
   }
-  
 }
 </script>
 

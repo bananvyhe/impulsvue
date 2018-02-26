@@ -5,5 +5,4 @@
     team: team.to_json(except: [:id, :created_at, :updated_at]),
     players_attributes: team.players.to_json(except: [:team_id, :created_at, :updated_at]),
   } do %>
-  <telpanel></telpanel>
 <% end %>
