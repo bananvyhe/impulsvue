@@ -30,7 +30,7 @@ export default {
 <style scoped>
 
 .head {
-	lost-center: 1366px;
+	
 	background-image: url(../../app/assets/images/SW-028.jpg);
 	background-repeat: no-repeat;
 	background-position: center left;

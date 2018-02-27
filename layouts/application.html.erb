@@ -4,24 +4,25 @@
     <title>Impulsvue Rails 5 User Registration With Devise, Vue.js, and Axios</title>
     <%= csrf_meta_tags %>
 		<%= javascript_include_tag 'jquery', 'jquery_ujs' %>
- 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   </head>
-  <body>
-    <div id="head"></div>
-      <div>
-        <% if user_signed_in? %>
-        <% end %>
-      	<% if user_signed_in? %>
-      		<%= link_to current_user.email, edit_user_registration_path %>
-      		<%= link_to "Logout", destroy_user_session_path, method: :delete %>
-      	<% else %>
-      		<%= link_to "Sign Up", new_user_registration_path %>
-      		<%= link_to "LogIn", new_user_session_path %>
-      	<% end %>
-      	<p class="notice"><%= notice %></p>
-        <p class="alert"><%= alert %></p>
-      </div>
-    <%= yield %>    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <body id="body"> 
+    <div id="content">
+      <div id="head"></div> 
+        <div>
+          <% if user_signed_in? %>
+          <% end %>
+        	<% if user_signed_in? %>
+        		<%= link_to current_user.email, edit_user_registration_path %>
+        		<%= link_to "Logout", destroy_user_session_path, method: :delete %>
+        	<% else %>
+        		<%= link_to "Sign Up", new_user_registration_path %>
+        		<%= link_to "LogIn", new_user_session_path %>
+        	<% end %>
+        	<p class="notice"><%= notice %></p>
+          <p class="alert"><%= alert %></p>
+        </div>
+      <%= yield %> <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    </div>
   </body>
 </html>
