@@ -30,28 +30,25 @@ export default {
 <style scoped>
 
 .head {
-	background-image: url(../../app/assets/images/ui_02.jpg);
+	lost-center: 1366px;
+	background-image: url(../../app/assets/images/SW-028.jpg);
 	background-repeat: no-repeat;
-	background-position: center bottom;
+	background-position: center left;
 	height: 160px;
 	background-color: #ada;
-	div {
-  	lost-column: 1/3;
-	}
 }
-.telpanel {
-    justify-content: center;  
-  }
-  .first {
-    background-color: #dad;
-  }
-  .second {
-   background-color: #ada;
-  }
-  .third {
-    background-color: #dad;
-  }
  
+.first {
+	lost-column: 1/2 2 0.5em;
+  background-color: #dad;
+}
+.second {lost-column: 1/4 4 0.5em;
+ background-color: #ada;
+}
+.third {lost-column: 1/4 4 0.5em;
+  background-color: #dad;
+}
+
 .fade-enter {
   opacity: 0;
 }
