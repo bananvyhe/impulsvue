@@ -47,8 +47,13 @@ document.addEventListener('DOMContentLoaded', () => {
     render: h => h(Mainmenu)
     
   }) 
-  new Vue({
-    el: '#sliderapp',
-    render: h => h(Sliderapp)
-  })
+  
+  var element = document.getElementById("sliderapp")
+  if (element != null) {
+    new Vue({
+      el: '#sliderapp',
+      render: h => h(Sliderapp)
+    })
+  }
+
 })
