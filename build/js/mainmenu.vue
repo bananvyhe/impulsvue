@@ -2,7 +2,8 @@
   <div>
     <div v-if="fixedClass == 'fixed'"  class='greedy-nav'>
     </div>
-numhide:{{numHide}}<br>numvis:{{numVis}}
+    <div v-show="false">numhide:{{numHide}}<br>numvis:{{numVis}}</div>
+		<div class="grass"></div>
     <nav class='greedy-nav' 
       v-scroll="handleScroll" 
       v-bind:style="{styleObject, width: menuwidth.value + 'px'}"  
@@ -295,11 +296,16 @@ numhide:{{numHide}}<br>numvis:{{numVis}}
 
 <style scoped>
 @import "../../app/assets/stylesheets/postcss/variables";
-
-.greedy-nav {
+.grass {
+	height: 48px;
+	background-image: url(../../app/assets/images/grass.jpg);
+	border-bottom: 2px solid #fff;
+}
+.greedy-nav { 
+	height: 2em;
   /*border-bottom-left-radius: 1.3em; */
   border-bottom: 1px solid #fff;
-  border-top: 6px solid $warningLine;
+  border-top: 3px solid $warningLine;
   z-index: 3;
   display: flex;
   justify-content: flex-end;

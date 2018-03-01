@@ -10,7 +10,6 @@
     <div class="third">
       <nobr>секция 3</nobr>
     </div> 
-
   </div>
 </template>
 
@@ -28,16 +27,13 @@ export default {
 </script>
 
 <style scoped>
-
-.head {
-	
+.head {  
 	background-image: url(../../app/assets/images/SW-028.jpg);
 	background-repeat: no-repeat;
 	background-position: center left;
 	height: 160px;
 	background-color: #ada;
 }
- 
 .first {
 	lost-column: 1/2 2 0.5em;
   background-color: #dad;
@@ -48,7 +44,6 @@ export default {
 .third {lost-column: 1/4 4 0.5em;
   background-color: #dad;
 }
-
 .fade-enter {
   opacity: 0;
 }

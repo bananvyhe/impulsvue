@@ -24,6 +24,20 @@
 End Hamster setup*/
 
 @reset;
+ 
 #content {
 	lost-center: 1366px;
+	position:relative;
+	.railsblock {
+		position: absolute;
+		margin: 10px;
+		background-color: #dad;
+		right:0;
+		
+ 		 
+
+
+
+	}
+ 
 }
