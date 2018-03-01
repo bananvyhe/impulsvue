@@ -230,7 +230,7 @@ gulp.task('css', function () {
 
   return streamqueue({ objectMode: true },
       gulp.src('app/assets/stylesheets/postcss/application.css'),
-      gulp.src('app/assets/stylesheets/postcss/head.css'),
+      gulp.src('app/assets/stylesheets/postcss/uistylechalk.css'),
       gulp.src('app/assets/stylesheets/postcss/headmenu.css')
     )
    .pipe(sourcemaps.init())

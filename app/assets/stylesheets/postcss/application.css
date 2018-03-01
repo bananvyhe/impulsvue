@@ -20,24 +20,27 @@
   ruler-scale: 1;
   ruler-thickness: 1;
 } 
-/*-----------------------------------------
+/*------------------------------------- 
 End Hamster setup*/
 
 @reset;
- 
+section {
+	 lost-center: 566px;
+} 
+#sliderapp {
+
+}
 #content {
 	lost-center: 1366px;
 	position:relative;
 	.railsblock {
 		position: absolute;
 		margin: 10px;
-		background-color: #dad;
+		background-color: #ada;
 		right:0;
-		
- 		 
-
-
-
 	}
  
+}
+#sliderapp {
+
 }

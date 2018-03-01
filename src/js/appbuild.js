@@ -1,15 +1,22 @@
 // import TurbolinksAdapter from 'vue-turbolinks';
+import ElementUI from 'element-ui'
+
 import axios from 'axios'
 import Vue from 'vue/dist/vue.esm'
-import store from './store'
+ 
 import App from './telpanel.vue' 
 import Head from './head.vue' 
 import Mainmenu from './mainmenu.vue' 
+import Sliderapp from './sliderapp.vue'
+
+
+
+Vue.use(ElementUI)
 
 // Vue.use(TurbolinksAdapter)
 document.addEventListener('DOMContentLoaded', () => {
   Vue.directive('scroll', {
-    // Когда привязанный элемент вставляется в DOM............
+    // Когда привязанный элемент вставляется в DOM......... 
     inserted: function(el, binding) {
       let f = function(evt) {
         if (binding.value(evt, el)) {
@@ -28,10 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
     el: element,
     template: '<App/>',
     components: {App},
-    store,
-      data: function() {
-      return {   }
-    } 
+    
   }) 
   var head = new Vue({
     el: '#head',
@@ -43,4 +47,8 @@ document.addEventListener('DOMContentLoaded', () => {
     render: h => h(Mainmenu)
     
   }) 
+  new Vue({
+    el: '#sliderapp',
+    render: h => h(Sliderapp)
+  })
 })

@@ -285,7 +285,7 @@
     menuwidth.value = menuwidth1.offsetWidth;
     availableSpace.value = menuwidth1.offsetWidth   - 90;
   }
-  // передаваемое значение во вью в виде обьекта для поддержания реактивной связи
+  // передаваемое значение во вью в виде обьекта для поддержания реактивной связи    
   window.onload = function () {
     parseCalc();
   }
