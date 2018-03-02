@@ -3,7 +3,7 @@ import { Carousel, CarouselItem } from 'element-ui'
 
 import axios from 'axios'
 import Vue from 'vue/dist/vue.esm'
- 
+import Footer from './footer.vue'
 import App from './telpanel.vue' 
 import Head from './head.vue' 
 import Mainmenu from './mainmenu.vue' 
@@ -47,6 +47,10 @@ document.addEventListener('DOMContentLoaded', () => {
     render: h => h(Mainmenu)
     
   }) 
+  new Vue({
+    el: '#footer',
+    render: h => h(Footer)
+  })
   
   var element = document.getElementById("sliderapp")
   if (element != null) {

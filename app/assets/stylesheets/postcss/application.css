@@ -24,19 +24,29 @@
 End Hamster setup*/
 
 @reset;
+html {
+  height: 100%;
+}
+.body {
+  height: 100%;
+}
+#main {
+  overflow:auto; background-color: #ada;
+  padding-bottom: 150px;/* footer height buffer */ 
+}
 #leftsheet {
-  margin-top: 0.5em;
-	lost-column: 2/7 3 1em ;background-color: #dad;
+  margin-top: 1em;
+	lost-column: 2/7 3 1.5em ; background-color: #dad;
 }
 #slider {
-  padding-top: 2em;
+  padding-top: 3em;
 	lost-column: 3/7 3 1em;
 } 
 #rightsheet {
-  margin-top: 0.5em;
-	lost-column: 2/7 3 1em;background-color: #dad;
+  margin-top: 1em;
+	lost-column: 2/7 3 1.5em; background-color: #dad;
 }
-#content {
+#content {min-height: 100%;
 	lost-center: 1366px;
 	position:relative;
 	.railsblock {
@@ -45,4 +55,12 @@ End Hamster setup*/
 		background-color: #ada;
 		right:0;
 	}
+}
+footer {
+  lost-center: 1366px; background-color: #dad;
+  lost-align: center; 
+  position: relative;
+  margin-top: -150px; /* negative value of footer height */
+  height: 150px;
+  clear:both;
 }
