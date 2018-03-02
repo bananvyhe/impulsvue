@@ -1,10 +1,10 @@
 <template>
   <div class="adult">
-  	<div>
+  	<div class="ubuntu">
   		Взрослым
   	</div>
  		<div v-for="(item, index) in items">
- 			{{item.title}}
+ 			<p>{{item.title}}</p>
  		</div>
   </div>
 </template>

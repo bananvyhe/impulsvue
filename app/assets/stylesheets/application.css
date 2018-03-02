@@ -1,3 +1,9 @@
+@font-face {
+	font-family: UbuntuR;
+	font-style: normal;
+	font-weight: 400;
+	src: url(fonts/Ubuntu-Regular.woff2) format("woff2");
+}
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -46,14 +52,28 @@ a:hover, a:active {
 }
 
 html {
-	font-size: 100%;
+	font-size: 87.5%;
 	line-height: 1.4em;
 }
 html {
   height: 100%;
 }
+p {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
 .body {
+  font-family: "Arial";
+   
+  font-style: normal;
+  font-weight: 400;
   height: 100%;
+}
+.ubuntu {
+  font-family: 'UbuntuR';
+  font-style: normal;
+  font-weight: 400;
 }
 #main {
   overflow:auto; background-color: #ada;

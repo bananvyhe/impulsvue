@@ -1,6 +1,6 @@
 <template>
   <div class="child">
-  	<div>
+  	<div class="ubuntu">
   		Детям и подросткам
   	</div>
  		<div v-for="(item, index) in items">
@@ -33,6 +33,7 @@ export default {
 
 <style scoped>
 .child {
+
 	display: flex;
   flex-direction: column;
   align-items: flex-end;
