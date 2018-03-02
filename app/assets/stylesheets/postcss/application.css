@@ -24,11 +24,17 @@
 End Hamster setup*/
 
 @reset;
-section {
-	 lost-center: 566px;
+#leftsheet {
+  margin-top: 0.5em;
+	lost-column: 2/7 3 1em ;background-color: #dad;
+}
+#slider {
+  padding-top: 2em;
+	lost-column: 3/7 3 1em;
 } 
-#sliderapp {
-
+#rightsheet {
+  margin-top: 0.5em;
+	lost-column: 2/7 3 1em;background-color: #dad;
 }
 #content {
 	lost-center: 1366px;
@@ -39,8 +45,4 @@ section {
 		background-color: #ada;
 		right:0;
 	}
- 
-}
-#sliderapp {
-
 }

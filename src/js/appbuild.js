@@ -1,5 +1,5 @@
 // import TurbolinksAdapter from 'vue-turbolinks';
-import ElementUI from 'element-ui'
+import { Carousel, CarouselItem } from 'element-ui'
 
 import axios from 'axios'
 import Vue from 'vue/dist/vue.esm'
@@ -8,10 +8,10 @@ import App from './telpanel.vue'
 import Head from './head.vue' 
 import Mainmenu from './mainmenu.vue' 
 import Sliderapp from './sliderapp.vue'
-
-
-
-Vue.use(ElementUI)
+import Child from './child.vue'
+import Adult from './adult.vue'
+Vue.use(Carousel)
+Vue.use(CarouselItem) 
 
 // Vue.use(TurbolinksAdapter)
 document.addEventListener('DOMContentLoaded', () => {
@@ -55,5 +55,20 @@ document.addEventListener('DOMContentLoaded', () => {
       render: h => h(Sliderapp)
     })
   }
+  var element = document.getElementById("child")
+  if (element != null) {
+    new Vue({
+      el: '#child',
+      render: h => h(Child)
+    })
+  }
+  var element = document.getElementById("adult")
+  if (element != null) {
+    new Vue({
+      el: '#adult',
+      render: h => h(Adult)
+    })
+  }
+
 
 })
