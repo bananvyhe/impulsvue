@@ -14,10 +14,7 @@
 </template>
 
 <script>
-console.log('head.vue');
-
 export default {
-   
   data: function () {
     return {
  
