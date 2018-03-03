@@ -4,7 +4,7 @@
   		Взрослым
   	</div>
  		<div v-for="(item, index) in items">
- 			<p>{{item.title}}</p>
+ 			{{item.title}}
  		</div>
   </div>
 </template>

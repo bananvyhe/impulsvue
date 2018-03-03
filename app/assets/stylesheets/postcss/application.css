@@ -24,6 +24,20 @@
 End Hamster setup*/
 
 @reset;
+@import "variables";
+@copy full {
+  @import "typography.css";
+}
+@paste full;
+@media (--only-small-screen) {
+  @ihamster {
+        --font-size: 16px;
+        --line-height: 1.4;
+  }
+  @baseline html;
+  @paste full;
+  @hamster end;  
+}
 html {
   height: 100%;
 }
