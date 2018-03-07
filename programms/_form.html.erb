@@ -1,0 +1,8 @@
+<%= content_tag :div,
+  id: "programm-form",
+  data: {
+  	id: programm.id,
+ 
+    programm: programm.to_json(except: [:created_at, :updated_at])
+  } do %>
+<% end %>

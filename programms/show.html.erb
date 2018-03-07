@@ -1,1 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Название:</strong>
+  <%= @programm.name %>
+</p>
+<p>
+  <strong>Описание:</strong>
+  <%= @programm.desc %>
+</p>
+ 
+
+<hr />
+
+<%= link_to 'Edit', edit_programm_path(@programm) %> |
+<%= link_to 'Back', programms_path %>
  

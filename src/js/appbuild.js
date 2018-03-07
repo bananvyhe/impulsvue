@@ -10,6 +10,7 @@ import Mainmenu from './mainmenu.vue'
 import Sliderapp from './sliderapp.vue'
 import Child from './child.vue'
 import Adult from './adult.vue'
+import Programm from './programms.vue'
 Vue.use(Carousel)
 Vue.use(CarouselItem) 
 
@@ -30,18 +31,28 @@ document.addEventListener('DOMContentLoaded', () => {
   axios.defaults.headers.common['X-CSRF-Token'] = token
   axios.defaults.headers.common['Accept'] = 'application/json'  
   //пример обмена vue-rails 
+
   var element = document.getElementById("team-form")
-  var app = new Vue({
-    el: element,
-    template: '<App/>',
-    components: {App},
-    
-  }) 
+  if (element != null) {
+    var app = new Vue({
+      el: element,
+      template: '<App/>',
+      components: {App}
+    }) 
+  }
   var head = new Vue({
     el: '#head',
     render: h => h(Head)
     
   }) 
+  var element1 = document.getElementById("programm-form")
+  if (element1 != null) {
+    var programm = new Vue({
+      el: element1,
+      template: '<Programm/>',
+      components: {Programm}
+    }) 
+  }
   new Vue({
     el: '#mainmenu',
     render: h => h(Mainmenu)
