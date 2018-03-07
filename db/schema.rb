@@ -23,6 +23,8 @@ ActiveRecord::Schema.define(version: 20180307114152) do
   end
 
   create_table "programms", force: :cascade do |t|
+    t.string "name"
+    t.text "desc"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
