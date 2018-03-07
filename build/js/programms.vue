@@ -2,17 +2,17 @@
   <div id="programms">
     <label>Название программы:</label>
     <input type="text" v-model="programm.name" /><br/>
-     <textarea   v-model="programm.desc" /> 
+     <ckeditor :config="config"  v-model="programm.desc" /> 
   	<button v-on:click="saveProgramm">Сохранить</button>
   </div>
 </template>
 
 <script>
-// setTimeout(function(){
+// setTimeout(function(){    
 //       $('.tel').css('visibility', 'visible').addClass('slideUpReturn');
 // }, 1300);
 import axios from 'axios'
- 
+ import Ckeditor from 'vue-ckeditor2'
  
 
 var element1 = document.getElementById("programm-form")
@@ -23,11 +23,20 @@ if (element1 != null) {
   console.log(programm); 
 }
 export default {
-   
+  components: { Ckeditor },
   data: function () {
     return {
       id: id, 
-      programm: programm 
+      programm: programm ,
+      config: {
+        toolbar: [
+          ['Undo','Redo'],
+          [ 'Bold', 'Italic', 'Underline'],
+          ['NumberedList','BulletedList'],
+          ['Cut','Copy','Paste']
+        ],
+        height: 300
+      }
        
     }
   
