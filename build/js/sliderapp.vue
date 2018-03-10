@@ -57,6 +57,7 @@
       vis.value = '300'; 
     }
   }
+  window.addEventListener('load', resize );
   window.addEventListener('resize', _.throttle(resize, 100));
  
   
