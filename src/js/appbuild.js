@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let token = document.getElementsByName('csrf-token')[0].getAttribute('content')
   axios.defaults.headers.common['X-CSRF-Token'] = token
   axios.defaults.headers.common['Accept'] = 'application/json'  
-  //пример обмена vue-rails 
+  //пример обмена vue-rails    
 
   var element = document.getElementById("team-form")
   if (element != null) {

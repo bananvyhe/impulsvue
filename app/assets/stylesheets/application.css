@@ -322,7 +322,7 @@ p {
   font-weight: 400;
 }
 #main {
-  overflow:auto; background-color: #ada; 
+  overflow:hidden; background-color: #ada; 
 }
 #leftsheet {
   margin-top: 1em;
@@ -381,9 +381,9 @@ p {
 #rightsheet:nth-child(3n + 1) {
   clear: both;
 }
-.maincontent {
-	max-width: 1366px;
-	margin-left: auto;
+.maincontent { 
+	max-width: 1366px; 
+	margin-left: auto; 
 	margin-right: auto;
 	position:relative;
 }

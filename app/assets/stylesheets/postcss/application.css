@@ -20,7 +20,7 @@
   ruler-scale: 1;
   ruler-thickness: 1;
 } 
-/*------------------------------------- 
+/*------------------------------------- ----
 End Hamster setup*/
 
 @reset;
@@ -56,7 +56,7 @@ p {
   font-weight: 400;
 }
 #main {
-  overflow:auto; background-color: #ada;
+  overflow:hidden; background-color: #ada;
    /* footer height buffer */ 
 }
 #leftsheet {
@@ -72,7 +72,7 @@ p {
 	lost-column: 2/7 3 1.5em; background-color: #dad;
 }
 .maincontent {
- /* min-height: 100%;*/
+ /* min-height: 100%;*/ 
 	lost-center: 1366px;
 	position:relative;
 	.railsblock {
