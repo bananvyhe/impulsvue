@@ -57,9 +57,9 @@
       vis.value = '300'; 
     }
   }
-
-  window.addEventListener('resize', resize, false);
-  resize();
+  window.addEventListener('resize', _.throttle(resize, 100));
+ 
+  
   let divHeight = {value:  ''};
   export default {
     data: function () {

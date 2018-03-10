@@ -12,7 +12,7 @@
 //       $('.tel').css('visibility', 'visible').addClass('slideUpReturn');
 // }, 1300);
 import axios from 'axios'
- import Ckeditor from 'vue-ckeditor2'
+import Ckeditor from 'vue-ckeditor2'
  
 
 var element1 = document.getElementById("programm-form")
@@ -35,7 +35,7 @@ export default {
           ['NumberedList','BulletedList'],
           ['Cut','Copy','Paste']
         ],
-        height: 300
+        height: 200
       }
        
     }
@@ -64,6 +64,9 @@ export default {
 </script>
 
 <style scoped>
- 
+ .ckeditor {
+  margin: 15px;
+  clear: both;
+ }
  
 </style>

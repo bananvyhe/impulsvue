@@ -315,7 +315,6 @@ p {
   font-family: "Arial";
   font-style: normal;
   font-weight: 400;
-  height: 100%;
 }
 .ubuntu {
   font-family: 'UbuntuR';
@@ -323,8 +322,7 @@ p {
   font-weight: 400;
 }
 #main {
-  overflow:auto; background-color: #ada;
-  padding-bottom: 150px; 
+  overflow:auto; background-color: #ada; 
 }
 #leftsheet {
   margin-top: 1em;
@@ -383,22 +381,22 @@ p {
 #rightsheet:nth-child(3n + 1) {
   clear: both;
 }
-#content {min-height: 100%;
+.maincontent {
 	max-width: 1366px;
 	margin-left: auto;
 	margin-right: auto;
 	position:relative;
 }
-#content:before {
+.maincontent:before {
   content: '';
   display: table;
 }
-#content:after {
+.maincontent:after {
   content: '';
   display: table;
   clear: both;
 }
-#content .railsblock {
+.maincontent .railsblock {
   position: absolute;
   margin: 10px;
   background-color: #ada;
@@ -410,7 +408,6 @@ footer {
   margin-right: auto; background-color: #dad;
   position: relative; 
   position: relative;
-  margin-top: -150px;
   height: 150px;
   clear:both;
 }

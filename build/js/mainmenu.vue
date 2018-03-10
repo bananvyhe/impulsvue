@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div>{{menuwidth.value}}
     <div v-if="fixedClass == 'fixed'"  class='greedy-nav'>
     </div>
     <div v-show="false">numhide:{{numHide}}<br>numvis:{{numVis}}</div>
@@ -289,9 +289,7 @@
   window.onload = function () {
     parseCalc();
   }
-  window.onresize = function(event) {
-    parseCalc();
-  }
+  window.addEventListener('resize', _.throttle(parseCalc, 100));
 </script>
 
 <style scoped>

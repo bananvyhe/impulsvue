@@ -48,7 +48,7 @@ p {
   font-family: "Arial";
   font-style: normal;
   font-weight: 400;
-  height: 100%;
+ /* height: 100%;*/
 }
 .ubuntu {
   font-family: 'UbuntuR';
@@ -57,7 +57,7 @@ p {
 }
 #main {
   overflow:auto; background-color: #ada;
-  padding-bottom: 150px;/* footer height buffer */ 
+   /* footer height buffer */ 
 }
 #leftsheet {
   margin-top: 1em;
@@ -71,7 +71,8 @@ p {
   margin-top: 1em;
 	lost-column: 2/7 3 1.5em; background-color: #dad;
 }
-#content {min-height: 100%;
+.maincontent {
+ /* min-height: 100%;*/
 	lost-center: 1366px;
 	position:relative;
 	.railsblock {
@@ -85,7 +86,7 @@ footer {
   lost-center: 1366px; background-color: #dad;
   lost-align: center; 
   position: relative;
-  margin-top: -150px; /* negative value of footer height */
+  /* negative value of footer height */
   height: 150px;
   clear:both;
 }

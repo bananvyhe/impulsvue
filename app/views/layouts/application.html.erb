@@ -8,8 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body class="body"> 
- 
-    <div id="content">
+    <div class="maincontent">
       <div class="railsblock">1<br>1<br>
         <% if user_signed_in? %>
         <% end %>
@@ -28,11 +27,13 @@
       <div id="main">
         <%= yield %> 
       </div>
-    </div>
+      <div class="push"></div>
+    </div>    
       <footer>
         <div id="footer">
         </div>
       </footer> 
+
       <%= javascript_include_tag 'application', 'TweenMax', 'TimelineMax', 'data-turbolinks-track': 'reload' %>
 
   </body>
