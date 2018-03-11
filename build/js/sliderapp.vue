@@ -58,7 +58,7 @@
     }
   }
   window.addEventListener('load', resize );
-  window.addEventListener('resize', _.throttle(resize, 100));
+ 
  
   
   let divHeight = {value:  ''};
@@ -84,6 +84,9 @@
           { title: 'Деятельность лицензирована', text: 'Деятельность лицензирована Министерством Российской Федерации по делам гражданской обороны, чрезвычайным ситуациям и ликвидации последствий стихийных бедствий за №66-Б/00124 от 23 июня 2009 года ', class: 'fivediv' }  
         ] 
       }
+    },
+    mounted() { 
+       window.addEventListener('resize', _.throttle(resize, 100));
     },
     computed: {
       //отключение индикации слайдов при маленьких разрешениях

@@ -44,7 +44,8 @@ html {
 p {
   @hyphens;
 }
-.body {
+body {
+  position:relative;
   font-family: "Arial";
   font-style: normal;
   font-weight: 400;
@@ -56,7 +57,7 @@ p {
   font-weight: 400;
 }
 #main {
-  overflow:hidden; background-color: #ada;
+  overflow:hidden; background-color: #ada; 
    /* footer height buffer */ 
 }
 #leftsheet {
@@ -72,9 +73,9 @@ p {
 	lost-column: 2/7 3 1.5em; background-color: #dad;
 }
 .maincontent {
- /* min-height: 100%;*/ 
+  /* min-height: 100%;*/ 
 	lost-center: 1366px;
-	position:relative;
+	position:relative; 
 	.railsblock {
 		position: absolute;
 		margin: 10px;
@@ -82,11 +83,7 @@ p {
 		right:0;
 	}
 }
-footer {
-  lost-center: 1366px; background-color: #dad;
-  lost-align: center; 
-  position: relative;
-  /* negative value of footer height */
-  height: 150px;
-  clear:both;
+ 
+.footer { position: fixed; bottom: 0px;
+  height: 150px; background-color: #dad; 
 }
