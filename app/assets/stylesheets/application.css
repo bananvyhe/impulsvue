@@ -403,8 +403,10 @@ body {
   background-color: #ada;
   right:0;
 }
- 
-.footer { position: fixed; bottom: 0px;
+#falign {
+
+} 
+.footer { 
   height: 150px; background-color: #dad; 
 }
 

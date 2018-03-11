@@ -1,6 +1,6 @@
 <template>
-	<div class="footer" v-bind:style="{position: triggerPos, width: footerWidth.value + 'px'}">
- 		234weqwe {{mcontentHeight}}{{footerHeight}}{{winH}}{{footerWidth}}
+	<div class="footer" v-bind:style="{ position: triggerPos.value, width: footerWidth.value + 'px'}">
+ 		234weqwe {{mcontentHeight}}{{footerHeight}}{{winH}}{{footerWidth}}<br/>{{triggerPos}}
 	</div>
 </template>
 <script>
@@ -8,11 +8,12 @@
 	let footerHeight = {value: ''};
 	let winH = {value: ''};
 	let footerWidth = {value: ''};
+	let triggerPos = {value: ''};
 	export default {
 		data: function () {
 		  return {
 		  	footerWidth: footerWidth,
-		  	triggerPos: '',
+		  	triggerPos: triggerPos,
 		  	winH: winH,
 		  	mcontentHeight: mcontentHeight,
 		  	footerHeight: footerHeight
@@ -23,16 +24,7 @@
 				console.log('update'); 
 		    parseheght ();
   		}, 500);
-  		if (mcontentHeight + footerHeight < winH){
-	  			 
-	  		}else{
-	  			 
-	  		}
-	  },
-	  watch: {
-	  	mcontentHeight: function(){
-	  		
-	  	}
+  		
 	  }
   }
   function parseheght () {
@@ -43,7 +35,13 @@
 	  footerWidth.value = maincontent.offsetWidth;
 	  winH.value = window.innerHeight;
 	  console.log( 'footer indicator');
-	};
+	  if (mcontentHeight.value + footerHeight.value > winH.value){
+  		console.log('rltve');
+  		  triggerPos.value = 'relative'	;
+  		}else{console.log('fxd');
+  		  triggerPos.value = 'fixed';	 
+  		}
+		};
 	window.addEventListener('load', function(event) {
     parseheght ();
   });
@@ -52,6 +50,6 @@
 <style scoped>
 @import "../../app/assets/stylesheets/postcss/variables";
 .footer {
- 
+	bottom: 0px;
 }
 </style>

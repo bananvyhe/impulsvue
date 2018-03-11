@@ -72,6 +72,7 @@ body {
   margin-top: 1em;
 	lost-column: 2/7 3 1.5em; background-color: #dad;
 }
+/* от размеров div'а maincontent идет зависимость - обсчет ширины меню, футера;  считается высота для определения sicky или realativ position футера */
 .maincontent {
   /* min-height: 100%;*/ 
 	lost-center: 1366px;
@@ -83,7 +84,9 @@ body {
 		right:0;
 	}
 }
- 
-.footer { position: fixed; bottom: 0px;
+#falign {
+
+} 
+.footer { 
   height: 150px; background-color: #dad; 
 }
