@@ -85,8 +85,11 @@ body {
 	}
 }
 #falign {
-
+ position: relative;
 } 
 .footer { 
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 150px; background-color: #dad; 
 }
