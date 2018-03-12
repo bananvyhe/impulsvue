@@ -290,6 +290,7 @@
     parseCalc();
   }
   window.addEventListener('resize', _.throttle(parseCalc, 100));
+  window.addEventListener('scroll', _.throttle(parseCalc, 300));
 </script>
 
 <style scoped>

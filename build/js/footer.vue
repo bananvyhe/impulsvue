@@ -21,7 +21,7 @@
 	  },
 	  updated: function(){
 	  	setTimeout(function(){
-				console.log('update'); 
+				console.log('footer timeout updated hook calc div dimensions'); 
 		    parseheght ();
   		}, 500);
   		
@@ -34,18 +34,17 @@
 	  footerHeight.value = footerquery.offsetHeight;
 	  footerWidth.value = maincontent.offsetWidth;
 	  winH.value = window.innerHeight;
-	  console.log( 'footer indicator');
 	  if (mcontentHeight.value + footerHeight.value > winH.value){
-  		console.log('rltve');
   		  triggerPos.value = 'relative'	;
-  		}else{console.log('fxd');
-  		  triggerPos.value = 'fixed';	 
+  		}else{
+  			triggerPos.value = 'fixed';	 
   		}
 		};
 	window.addEventListener('load', function(event) {
     parseheght ();
   });
 	window.addEventListener('resize', _.throttle(parseheght, 300));
+	window.addEventListener('scroll', _.throttle(parseheght, 300));
 </script>
 <style scoped>
 @import "../../app/assets/stylesheets/postcss/variables";
