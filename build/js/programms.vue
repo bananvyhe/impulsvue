@@ -1,8 +1,9 @@
 <template>
   <div id="programms">
+    <div v-html="programm.desc"></div>
     <label>Название программы:</label>
     <input type="text" v-model="programm.name" /><br/>
-     <ckeditor :config="config"  v-model="programm.desc" /> 
+    <ckeditor :config="config"  v-model="programm.desc" /> 
   	<button v-on:click="saveProgramm">Сохранить</button>
   </div>
 </template>
@@ -13,11 +14,8 @@
 // }, 1300);
 import axios from 'axios'
 import Ckeditor from 'vue-ckeditor2'
- 
-
 var element1 = document.getElementById("programm-form")
 if (element1 != null) {
-  
   var id = element1.dataset.id
   var programm = JSON.parse(element1.dataset.programm)
   console.log(programm); 
