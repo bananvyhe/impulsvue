@@ -21,6 +21,7 @@
 		  	footerHeight: footerHeight
 		  }
 	  },
+
 	  updated: function(){
 	  	setTimeout(function(){
 				console.log('footer timeout updated hook calc div dimensions'); 
@@ -50,7 +51,7 @@
 	       parseheght ();
 	    });
 		});
-	}
+ 	}
 	window.addEventListener('load', function(event) {
     parseheght ();
   });
