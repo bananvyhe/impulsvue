@@ -257,7 +257,7 @@ gulp.task('html', function () {
 // });
 
 gulp.task('browreload', function () {
-   return gulp.src('app/assets/javascripts/application.js')
+   return gulp.src('app/assets/javascripts/application1.js')
     .pipe(livereload());
 });
 
@@ -271,7 +271,7 @@ gulp.task('watch', function () {
   livereload.listen();
   gulp.watch('app/assets/stylesheets/postcss/*.css', ['css']);
   gulp.watch('app/views/**/*.html.erb', ['html']);
-  gulp.watch('app/assets/javascripts/application.js', ['browreload']); 
+  gulp.watch('app/assets/javascripts/application1.js', ['browreload']); 
   //gulp.watch('app/assets/src/**/*.js', ['js']);
   gulp.watch('app/assets/stylesheets/fonts/*.ttf', ['ttf2woff2']); 
 
