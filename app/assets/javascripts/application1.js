@@ -2537,9 +2537,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //
 //
 
-// setTimeout(function(){    
-//       $('.tel').css('visibility', 'visible').addClass('slideUpReturn');
-// }, 1300);
 var element1 = document.getElementById("programm-form");
 if (element1 != null) {
   var id = element1.dataset.id;
@@ -2748,7 +2745,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 var start = "hello45451245345ssdfgsdg223";
 console.log(start);
-//hhh
+//hhhdd
 //# sourceMappingURL=app.js.map
 
 /***/ }),

@@ -9,9 +9,6 @@
 </template>
 
 <script>
-// setTimeout(function(){    
-//       $('.tel').css('visibility', 'visible').addClass('slideUpReturn');
-// }, 1300);
 import axios from 'axios'
 import Ckeditor from 'vue-ckeditor2'
 var element1 = document.getElementById("programm-form")
