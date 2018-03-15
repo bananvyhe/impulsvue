@@ -34,9 +34,7 @@ export default {
           ['Cut','Copy','Paste'],
  
         ],
-        customConfig: 'config.js',
-        // customConfig: '/ckeditor/config.js',
-        extraPlugins: 'imageuploader',
+ 
         height: 200
       }
        
