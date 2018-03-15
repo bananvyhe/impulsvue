@@ -4,7 +4,7 @@ module.exports = {
   watch: true,      
   entry: {
     turbolinks: './src/js/turbolinks.js',
-    application: './build/js/app.js'
+    application1: './build/js/app.js'
   },
   output: {
     filename: "[name].js",
