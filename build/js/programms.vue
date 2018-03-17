@@ -3,7 +3,7 @@
     <div v-html="programm.desc"></div>
     <label>Название программы:</label>
     <input type="text" v-model="programm.name" /><br/>
-    <ckeditor :config="config"  v-model="programm.desc" /> 
+    <ckeditor    v-model="programm.desc" /> 
   	<button v-on:click="saveProgramm">Сохранить</button>
   </div>
 </template>
