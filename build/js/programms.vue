@@ -22,18 +22,7 @@ export default {
   data: function () {
     return {
       id: id, 
-      programm: programm ,
-      config: {
-        toolbar: [
-          ['Undo','Redo'],
-          ['Bold', 'Italic', 'Underline'],
-          ['NumberedList','BulletedList'],
-          ['Cut','Copy','Paste'],
- 
-        ],
- 
-        height: 200
-      }
+      programm: programm 
        
     }
   

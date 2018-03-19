@@ -47,16 +47,15 @@
 	let cke = document.querySelector("ckeditor");
 	if (typeof CKEDITOR !== 'undefined'){
 		CKEDITOR.on('instanceCreated', function(e) {
-	    e.editor.on('change', function (event) {
-	       parseheght ();
-	    });
+	    e.editor.on('change', _.throttle(parseheght, 100));
 		});
  	}
 	window.addEventListener('load', function(event) {
     parseheght ();
   });
+  window.addEventListener('click', _.throttle(parseheght, 300));
 	window.addEventListener('resize', _.throttle(parseheght, 300));
-	window.addEventListener('scroll', _.throttle(parseheght, 300));
+ 	window.addEventListener('scroll', _.throttle(parseheght, 300));
 	 
 </script>
 <style scoped>
