@@ -33,7 +33,7 @@ CKEDITOR.editorConfig = function( config )
   config.filebrowserUploadUrl = "/ckeditor/attachment_files";
 
   config.allowedContent = true;
-
+  config.contentsCss = ["../assets/application.css"];
   // Toolbar groups configuration.
   config.toolbar = [
     { name: 'document', groups: [ 'mode', 'document', 'doctools' ], items: [ 'Source'] },
@@ -48,7 +48,6 @@ CKEDITOR.editorConfig = function( config )
     { name: 'colors', items: [ 'TextColor', 'BGColor' ] },
     { name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ], items: [ 'Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-', 'RemoveFormat' ] }
   ];
-
   config.toolbar_mini = [
     { name: 'paragraph', groups: [ 'list', 'indent', 'blocks', 'align', 'bidi' ], items: [ 'NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote', 'CreateDiv', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock' ] },
     { name: 'styles', items: [ 'Font', 'FontSize' ] },
@@ -57,6 +56,4 @@ CKEDITOR.editorConfig = function( config )
     { name: 'insert', items: [ 'Image', 'Table', 'HorizontalRule', 'SpecialChar' ] }
   ];
   config.extraPlugins = 'dragresize';
-
-
 };

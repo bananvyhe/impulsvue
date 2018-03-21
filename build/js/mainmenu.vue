@@ -146,13 +146,13 @@
             this.toggle = false;
             this.toggle2 = false;
         // вернуть меню на позицию при попадании его в область видимости при проскролле вверх
-        }else if (this.stick.value == 'up' && window.scrollY < this.headHeight.value+800){
+        }else if (this.stick.value == 'up' && window.scrollY < this.headHeight.value+1000){
           TweenLite.to(el, 0, {
             top: '0px',
             ease: Linear.easeInOut
           });
           this.fixedClass = 'unfixed';
-        }else if (this.stick.value == 'up' && window.scrollY < this.headHeight.value+1200){
+        }else if (this.stick.value == 'up' && window.scrollY < this.headHeight.value+1400){
           TweenLite.to(el, .2, {
             top: '-60px',
             ease: Linear.easeInOut
