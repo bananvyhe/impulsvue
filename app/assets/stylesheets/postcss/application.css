@@ -58,19 +58,29 @@ body {
 }
 #main {
   overflow:hidden; background-color: #ada; 
-   /* footer height buffer */ 
+   /* footer height bufferdffgdfg */ 
 }
+ 
 #leftsheet {
   margin-top: 1em;
 	lost-column: 2/7 3 1.5em ; background-color: #dad;
+  @media (--only-small-screen) {
+    lost-column: 1/1;
+  }
 }
 #slider {
   padding-top: 3em;
 	lost-column: 3/7 3 1em;
+  @media (--only-small-screen) {
+    lost-column: 1/1;
+  }
 } 
 #rightsheet {
   margin-top: 1em;
 	lost-column: 2/7 3 1.5em; background-color: #dad;
+  @media (--only-small-screen) {
+    lost-column: 1/1;
+  }
 }
 /* от размеров div'а maincontent идет зависимость - обсчет ширины меню, футера;  считается высота для определения sicky или realativ position футера */
 .maincontent {

@@ -325,28 +325,54 @@ body {
 #main {
   overflow:hidden; background-color: #ada; 
 }
+ 
 #leftsheet {
   margin-top: 1em;
-	width: calc(99.9% * 2/7 - (1.5em - 1.5em * 2/7)); background-color: #dad;
+	width: calc(99.9% * 2/7 - (1.5em - 1.5em * 2/7)); background-color: #dad
 }
+ 
 #leftsheet:nth-child(1n) {
   float: left;
   margin-right: 1.5em;
   clear: none;
 }
+ 
 #leftsheet:last-child {
   margin-right: 0;
 }
+ 
 #leftsheet:nth-child(3n) {
   margin-right: 0;
   float: right;
 }
+ 
 #leftsheet:nth-child(3n + 1) {
   clear: both;
 }
+ 
+@media (min-width: 0px) and (max-width: 580px) {
+  #leftsheet {
+    width: calc(99.9% * 1/1 - (30px - 30px * 1/1));
+  }
+  #leftsheet:nth-child(1n) {
+    float: left;
+    margin-right: 30px;
+    clear: none;
+  }
+  #leftsheet:last-child {
+    margin-right: 0;
+  }
+  #leftsheet:nth-child(1n) {
+    margin-right: 0;
+    float: right;
+  }
+  #leftsheet:nth-child(1n + 1) {
+    clear: both;
+  }
+  }
 #slider {
   padding-top: 3em;
-	width: calc(99.9% * 3/7 - (1em - 1em * 3/7));
+	width: calc(99.9% * 3/7 - (1em - 1em * 3/7))
 }
 #slider:nth-child(1n) {
   float: left;
@@ -362,10 +388,30 @@ body {
 }
 #slider:nth-child(3n + 1) {
   clear: both;
-} 
+}
+@media (min-width: 0px) and (max-width: 580px) {
+  #slider {
+    width: calc(99.9% * 1/1 - (30px - 30px * 1/1));
+  }
+  #slider:nth-child(1n) {
+    float: left;
+    margin-right: 30px;
+    clear: none;
+  }
+  #slider:last-child {
+    margin-right: 0;
+  }
+  #slider:nth-child(1n) {
+    margin-right: 0;
+    float: right;
+  }
+  #slider:nth-child(1n + 1) {
+    clear: both;
+  }
+  } 
 #rightsheet {
   margin-top: 1em;
-	width: calc(99.9% * 2/7 - (1.5em - 1.5em * 2/7)); background-color: #dad;
+	width: calc(99.9% * 2/7 - (1.5em - 1.5em * 2/7)); background-color: #dad
 } 
 #rightsheet:nth-child(1n) {
   float: left;
@@ -381,7 +427,27 @@ body {
 } 
 #rightsheet:nth-child(3n + 1) {
   clear: both;
-}
+} 
+@media (min-width: 0px) and (max-width: 580px) {
+  #rightsheet {
+    width: calc(99.9% * 1/1 - (30px - 30px * 1/1));
+  }
+  #rightsheet:nth-child(1n) {
+    float: left;
+    margin-right: 30px;
+    clear: none;
+  }
+  #rightsheet:last-child {
+    margin-right: 0;
+  }
+  #rightsheet:nth-child(1n) {
+    margin-right: 0;
+    float: right;
+  }
+  #rightsheet:nth-child(1n + 1) {
+    clear: both;
+  }
+  }
 .maincontent { 
 	max-width: 1366px; 
 	margin-left: auto; 

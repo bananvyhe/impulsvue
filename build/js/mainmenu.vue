@@ -130,10 +130,10 @@
       },
       handleScroll: function(evt, el) {
         //начальный скролл вниз с топа страницы
-        if (this.stick.value == 'down' && window.scrollY > this.headHeight.value+1000 && this.fixedClass == 'unfixed')
+        if (this.stick.value == 'down' && window.scrollY > this.headHeight.value+500 && this.fixedClass == 'unfixed')
         {
-          var self = this;
-          TweenLite.to(el, .4, {
+           
+          TweenLite.to(el, .1, {
             top: '-60px',
             ease: Linear.easeInOut
           });
@@ -147,14 +147,14 @@
             this.toggle = false;
             this.toggle2 = false;
         // вернуть меню на позицию при попадании его в область видимости при проскролле вверх
-        }else if (this.stick.value == 'up' && window.scrollY < this.headHeight.value+600){
+        }else if (this.stick.value == 'up' && window.scrollY < this.headHeight.value+800){
           TweenLite.to(el, .1, {
             top: '0px',
             ease: Linear.easeInOut
           });
           this.fixedClass = 'unfixed';
-        }else if (this.stick.value == 'up' && window.scrollY < this.headHeight.value+1000){
-          TweenLite.to(el, .4, {
+        }else if (this.stick.value == 'up' && window.scrollY < this.headHeight.value+1200){
+          TweenLite.to(el, .2, {
             top: '-60px',
             ease: Linear.easeInOut
           });
