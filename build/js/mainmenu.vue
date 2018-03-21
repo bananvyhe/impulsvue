@@ -132,7 +132,6 @@
         //начальный скролл вниз с топа страницы
         if (this.stick.value == 'down' && window.scrollY > this.headHeight.value+500 && this.fixedClass == 'unfixed')
         {
-           
           TweenLite.to(el, .1, {
             top: '-60px',
             ease: Linear.easeInOut
@@ -148,7 +147,7 @@
             this.toggle2 = false;
         // вернуть меню на позицию при попадании его в область видимости при проскролле вверх
         }else if (this.stick.value == 'up' && window.scrollY < this.headHeight.value+800){
-          TweenLite.to(el, .1, {
+          TweenLite.to(el, 0, {
             top: '0px',
             ease: Linear.easeInOut
           });
