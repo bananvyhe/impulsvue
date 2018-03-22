@@ -47,9 +47,15 @@ h6 {
 strong {
   @extend %strong;
 }
+img {
+  margin: 1em;
+}
 p {
   adjust-font-size: fs b;
-  @hyphens;
+  display: block;
+  text-indent: 2em;
+  padding-left: 1.2em;
+  padding-right: 1.2em;
   margin-bottom: spacing(1);
 }
 a {
@@ -59,11 +65,12 @@ a {
   }
 }
 ul,
-ol {
+ol { 
+	padding: 0.5em 0 0.5em 0;
   adjust-font-size: fs b;
   list-style-position: inside;
 }
-ul {
+ul { 
   list-style: disc inside;
 }
 ol {
@@ -71,6 +78,11 @@ ol {
 }
 ul a, ol a {
   text-decoration: none;
+}
+li {
+	padding-left: 32px;
+	margin-bottom: 10px;
+	padding-bottom: 10px;
 }
 code,
 pre {

@@ -115,6 +115,12 @@ html {
   font-size: 87.5%;
   line-height: 1.4em;
 }
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
 h2, strong {
   font-weight: 500;
 }
@@ -162,12 +168,16 @@ h6 {
   line-height: 1.6801em;
   margin-top: 1.6801em;
 }
+img {
+  margin: 1em;
+}
 p {
   font-size: 1em;
   line-height: 1.4em;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  hyphens: auto;
+  display: block;
+  text-indent: 2em;
+  padding-left: 1.2em;
+  padding-right: 1.2em;
   margin-bottom: 1.4em;
 }
 a {
@@ -177,6 +187,7 @@ a:hover {
   color: @font-color;
 }
 ul, ol {
+  padding: 0.5em 0 0.5em 0;
   font-size: 1em;
   line-height: 1.4em;
   list-style-position: inside;
@@ -189,6 +200,11 @@ ol {
 }
 ul a, ol a {
   text-decoration: none;
+}
+li {
+  padding-left: 32px;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
 }
 code, pre {
   font-family: "Roboto Mono", Inconsolata, monospace;
@@ -258,12 +274,16 @@ code, pre {
     line-height: 1.6801em;
     margin-top: 1.6801em;
   }
+  img {
+    margin: 1em;
+  }
   p {
     font-size: 1em;
     line-height: 1.4em;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  hyphens: auto;
+    display: block;
+    text-indent: 2em;
+    padding-left: 1.2em;
+    padding-right: 1.2em;
     margin-bottom: 1.4em;
   }
   a {
@@ -273,6 +293,7 @@ code, pre {
     color: @font-color;
   }
   ul, ol {
+    padding: 0.5em 0 0.5em 0;
     font-size: 1em;
     line-height: 1.4em;
     list-style-position: inside;
@@ -285,6 +306,11 @@ code, pre {
   }
   ul a, ol a {
     text-decoration: none;
+  }
+  li {
+    padding-left: 32px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
   }
   code, pre {
     font-family: "Roboto Mono", Inconsolata, monospace;
@@ -306,11 +332,7 @@ code, pre {
 html {
   height: 100%;
 }
-p {
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  hyphens: auto;
-}
+
 body {
   position:relative;
   font-family: "Arial";

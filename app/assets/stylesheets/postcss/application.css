@@ -20,10 +20,11 @@
   ruler-scale: 1;
   ruler-thickness: 1;
 } 
-/*------------------------------------- ----
+/*------------------------------------- ----------
 End Hamster setup*/
 
 @reset;
+@box-sizing-reset;
 @import "variables";
 @copy full {
   @import "typography.css";
@@ -31,8 +32,8 @@ End Hamster setup*/
 @paste full;
 @media (--only-small-screen) {
   @ihamster {
-        --font-size: 16px;
-        --line-height: 1.4;
+    --font-size: 16px;
+    --line-height: 1.4;
   }
   @baseline html;
   @paste full;
@@ -41,9 +42,7 @@ End Hamster setup*/
 html {
   height: 100%;
 }
-p {
-  @hyphens;
-}
+
 body {
   position:relative;
   font-family: "Arial";
