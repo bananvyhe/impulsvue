@@ -124,15 +124,15 @@ html {
 h2, strong {
   font-weight: 500;
 }
-h3, h4, h5, h6 {
+h3, h5, h6 {
   color: @sheader-color;
 }
 h1 {
-  text-align: center;
+  padding-left: 1.4em;
+  padding-right: 1.4em;
   font-weight: 600;
   font-size: 2.0736em;
   line-height: 1.3503em;
-  color: #fff;
   margin-top: 0.6752em;
   margin-bottom: 0.6752em;
 }
@@ -140,8 +140,8 @@ h2 {
   color: @header-color;
   font-size: 1.728em;
   line-height: 1.6204em;
-  margin-top: 1.6204em;
-  margin-bottom: 0.8102em;
+  margin-top: 1.4583em;
+  margin-bottom: 0.162em;
   padding-left: 0.8102em;
   padding-right: 0.8102em;
   border-left: 0.162em solid @header-color;
@@ -150,35 +150,46 @@ h2 {
 h3 {
   font-size: 1.44em;
   line-height: 1.9444em;
-  margin-top: 1.9444em;
-  margin-bottom: 0.9722em;
+  margin-top: 0.9722em;
+  margin-bottom: 0em;
+  padding-left: 0.9722em;
+  padding-right: 0.9722em;
 }
 h4 {
   font-size: 1.2em;
   line-height: 1.1667em;
-  margin-top: 1.1667em;
+  margin-top: 0.2333em;
+  margin-bottom: 0.35em;
+  padding-left: 1.1667em;
+  padding-right: 1.1667em;
 }
 h5 {
   font-size: 1em;
   line-height: 1.4em;
   margin-top: 1.4em;
+  margin-bottom: 0em;
+  padding-left: 1.4em;
+  padding-right: 1.4em;
 }
 h6 {
   font-size: 0.8333em;
   line-height: 1.6801em;
   margin-top: 1.6801em;
-}
-img {
-  margin: 1em;
+  margin-bottom: 0em;
+  padding-left: 1.6801em;
+  padding-right: 1.6801em;
 }
 p {
   font-size: 1em;
   line-height: 1.4em;
   display: block;
-  text-indent: 2em;
+  text-indent: 1.8em;
   padding-left: 1.2em;
   padding-right: 1.2em;
   margin-bottom: 1.4em;
+}
+img {
+  margin: 1em;
 }
 a {
   color: @header-color;
@@ -202,9 +213,10 @@ ul a, ol a {
   text-decoration: none;
 }
 li {
+  display: list-item;
   padding-left: 32px;
+  padding-right: 32px;
   margin-bottom: 10px;
-  padding-bottom: 10px;
 }
 code, pre {
   font-family: "Roboto Mono", Inconsolata, monospace;
@@ -230,15 +242,15 @@ code, pre {
   h2, strong {
     font-weight: 500;
   }
-  h3, h4, h5, h6 {
+  h3, h5, h6 {
     color: @sheader-color;
   }
   h1 {
-    text-align: center;
+    padding-left: 1.4em;
+    padding-right: 1.4em;
     font-weight: 600;
     font-size: 2.0736em;
     line-height: 1.3503em;
-    color: #fff;
     margin-top: 0.6752em;
     margin-bottom: 0.6752em;
   }
@@ -246,8 +258,8 @@ code, pre {
     color: @header-color;
     font-size: 1.728em;
     line-height: 1.6204em;
-    margin-top: 1.6204em;
-    margin-bottom: 0.8102em;
+    margin-top: 1.4583em;
+    margin-bottom: 0.162em;
     padding-left: 0.8102em;
     padding-right: 0.8102em;
     border-left: 0.162em solid @header-color;
@@ -256,35 +268,46 @@ code, pre {
   h3 {
     font-size: 1.44em;
     line-height: 1.9444em;
-    margin-top: 1.9444em;
-    margin-bottom: 0.9722em;
+    margin-top: 0.9722em;
+    margin-bottom: 0em;
+    padding-left: 0.9722em;
+    padding-right: 0.9722em;
   }
   h4 {
     font-size: 1.2em;
     line-height: 1.1667em;
-    margin-top: 1.1667em;
+    margin-top: 0.2333em;
+    margin-bottom: 0.35em;
+    padding-left: 1.1667em;
+    padding-right: 1.1667em;
   }
   h5 {
     font-size: 1em;
     line-height: 1.4em;
     margin-top: 1.4em;
+    margin-bottom: 0em;
+    padding-left: 1.4em;
+    padding-right: 1.4em;
   }
   h6 {
     font-size: 0.8333em;
     line-height: 1.6801em;
     margin-top: 1.6801em;
-  }
-  img {
-    margin: 1em;
+    margin-bottom: 0em;
+    padding-left: 1.6801em;
+    padding-right: 1.6801em;
   }
   p {
     font-size: 1em;
     line-height: 1.4em;
     display: block;
-    text-indent: 2em;
+    text-indent: 1.8em;
     padding-left: 1.2em;
     padding-right: 1.2em;
     margin-bottom: 1.4em;
+  }
+  img {
+    margin: 1em;
   }
   a {
     color: @header-color;
@@ -308,9 +331,10 @@ code, pre {
     text-decoration: none;
   }
   li {
+    display: list-item;
     padding-left: 32px;
+    padding-right: 32px;
     margin-bottom: 10px;
-    padding-bottom: 10px;
   }
   code, pre {
     font-family: "Roboto Mono", Inconsolata, monospace;

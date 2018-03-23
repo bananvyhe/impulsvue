@@ -1,15 +1,10 @@
 <p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Название:</strong>
-  <%= @programm.name %>
-</p>
-<p>
-  <strong>Описание:</strong>
-  <%= @programm.desc %>
-</p>
  
-
+<strong>Название:</strong>
+<%= @programm.name %>
+ 
+<strong>Описание:</strong>
+<%= @programm.desc.html_safe %>
 <hr />
 
 <%= link_to 'Edit', edit_programm_path(@programm) %> |
