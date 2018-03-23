@@ -29,12 +29,15 @@ End Hamster setup*/
 @copy full {
   @import "typography.css";
 }
+@ruler;
 @paste full;
+
 @media (--only-small-screen) {
   @ihamster {
     --font-size: 16px;
-    --line-height: 1.4;
+    --line-height: 1.5;
   }
+  @ruler;
   @baseline html;
   @paste full;
   @hamster end;  
@@ -45,17 +48,20 @@ html {
 
 body {
   position:relative;
+  height: 100%;
   font-family: "Arial";
   font-style: normal;
   font-weight: 400;
  /* height: 100%;*/
 }
+
 .ubuntu {
   font-family: 'UbuntuR';
   font-style: normal;
   font-weight: 400;
 }
 #main {
+  position: relative;
   overflow:hidden; background-color: #ada; 
    /* footer height bufferdffgdfg */ 
 }

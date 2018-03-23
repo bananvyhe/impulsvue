@@ -121,6 +121,21 @@ html {
 *, *:before, *:after {
   box-sizing: inherit;
 }
+.ruler-debug{
+
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9900;
+  pointer-events: none;
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAUCAYAAACqJ5zlAAAAE0lEQVR42mNgGAWUAuG2/WeQ+QAfLAIluB8I/gAAAABJRU5ErkJggg==");
+  background-position: left top;
+  background-repeat: repeat;
+  background-size: 4px 20px;}
 h2, strong {
   font-weight: 500;
 }
@@ -234,10 +249,26 @@ code, pre {
   white-space: pre-wrap;
   word-wrap: break-word;
 }
+
 @media (min-width: 0px) and (max-width: 580px) {
+.ruler-debug{
+
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9900;
+  pointer-events: none;
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAYCAYAAADd5VyeAAAAFElEQVR42mNgGAWDAQi37T+DzAcAH3ACJR9sUEYAAAAASUVORK5CYII=");
+  background-position: left top;
+  background-repeat: repeat;
+  background-size: 4px 24px;}
   html {
     font-size: 100%;
-    line-height: 1.4em;
+    line-height: 1.5em;
   }
   h2, strong {
     font-weight: 500;
@@ -246,65 +277,65 @@ code, pre {
     color: @sheader-color;
   }
   h1 {
-    padding-left: 1.4em;
-    padding-right: 1.4em;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
     font-weight: 600;
     font-size: 2.0736em;
-    line-height: 1.3503em;
-    margin-top: 0.6752em;
-    margin-bottom: 0.6752em;
+    line-height: 1.4468em;
+    margin-top: 0.7234em;
+    margin-bottom: 0.7234em;
   }
   h2 {
     color: @header-color;
     font-size: 1.728em;
-    line-height: 1.6204em;
-    margin-top: 1.4583em;
-    margin-bottom: 0.162em;
-    padding-left: 0.8102em;
-    padding-right: 0.8102em;
-    border-left: 0.162em solid @header-color;
+    line-height: 1.7361em;
+    margin-top: 1.5625em;
+    margin-bottom: 0.1736em;
+    padding-left: 0.8681em;
+    padding-right: 0.8681em;
+    border-left: 0.1736em solid @header-color;
     background: @code-color;
   }
   h3 {
     font-size: 1.44em;
-    line-height: 1.9444em;
-    margin-top: 0.9722em;
+    line-height: 1.0417em;
+    margin-top: 1.0417em;
     margin-bottom: 0em;
-    padding-left: 0.9722em;
-    padding-right: 0.9722em;
+    padding-left: 1.0417em;
+    padding-right: 1.0417em;
   }
   h4 {
     font-size: 1.2em;
-    line-height: 1.1667em;
-    margin-top: 0.2333em;
-    margin-bottom: 0.35em;
-    padding-left: 1.1667em;
-    padding-right: 1.1667em;
+    line-height: 1.25em;
+    margin-top: 0.25em;
+    margin-bottom: 0.375em;
+    padding-left: 1.25em;
+    padding-right: 1.25em;
   }
   h5 {
     font-size: 1em;
-    line-height: 1.4em;
-    margin-top: 1.4em;
+    line-height: 1.5em;
+    margin-top: 1.5em;
     margin-bottom: 0em;
-    padding-left: 1.4em;
-    padding-right: 1.4em;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
   }
   h6 {
     font-size: 0.8333em;
-    line-height: 1.6801em;
-    margin-top: 1.6801em;
+    line-height: 1.8001em;
+    margin-top: 1.8001em;
     margin-bottom: 0em;
-    padding-left: 1.6801em;
-    padding-right: 1.6801em;
+    padding-left: 1.8001em;
+    padding-right: 1.8001em;
   }
   p {
     font-size: 1em;
-    line-height: 1.4em;
+    line-height: 1.5em;
     display: block;
     text-indent: 1.8em;
     padding-left: 1.2em;
     padding-right: 1.2em;
-    margin-bottom: 1.4em;
+    margin-bottom: 1.5em;
   }
   img {
     margin: 1em;
@@ -318,7 +349,7 @@ code, pre {
   ul, ol {
     padding: 0.5em 0 0.5em 0;
     font-size: 1em;
-    line-height: 1.4em;
+    line-height: 1.5em;
     list-style-position: inside;
   }
   ul {
@@ -359,16 +390,19 @@ html {
 
 body {
   position:relative;
+  height: 100%;
   font-family: "Arial";
   font-style: normal;
   font-weight: 400;
 }
+
 .ubuntu {
   font-family: 'UbuntuR';
   font-style: normal;
   font-weight: 400;
 }
 #main {
+  position: relative;
   overflow:hidden; background-color: #ada; 
 }
  
