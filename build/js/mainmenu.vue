@@ -340,12 +340,12 @@
     background: radial-gradient(circle farthest-corner at 50% 50%, $redorange 50%, color($redorange blackness(20%)) 90%);
 
       &::after {
-        margin-top: -1.1em;
+        margin-top: -1.0em;
         padding-top: 0.1em;
         content: attr(count);
         position: absolute;
-        width: 1.8em;
-        height: 1.8em;
+        width: 1.7em;
+        height: 1.7em;
         left: -1em;
         text-align: center;
         filter: drop-shadow(3px 0px 3px rgba(50,50,50,0.4));
