@@ -24,7 +24,7 @@
       </div>
       <ul class='visible-links'>
         <li v-for="menuitem in menuitems">
-          <a href=""><nobr>{{menuitem.title.toUpperCase()}}</nobr>
+          <a :href="menuitem.url"><nobr>{{menuitem.title.toUpperCase()}}</nobr>
           </a>
         </li>
       </ul>
@@ -39,7 +39,7 @@
           @mouseup="" 
           @click=""
           :key="index">
-          <a href=""><nobr>{{item.title.toUpperCase()}}</nobr>
+          <a :href="item.url"><nobr>{{item.title.toUpperCase()}}</nobr>
           </a>
         </li>
       </transition-group>
@@ -69,12 +69,13 @@
         stick: {value: ''},
         fixedClass: 'unfixed',
         menuitems: [
-          { title: 'главная', url: ''},
-          { title: 'специалисты', url: ''},
+          { title: 'главная', url: '/'},
+          { title: 'специалисты', url: '/'},
           { title: 'стоимость', url: ''},
           { title: 'отзывы', urs: ''},
           { title: 'библиотека', url: ''},
-          { title: 'контакты', url: ''}
+          { title: 'контакты', url: ''},
+          { title: 'программы', url: '/programms'}
         ],
         menuitemsHide: [],
         styleObject: {},
@@ -353,7 +354,7 @@
         border-radius: 50%;
         border: 2px solid #fff;
         font-weight: bold;
-        background-color: color($redorange blackness(15%));
+        background-color: color($redorange blackness(22%));
         transition: 1.2s cubic-bezier(0,.27,.07,1);
       }
       &:hover::after {
