@@ -423,6 +423,7 @@
       display: table-cell;
       border-left: 1px solid $color-1;
       line-height: 0.2em;
+      font-size: 0.8em;
     }
   }
   .hidden-links {
@@ -439,7 +440,7 @@
       background-color: $color-5;
       padding: 0px;
       margin: 2px;
-      font-size: 0.9em;
+      font-size: 0.8em;
     }
   }
   .visible-links li:first-child {

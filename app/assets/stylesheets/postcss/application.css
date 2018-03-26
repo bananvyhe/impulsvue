@@ -44,15 +44,8 @@ End Hamster setup*/
     --viewport: 320px 800px;
     --unit: vw;
   }
- 
-   
   @paste full;
   @hamster end;
-  nav {
-    li {
-      font-size: 0.8em;
-    }
-  }  
 }
 @media (--only-medium-screen) {
     @ihamster {
@@ -63,14 +56,8 @@ End Hamster setup*/
         --viewport: 800px 1920px;
         --unit: vw;
     }
-    
     @paste full;
     @hamster end;
-    nav {
-      li {
-        font-size: 0.8em;
-      }
-    }
 }
 @media (only-big-screen){
     @ihamster {
@@ -81,16 +68,9 @@ End Hamster setup*/
         --viewport: 1920px 3840px;
         --unit: vw;
     }
-    
     @paste full;
     @hamster end;
-    nav {
-      li {
-        font-size: 0.6em;
-      }
-    }
 }
-
 html {
   height: 100%;
 }
