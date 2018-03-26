@@ -2,40 +2,43 @@
   font-weight: 500;
 }
 %hlight {
-  color: @sheader-color;
+   
 }
 h1 {
-	padding-left: spacing(1);
-  padding-right: spacing(1);
+ 	adjust-font-size: fs xxl;
+	
   font-weight: 600;
-  adjust-font-size: fs xxl;
+   
+	 
+  padding-left: spacing(1);
+  padding-right: spacing(1);
   margin-top: spacing(1);
-  margin-bottom: spacing(1);
+  margin-bottom: spacing(0.2);
 }
-h2 {
+h2 {line-height: inherit;
   @extend %strong;
   color: @header-color;
   adjust-font-size: fs xl;
-  margin-top: spacing(1.8);
-  margin-bottom: spacing(0.2);
+  margin-top: spacing(1);
+  margin-bottom: spacing(0);
   padding-left: spacing(1);
   padding-right: spacing(1);
-  border-left: spacing(.2) solid @header-color;
-  background: @code-color;
+	 
+   
 }
 h3 {
   @extend %hlight;
   adjust-font-size: fs l;
   margin-top: spacing(1);
-  margin-bottom: spacing(0);
+  margin-bottom: spacing(-0.2);
   padding-left: spacing(1);
   padding-right: spacing(1);
 }
 h4 {
    
   adjust-font-size: fs m;
-  margin-top: spacing(0.2);
-  margin-bottom: spacing(0.3);
+  margin-top: spacing(1);
+  margin-bottom: spacing(0.2);
   padding-left: spacing(1);
   padding-right: spacing(1);
 }
@@ -58,7 +61,8 @@ h6 {
 strong {
   @extend %strong;
 }
-p {
+
+p { 
   adjust-font-size: fs b;
   display: block;
   text-indent: 1.8em;
@@ -75,7 +79,7 @@ a {
       color: @font-color;
   }
 }
- 
+
 ul,
 ol { 
 	padding: 0.5em 0 0.5em 0;

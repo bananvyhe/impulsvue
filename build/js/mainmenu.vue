@@ -303,8 +303,8 @@
 	background-image: url(../../app/assets/images/grass.jpg);
 	border-bottom: 2px solid #fff;
 }
-.greedy-nav { 
-	height: 2em;
+.greedy-nav {
+  height: 2.4em;
   /*border-bottom-left-radius: 1.3em; */
   border-bottom: 1px solid #fff;
   border-top: 3px solid $warningLine;
