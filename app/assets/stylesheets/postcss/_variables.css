@@ -1,4 +1,4 @@
- $color-1: #FFF;
+ $color-1: #888;
 $color-2: #f57c00;
 $color-3: #ef6c00;
 $color-4: #d64933;
@@ -35,7 +35,7 @@ $x11gray: #C1BDB3;
 $antiflashwhite: #F3EFF5;
 $navajowhite: #FFE19C;
 $sunglow: #FCCA46;
-$redorange: #F15152;
+$redorange1: #F15152;
 $languidlavender: #DBCBD8;
 $diamond: #BCEDF6;
 $whitesmoke: #F3F7F0;
@@ -60,7 +60,9 @@ $advantageFontColor: #f1f9ee;
 $advBottomBorder: #ebf0f3;
 $advGreyBorder: #ebf0f3;
 /*$color-5: #1d3557;*/
-$color-5: #1d3557;
+$redorange: #C14953;
+$color-5: #EDEBD7;
+
 
 $advantageLight: #E3D26F;
 $almond: #E7DECD;
@@ -69,8 +71,8 @@ $advColor: #393e41;
 $silverPink: #D0ADA7;
 $bones: #E8D6CB;
 $copperPenny: #AD6A6C;
-
-$warningLine: #F2AF29;
+$warningLine1: #F2AF29;
+$warningLine: #f07d1f;
 
 @custom-media --telpanel-small-screen (width <= 720px);
 

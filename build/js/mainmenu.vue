@@ -307,13 +307,14 @@
   height: 2.4em;
   /*border-bottom-left-radius: 1.3em; */
   border-bottom: 1px solid #fff;
-  border-top: 3px solid $warningLine;
+  border-top: 2px solid $warningLine;
   z-index: 3;
   display: flex;
   justify-content: flex-end;
   align-items: center;
   position: relative;
-  background-color: $color-5;
+  background-color: color($color-5 tint(45%));
+  border-bottom: 0.15em solid color(#C1BDB3 tint(50%)) ;
   /*margin-bottom: 5px;*/
   a {
     display: block;
@@ -335,23 +336,24 @@
     background-color: $redorange;
     color: #fff;
     cursor: pointer;
-    background: radial-gradient(circle farthest-corner at 50% 50%, $redorange 50%, color($redorange blackness(30%)) 100%);
+    background: radial-gradient(circle farthest-corner at 50% 50%, $redorange 50%, color($redorange blackness(20%)) 90%);
 
       &::after {
-        margin-top: -2.6em;
+        margin-top: -1.1em;
         padding-top: 0.1em;
         content: attr(count);
         position: absolute;
-        width: 15px;
-        height: 14px;
-        left: -10px;
+        width: 1.8em;
+        height: 1.8em;
+        left: -1em;
         text-align: center;
-        background-color: color($redorange blackness(35%));
+        filter: drop-shadow(3px 0px 3px rgba(50,50,50,0.4));
         color: #fff;
         font-size: 0.8em;
         border-radius: 50%;
         border: 2px solid #fff;
         font-weight: bold;
+        background-color: color($redorange blackness(15%));
         transition: 1.2s cubic-bezier(0,.27,.07,1);
       }
       &:hover::after {
@@ -359,7 +361,7 @@
       }
     }
     .blankdiv {
-      background-color: $color-5; 
+      background-color: color($color-5 tint(45%)); 
       z-index: 2;
       position: absolute;
       height: 100%;
@@ -377,9 +379,9 @@
   .hoverhamburger {
     background: radial-gradient(circle farthest-corner at 50% 55%, $redorange 50%, color($redorange blackness(40%)) 100%);
     &:after {
-      background-color: color($redorange blackness(15%)); 
-      transform:  scale(0.8) translateY(1.9em);
-      transition: 1.2s cubic-bezier(0,.27,.07,1);
+      background-color: color($redorange blackness(5%) saturation(10%) ); 
+      transform: scale(0.8);
+      transition: 0.1s cubic-bezier(0,.27,.07,1);
     }
   }
   .hamshadow {
