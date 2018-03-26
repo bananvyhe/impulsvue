@@ -79,10 +79,8 @@ a {
       color: @font-color;
   }
 }
-
 ul,
 ol { 
-	padding: 0.5em 0 0.5em 0;
   adjust-font-size: fs b;
   list-style-position: inside;
 }
@@ -96,9 +94,9 @@ ul a, ol a {
   text-decoration: none;
 }
 li {display: list-item;
-	padding-left: 32px;
-	padding-right: 32px;
-	margin-bottom: 10px;
+	padding-left: 0.5em;
+	padding-right: 0.5em;
+	margin-bottom: 0.2em;
 }
 code,
 pre {

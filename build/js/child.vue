@@ -33,7 +33,6 @@ export default {
 
 <style scoped>
 .child {
-
 	display: flex;
   flex-direction: column;
   align-items: flex-end;
