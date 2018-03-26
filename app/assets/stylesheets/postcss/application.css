@@ -51,8 +51,8 @@ End Hamster setup*/
     @ihamster {
         --font-size: 16px;
         --line-height: 1.3;
-        --to-font-size: 21px;
-        --to-line-height: 1.4;
+        --to-font-size: 18px;
+        --to-line-height: 1.35;
         --viewport: 800px 1920px;
         --unit: vw;
     }
@@ -61,8 +61,8 @@ End Hamster setup*/
 }
 @media (only-big-screen){
     @ihamster {
-        --font-size: 21px;
-        --line-height: 1.4; 
+        --font-size: 18px;
+        --line-height: 1.35; 
         --to-font-size: 42px;
         --to-line-height: 1.6;
         --viewport: 1920px 3840px;
