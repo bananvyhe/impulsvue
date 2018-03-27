@@ -70,12 +70,12 @@
         fixedClass: 'unfixed',
         menuitems: [
           { title: 'главная', url: '/'},
-          { title: 'специалисты', url: '/'},
+          { title: 'специалисты', url: '/employees'},
           { title: 'стоимость', url: ''},
           { title: 'отзывы', urs: ''},
           { title: 'библиотека', url: ''},
-          { title: 'контакты', url: ''},
-          { title: 'программы', url: '/programms'}
+          { title: 'программы', url: '/programms'},
+          { title: 'контакты', url: ''}
         ],
         menuitemsHide: [],
         styleObject: {},

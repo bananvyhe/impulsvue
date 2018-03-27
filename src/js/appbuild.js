@@ -11,6 +11,7 @@ import Sliderapp from './sliderapp.vue'
 import Child from './child.vue'
 import Adult from './adult.vue'
 import Programm from './programms.vue'
+import Employee from './employees.vue'
 Vue.use(Carousel)
 Vue.use(CarouselItem) 
 
@@ -51,6 +52,14 @@ document.addEventListener('DOMContentLoaded', () => {
       el: element1,
       template: '<Programm/>',
       components: {Programm}
+    }) 
+  }
+  var element2 = document.getElementById("employee-form")
+  if (element2 != null) {
+    var employee = new Vue({
+      el: element2,
+      template: '<Employee/>',
+      components: {Employee}
     }) 
   }
   new Vue({

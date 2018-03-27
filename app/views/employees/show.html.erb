@@ -1,0 +1,13 @@
+<p id="notice"><%= notice %></p>
+<p>
+	Название:
+	<%= @employee.name %>
+</p> 
+ 
+Описание:
+<%= @employee.desc.html_safe %>
+<hr />
+
+<%= link_to 'Edit', edit_employee_path(@employee) %> |
+<%= link_to 'Back', employees_path %>
+ 

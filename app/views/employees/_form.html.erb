@@ -1,0 +1,8 @@
+<%= content_tag :div,
+  id: "employee-form",
+  data: {
+  	id: employee.id,
+ 
+    employee: employee.to_json(except: [:created_at, :updated_at])
+  } do %>
+<% end %>
