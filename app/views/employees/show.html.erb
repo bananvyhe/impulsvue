@@ -6,6 +6,11 @@
 <p>
 	Аватара:
 	<%= image_tag(@employee.avatar_url.to_s) %></p> 
+	<label>Миниатюра:</label>
+<p>
+	<%= image_tag @employee.avatar.thumb.url %>
+</p>
+
  
 Описание:
 <% if @employee.desc %> 
