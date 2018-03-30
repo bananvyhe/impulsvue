@@ -3,6 +3,7 @@ class EmployeesController < ApplicationController
 
 	def index
     @employees = Employee.all
+
   end
 
   def show
@@ -13,6 +14,7 @@ class EmployeesController < ApplicationController
   end
 
   def edit
+
   end
 
   def create
@@ -56,6 +58,6 @@ class EmployeesController < ApplicationController
   end
 
   def employee_params
-    params.require(:employee).permit(:name, :desc )
+    params.require(:employee).permit(:name, :desc, :avatar )
   end
 end

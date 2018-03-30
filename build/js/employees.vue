@@ -11,7 +11,7 @@
 
 <script>
 import axios from 'axios'
-import Ckeditor from 'vue-ckeditor2'
+import Ckeditor from 'vue-ckeditor2' 
 var element2 = document.getElementById("employee-form")
 if (element2 != null) {
   var id = element2.dataset.id
@@ -37,6 +37,7 @@ export default {
         })
       // Edit an existing employee
       } else {
+ 
         axios.put(`/employees/${this.id}`, { employee: this.employee }).then(response => {
            window.location.href = '/employees';  
         }, response => {
