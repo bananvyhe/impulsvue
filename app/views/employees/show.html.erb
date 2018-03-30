@@ -8,7 +8,9 @@
 	<%= image_tag(@employee.avatar_url.to_s) %></p> 
  
 Описание:
+<% if @employee.desc %> 
 <%= @employee.desc.html_safe %>
+<% end %>
 <hr />
 
 <%= link_to 'Edit', edit_employee_path(@employee) %> |
