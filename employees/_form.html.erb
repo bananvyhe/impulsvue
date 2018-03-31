@@ -1,11 +1,18 @@
 <%= form_for @employee do |f| %>   
-  <p>
-    <label>Фото сотрудника:</label>
-    <%= image_tag(@employee.avatar_url) if @employee.avatar? %>  
-    <%= f.file_field :avatar %>
-    <%= f.hidden_field :avatar_cache %>  
-    <%= f.submit "Сохранить" %>
+  <label>Фото сотрудника:</label>
+  <%= image_tag(@employee.avatar_url) if @employee.avatar? %>  
+  <%= f.file_field :avatar %>
+  <%= f.hidden_field :avatar_cache %> 
+
+  <% if @employee.avatar? %>  
+  	<label>
+		  <%= f.check_box :remove_avatar %>
+		  Удалить фото:
+		</label>
+	<% end %>
+  <%= f.submit "Сохранить" %>
 <% end %>
+
 <%= content_tag :div,
   id: "employee-form",
   data: {
