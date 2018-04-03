@@ -230,12 +230,12 @@ gulp.task('css', function () {
   ];
 
   return streamqueue({ objectMode: true },
-      gulp.src('app/assets/stylesheets/postcss/application.css'),
+      gulp.src('app/assets/stylesheets/postcss/layout.css'),
       gulp.src('app/assets/stylesheets/postcss/uistylechalk.css'),
       gulp.src('app/assets/stylesheets/postcss/headmenu.css')
     )
    .pipe(sourcemaps.init())
-   .pipe(concat("application.css")) 
+   .pipe(concat("layout.css")) 
    .pipe(postcssgulp(plugins))
    .pipe(sourcemaps.write('.'))
    .pipe(gulp.dest('app/assets/stylesheets'))
