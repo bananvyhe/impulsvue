@@ -8,8 +8,15 @@
 	<%= image_tag(@employee.avatar_url.to_s) if @employee.avatar?%>
 </p> 
 	<label>Миниатюра:</label>
+ 
 <p>
 	<%= image_tag @employee.avatar.thumb.url if @employee.avatar?%>
+</p>
+<p>
+	<%= image_tag @employee.avatar.tiny.url if @employee.avatar?%>
+</p>
+<p>
+	<%= image_tag @employee.avatar.pic.url if @employee.avatar?%>
 </p>
 Описание:
 <% if @employee.desc %> 
