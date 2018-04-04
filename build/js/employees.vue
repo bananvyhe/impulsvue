@@ -1,9 +1,10 @@
 <template>
   <div id="employees">
+    <label>Информация о сотроуднике:</label>
     <div v-html="employee.desc"></div>
     <label>Имя сотроудника:</label>
     <input type="text" v-model="employee.name" /><br/>
-    <label>Информация о сотроуднике:</label>
+    <label>Персональные данные:</label>
     <ckeditor v-model="employee.desc" /> 
   	<button v-on:click="saveProgramm">Сохранить</button>
   </div>

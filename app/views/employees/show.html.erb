@@ -8,7 +8,6 @@
 	<%= image_tag(@employee.avatar_url.to_s) if @employee.avatar?%>
 </p> 
 	<label>Миниатюра:</label>
- 
 <p>
 	<%= image_tag @employee.avatar.thumb.url if @employee.avatar?%>
 </p>
@@ -23,7 +22,6 @@
 	<%= @employee.desc.html_safe %>
 <% end %>
 <hr />
-
 <%= link_to 'Edit', edit_employee_path(@employee) %> |
 <%= link_to 'Back', employees_path %>
  

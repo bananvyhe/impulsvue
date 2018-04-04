@@ -3,14 +3,14 @@
 
     <div class="panel panel-primary">
       <div class="panel-heading">
-        <h3 class="panel-title">Crop Avatar</h3>
+        <h3 class="panel-title">Вырежьте часть при необходимости:</h3>
       </div>
       <div class="panel-body">
         <%= image_tag @employee.avatar_url , id: "cropbox" %>
         <br>
         <%= simple_form_for(@employee) do |f| %>
           <% %w[x y w h].each do |attribute| %>
-            <%= f.input "crop_#{attribute}"  %>
+            <%= f.input "crop_#{attribute}", as: :hidden  %>
           <% end %>
 
           <div class="form-actions">

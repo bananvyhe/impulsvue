@@ -1,9 +1,11 @@
+<% if @employee.avatar.url == nil %>
+	Загрузите фото сотрудника
+<% end %>
 <%= form_for @employee do |f| %>   
-  <label>Фото сотрудника:</label>
+  <label>Фото:</label>
   <%= image_tag(@employee.avatar_url) if @employee.avatar? %>  
   <%= f.file_field :avatar %>
   <%= f.hidden_field :avatar_cache %> 
-
   <% if @employee.avatar? %>  
   	<label>
 		  <%= f.check_box :remove_avatar %>
@@ -12,13 +14,13 @@
 	<% end %>
   <%= f.submit "Сохранить" %>
 <% end %>
-
-<%= content_tag :div,
-  id: "employee-form",
-  data: {
-  	id: employee.id,
- 
-    employee: employee.to_json(except: [:created_at, :updated_at])
-  } do %>
-
+<% if @employee.avatar? %>
+	<%= content_tag :div,
+	  id: "employee-form",
+	  data: {
+	  	id: employee.id,
+	 
+	    employee: employee.to_json(except: [:created_at, :updated_at])
+	  } do %>
+	<% end %>
 <% end %>
