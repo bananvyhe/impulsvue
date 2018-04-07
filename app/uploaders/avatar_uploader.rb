@@ -2,16 +2,18 @@ class AvatarUploader < CarrierWave::Uploader::Base
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
+ 
   include CarrierWave::MiniMagick
+
     storage :file
-  process resize_to_limit: [600, 600]
+  process resize_to_limit: [1600, 1600]
 
   version :thumb do
     process :crop
-    resize_to_fill(300, 300)
+    resize_to_fill(400, 400)
   end
   version :tiny, from_version: :thumb do
-    process resize_to_fill: [150, 150]
+    process resize_to_fill: [250, 250]
   end
   version :pic, from_version: :tiny do
     process resize_to_fill: [80, 80]
@@ -29,7 +31,7 @@ class AvatarUploader < CarrierWave::Uploader::Base
   end
   def crop
     if model.crop_x.present?
-      resize_to_limit(600, 600)
+      resize_to_limit(1600, 1600)
       manipulate! do |img|
         x = model.crop_x.to_i
         y = model.crop_y.to_i

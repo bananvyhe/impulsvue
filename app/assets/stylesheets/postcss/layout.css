@@ -82,6 +82,11 @@ body {
   font-weight: 400;
  /* height: 100%;*/
 }
+.deleteAction {
+  color: blue;
+  border-bottom: solid 1px;
+  cursor: pointer;
+}
 .ubuntu {
   font-family: 'UbuntuR';
   font-style: normal;
