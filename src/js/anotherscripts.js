@@ -54,7 +54,7 @@ jQuery(function($){
 		if(confirm("Точно удалить?")){
 			$.ajax({
 				beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
-				url: '/employees/' + $(current_item_tr).attr('data-item_id'),
+				url: document.location.pathname + '/' + $(current_item_tr).attr('data-item_id'),
 				type: 'POST',
 				data: { _method: 'DELETE'},
 				success: function(){
