@@ -69,10 +69,12 @@ p {
   padding-left: 1.2em;
   padding-right: 1.2em;
   margin-bottom: spacing(1);
- 
+
 }
 img {
-   
+   margin-right: 1.2em;
+   margin-left: 1.2em;
+   margin-bottom: 0.6em;
 }
 a {
   color: @header-color;
@@ -84,7 +86,7 @@ ul,
 ol { padding-left: 2em;
   padding-right: 2em;
   adjust-font-size: fs b;
-  list-style-position: inside;margin: 0.5em 0 1.571em 1.9em;
+  list-style-position: inside; 
 }
 ul { 
   list-style: disc inside;

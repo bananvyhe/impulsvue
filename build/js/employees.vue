@@ -52,7 +52,7 @@ export default {
 
 <style scoped>
  .ckeditor {
-  margin: 15px;
+ 
   clear: both;
  }
  

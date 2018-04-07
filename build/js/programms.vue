@@ -38,7 +38,7 @@ export default {
         })
       // Edit an existing programm
       } else {
-        axios.put(`/teams/${this.id}`, { programm: this.programm }).then(response => {
+        axios.put(`/programms/${this.id}`, { programm: this.programm }).then(response => {
            window.location.href = '/programms';  
         }, response => {
           console.log(response)
@@ -51,7 +51,7 @@ export default {
 
 <style scoped>
  .ckeditor {
-  margin: 15px;
+ 
   clear: both;
  }
  
