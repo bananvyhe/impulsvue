@@ -1,14 +1,13 @@
 @hamster {
   /*  Base settings */
-  --font-size: 16px;
-  --line-height: 1.35;   
+   
  
-  font-ratio: 1.2;
+  font-ratio: 1.125;
   unit: em;
   min-line-padding: 2px;
   remove-comments: true;
  /*  Vertical Rythm settings */
-  px-baseline: false; 
+  px-baseline: true; 
   px-fallback: true;
   properties:  extend;
   ruler: true;
@@ -21,7 +20,7 @@
   ruler-pattern: 1 0 0 0;
   ruler-scale: 1;
   ruler-thickness: 1;
-  browser-font-size: 16px;
+   
   legacy-browsers: true;
 } 
 /*------------------------------------- -------    -----  
@@ -82,6 +81,7 @@ body {
   font-weight: 400;
  /* height: 100%;*/
 }
+
 .deleteAction {
   color: blue;
   border-bottom: solid 1px;
