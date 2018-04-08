@@ -430,6 +430,7 @@
     }
   }
   .hidden-links {
+    margin-top: 0px;
     padding-left: 0em;
     padding-right: 0em;
     padding-top: 0.1em;
