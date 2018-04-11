@@ -1,8 +1,4 @@
-<%= content_tag :div,
-  id: "programm-form",
-  data: {
-  	id: programm.id,
- 
-    programm: programm.to_json(except: [:created_at, :updated_at])
-  } do %>
+<%= form_for @programm do |f| %>  
+	<%= f.cktext_area :desc, cols: 40, rows: 10  %> 
+	<%= f.submit "Сохранить" %>
 <% end %>

@@ -15,8 +15,7 @@
 				<% if @employee.avatar? %>  
 					<label><%= f.check_box :remove_avatar %>Удалить</label>
 				<% end %>
-				<br/>
-			  <%= f.submit "Сохранить" %>
+
 			</div> 
 			
 		</div>
@@ -26,8 +25,9 @@
 			<div>asdasdasfasf1</div>
 		</div>
 	</div>
-
+	<%= f.text_field :name %>
 	<%= f.cktext_area :desc, cols: 40, rows: 10  %> 
+  <%= f.submit "Сохранить" %>
 <% end %>
 
 
