@@ -10,8 +10,8 @@ import Mainmenu from './mainmenu.vue'
 import Sliderapp from './sliderapp.vue'
 import Child from './child.vue'
 import Adult from './adult.vue'
-import Programm from './programms.vue'
-import Employee from './employees.vue'
+// import Programm from './programms.vue'
+// import Employee from './employees.vue'
 Vue.use(Carousel)
 Vue.use(CarouselItem) 
 

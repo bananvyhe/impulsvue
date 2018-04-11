@@ -33,7 +33,7 @@ gem 'devise'
 gem 'sass-rails'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-gem 'ckeditor'
+gem 'ckeditor', github: 'galetahub/ckeditor'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'rails-assets-jcrop', source: 'https://rails-assets.org'

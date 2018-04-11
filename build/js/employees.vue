@@ -1,7 +1,6 @@
 <template>
   <div id="employees">
-    <label>Информация о сотроуднике:</label>
-    <div v-html="employee.desc"></div>
+ 
     <label>Имя сотроудника:</label>
     <input type="text" v-model="employee.name" /><br/>
     <label>Персональные данные:</label>
@@ -51,7 +50,7 @@ export default {
 </script>
 
 <style scoped>
-  
+
  .ckeditor {
  
   clear: both;

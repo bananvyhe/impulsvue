@@ -16,7 +16,7 @@ AvatarCrop = (function() {
     width = parseInt($('#cropbox').width());
     height = parseInt($('#cropbox').height());
     $('#cropbox').Jcrop({
-      aspectRatio: 9 / 12,
+      aspectRatio: 9 / 10,
       setSelect: [0, 0, width, height],
       onSelect: this.update,
       onChange: this.update
@@ -34,7 +34,7 @@ AvatarCrop = (function() {
   AvatarCrop.prototype.updatePreview = function(coords) {
     var rx, ry;
     rx = 90 / coords.w;
-    ry = 120 / coords.h;
+    ry = 100 / coords.h;
     return $('#preview').css({
       width: Math.round(rx * $('#cropbox').width()) + 'px',
       height: Math.round(ry * $('#cropbox').height()) + 'px',

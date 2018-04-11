@@ -149,7 +149,16 @@ body {
 .topSectAv {
   display: flex;
   .avatarSect1 {
+    position: relative;
     lost-column: 2/5 2 1.5em ; background-color: #dad;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .fotoEdit {
+      position: absolute;
+      top: 50%;
+      left: 30%;
+    }
   }
   .avatarSect2 {
     lost-column: 3/5 2 1.5em  ; background-color: #ada;
