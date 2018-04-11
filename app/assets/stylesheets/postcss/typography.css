@@ -11,8 +11,8 @@ h1 {
   padding-left: spacing(1);
   padding-right: spacing(1);
   margin-top: spacing(0.5);
-  margin-bottom: spacing(0.2);
-  line-height: 1.3em;
+  margin-bottom: spacing(0.4);
+  line-height: 1.0em;
 }
 h2 {
   @extend %strong;
@@ -21,7 +21,7 @@ h2 {
   margin-bottom: spacing(0.4);
   padding-left: spacing(1);
   padding-right: spacing(1);
-  line-height: 1.2em;
+  line-height: 1.12em;
 }
 h3 {
   adjust-font-size: fs xlarge;
@@ -29,7 +29,7 @@ h3 {
   margin-bottom: spacing(0.2);
   padding-left: spacing(1);
   padding-right: spacing(1);
-  line-height: 1.2em;
+  line-height: 1.1em;
 }
 h4 {
   adjust-font-size: fs large;
@@ -37,7 +37,7 @@ h4 {
   margin-bottom: spacing(0.2);
   padding-left: spacing(1);
   padding-right: spacing(1);
-  line-height: 1.2em;
+  line-height: 1.1em;
 }
 h5 {
   adjust-font-size: fs medium;
@@ -61,10 +61,10 @@ p {
   margin-bottom: spacing(1);
 }
 img {
-   margin-right: 1.2em;
-   margin-left: 1.2em;
-   margin-top: 0.6em;
-   margin-bottom: 0.6em;
+   margin-right: 4vw;
+   margin-left: 4vw;
+   margin-top: 2vw;
+   margin-bottom: 2vw;
 }
 a {
   color: @header-color;
