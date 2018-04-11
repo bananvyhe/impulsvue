@@ -1,26 +1,42 @@
+
 <% if @employee.avatar.url == nil %>
 	Загрузите фото сотрудника
 <% end %>
-<%= form_for @employee do |f| %>   
-  <label>Фото:</label>
-  <%= image_tag(@employee.avatar_url) if @employee.avatar? %>  
-  <%= f.file_field :avatar %>
-  <%= f.hidden_field :avatar_cache %> 
-  <% if @employee.avatar? %>  
-  	<label>
-		  <%= f.check_box :remove_avatar %>
-		  Удалить фото:
-		</label>
+<div class="topSectAv">
+	<div class="avatarSect1">
+		<%= form_for @employee do |f| %>   
+		  <%= image_tag(@employee.avatar.tiny) if @employee.avatar? %> 
+		  <% unless @employee.avatar? %>
+			  <%= f.file_field :avatar %>
+			  <%= f.hidden_field :avatar_cache %> 
+			<% end %>
+			<% if @employee.avatar? %>  
+				<label><%= f.check_box :remove_avatar %>Удалить фото:</label>
+			<% end %>
+		  <%= f.submit "Сохранить" %>
+		<% end %>
+	</div>
+	<div class="avatarSect2">
+		<div>asdasdasfasf</div>
+		<div>asdasdasfasf</div>
+		<div>asdasdasfasf1</div>
+	</div>
+</div>
+
+
+
+
+ 
+	<% if @employee.avatar? %>
+		<%= content_tag :div,
+		  id: "employee-form",
+		  data: {
+		  	id: employee.id,
+		 
+		    employee: employee.to_json(except: [:created_at, :updated_at])
+		  } do %>
+		<% end %>
 	<% end %>
-  <%= f.submit "Сохранить" %>
-<% end %>
-<% if @employee.avatar? %>
-	<%= content_tag :div,
-	  id: "employee-form",
-	  data: {
-	  	id: employee.id,
-	 
-	    employee: employee.to_json(except: [:created_at, :updated_at])
-	  } do %>
-	<% end %>
-<% end %>
+
+ 
+

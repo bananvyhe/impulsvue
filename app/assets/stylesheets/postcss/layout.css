@@ -139,3 +139,27 @@ body {
   align-items: center;
   height: 150px; background-color: #dad; 
 }
+
+/* employees page */
+/* form design */
+#employees {
+  background-color: #dad;
+  clear: both;
+}
+.topSectAv {
+  display: flex;
+  .avatarSect1 {
+    lost-column: 2/5 2 1.5em ; background-color: #dad;
+  }
+  .avatarSect2 {
+    lost-column: 3/5 2 1.5em  ; background-color: #ada;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    div {
+      background-color: #faf;
+    }
+  }
+}
