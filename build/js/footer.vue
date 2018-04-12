@@ -61,7 +61,9 @@
 <style scoped>
 @import "../../app/assets/stylesheets/postcss/variables";
 .footer {
-	margin-top: 1em;
+	height: 150px; 
+	background-color: #dad;
 	bottom: 0px;
+	margin-top: 1em;
 }
 </style>

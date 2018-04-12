@@ -3,7 +3,7 @@ const path = require('path');
 module.exports = {
   watch: true,      
   entry: {
-    turbolinks: './src/js/turbolinks.js',
+  
     application1: './build/js/app.js'
   },
   output: {

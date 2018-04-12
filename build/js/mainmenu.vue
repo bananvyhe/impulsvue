@@ -301,8 +301,10 @@
 @import "../../app/assets/stylesheets/postcss/variables";
 .grass {
 	height: 48px;
+  
 	background-image: url(../../app/assets/images/grass.jpg);
 	border-bottom: 2px solid #fff;
+
 }
 .greedy-nav {
   height: 2.4em;

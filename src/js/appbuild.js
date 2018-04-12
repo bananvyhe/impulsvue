@@ -18,7 +18,7 @@ Vue.use(CarouselItem)
 // Vue.use(TurbolinksAdapter)
 document.addEventListener('DOMContentLoaded', () => {
   Vue.directive('scroll', {
-    // Когда привязанный элемент вставляется в DOM......... 
+    // Когда привязанный элемент вставляется в DOM.........ы ss
     inserted: function(el, binding) {
       let f = function(evt) {
         if (binding.value(evt, el)) {
@@ -44,7 +44,10 @@ document.addEventListener('DOMContentLoaded', () => {
   var head = new Vue({
     el: '#head',
     render: h => h(Head)
-    
+  }) 
+  new Vue({
+    el: '#mainmenu',
+    render: h => h(Mainmenu)
   }) 
   var element1 = document.getElementById("programm-form")
   if (element1 != null) {
@@ -62,11 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
       components: {Employee}
     }) 
   }
-  new Vue({
-    el: '#mainmenu',
-    render: h => h(Mainmenu)
-    
-  }) 
+
   new Vue({
     el: '#footer',
     render: h => h(Footer)

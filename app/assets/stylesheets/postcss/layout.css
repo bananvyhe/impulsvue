@@ -23,7 +23,7 @@
    
   legacy-browsers: true;
 } 
-/*------------------------------------- -------    -----  
+/*------------------------------------- -------    -c----  
 End Hamster setup*/
 @reset;
  
@@ -119,7 +119,7 @@ body {
     lost-column: 1/1;
   }
 }
-/* от размеров div'а maincontent идет зависимость - обсчет ширины меню, футера;  считается высота для определения sicky или realativ position футера */
+/* от размеров div'а maincontent идет зависимость - обсчет ширины меню, футера;  считается высота для определения sicky или realativ position футера s */
 .maincontent {
   /* min-height: 100%;*/ 
 	lost-center: 1366px;
@@ -137,7 +137,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 150px; background-color: #dad; 
+   bottom: 0px;  margin-top: 1em;
 }
 
 /* employees page */
@@ -149,16 +149,7 @@ body {
 .topSectAv {
   display: flex;
   .avatarSect1 {
-    position: relative;
     lost-column: 2/5 2 1.5em ; background-color: #dad;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    .fotoEdit {
-      position: absolute;
-      top: 50%;
-      left: 30%;
-    }
   }
   .avatarSect2 {
     lost-column: 3/5 2 1.5em  ; background-color: #ada;
