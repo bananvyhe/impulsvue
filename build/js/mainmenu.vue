@@ -1,5 +1,5 @@
 <template>
-  <div>{{menuwidth.value}}
+  <div><div v-show="false">{{menuwidth.value}}</div>
     <div v-if="fixedClass == 'fixed'"  class='greedy-nav'>
     </div>
     <div v-show="false">numhide:{{numHide}}<br>numvis:{{numVis}}</div>
