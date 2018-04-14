@@ -17,8 +17,8 @@ h1 {
 h2 {
   @extend %strong;
   adjust-font-size: fs xxlarge;
-  margin-top: spacing(0.2);
-  margin-bottom: spacing(0.2);
+  margin-top: spacing(0.4);
+  margin-bottom: spacing(0.3);
   padding-left: spacing(1);
   padding-right: spacing(1);
   line-height: 1.12em;

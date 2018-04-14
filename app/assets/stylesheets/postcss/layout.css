@@ -148,8 +148,9 @@ body {
   height:  20vw;
   display: flex;
   overflow: hidden;
+  margin-bottom: 1em;
   @media (--only-small-screen) {
-    height:  38vw;
+    height:  18vw;
   }
   @media (--only-medium-screen) {
     height:  22vw;
@@ -161,19 +162,19 @@ body {
     box-shadow: 0px 1px 47px -3px #9e9e9e inset;
     border: 0.5em solid $isabelline;
     margin-left: 1em;
-    @media (--only-small-screen) {
-      lost-column: 2/5 2 0 ; 
-    }
-    @media (--only-medium-screen) {
-      lost-column: 1/4 2 0 ; 
-    }
     lost-column: 1/5 2 0 ; 
     background-position: center;
     background-size: cover; 
     background-repeat: no-repeat;
+    @media (--only-small-screen) {
+      lost-column: 0/5 2 0 ; 
+    }
+    @media (--only-medium-screen) {
+      lost-column: 1/5 2 0 ; 
+    }
   }
   .avatarSect2 {
-  
+    
     lost-column: 4/5 2 0 ;
     display: flex;
     flex-direction: column;
@@ -189,7 +190,16 @@ body {
     }
     background-color: $whitesmoke;
     @media (--only-small-screen) {
-      lost-column: 3/5 2 0; 
+      h2 {
+        adjust-font-size: fs xlarge;
+      }  
+      p {
+          adjust-font-size: fs s;
+          line-height: 1.2em;
+      }
+      lost-column: 5/5 2 0;  
+      margin-bottom: 0em;
+      margin-top: 0em;
     }
     @media (--only-medium-screen) {
       lost-column: 3/4 2 0; 
