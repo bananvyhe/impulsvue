@@ -3,7 +3,7 @@
 }
  
 h1, h2, h3, h4, h5 {
-  color: $titleColor;
+  color: #555;
 }
 h1 {
   @extend %strong;
@@ -17,8 +17,8 @@ h1 {
 h2 {
   @extend %strong;
   adjust-font-size: fs xxlarge;
-  margin-top: spacing(0.5);
-  margin-bottom: spacing(0.4);
+  margin-top: spacing(0.2);
+  margin-bottom: spacing(0.2);
   padding-left: spacing(1);
   padding-right: spacing(1);
   line-height: 1.12em;
@@ -26,7 +26,7 @@ h2 {
 h3 {
   adjust-font-size: fs xlarge;
   margin-top: spacing(0.6);
-  margin-bottom: spacing(0.2);
+  margin-bottom: spacing(0.4);
   padding-left: spacing(1);
   padding-right: spacing(1);
   line-height: 1.1em;
@@ -58,6 +58,7 @@ p {
   text-indent: 1.8em;
   padding-left: 1.2em;
   padding-right: 1.2em;
+  margin-top: spacing(0);
   margin-bottom: spacing(1);
 }
 img {
