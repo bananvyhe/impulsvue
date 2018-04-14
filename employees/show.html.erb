@@ -1,16 +1,11 @@
 <p id="notice"><%= notice %></p>
 <div class="topSectAv">
 	<div class="avatarSect1"  style="background-image: url('<%= @employee.avatar.tiny.url %>')"> sc
-	   
 	</div>
 	<div class="avatarSect2">
-		 
+		 <%= @employee.name.mb_chars.titleize %>
 	</div>
 </div>
-<p>
-	Название:
-	<%= @employee.name %>
-</p> 
 <p>
 	Аватара:
 	<%= image_tag(@employee.avatar_url.to_s) if @employee.avatar?%>
