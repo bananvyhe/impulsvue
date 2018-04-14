@@ -167,7 +167,7 @@ body {
     background-size: cover; 
     background-repeat: no-repeat;
     @media (--only-small-screen) {
-      lost-column: 0/5 2 0 ; 
+      display:none;
     }
     @media (--only-medium-screen) {
       lost-column: 1/5 2 0 ; 
@@ -192,12 +192,14 @@ body {
     @media (--only-small-screen) {
       h2 {
         adjust-font-size: fs xlarge;
+        margin-bottom: spacing(0.1);
+
       }  
       p {
           adjust-font-size: fs s;
           line-height: 1.2em;
       }
-      lost-column: 5/5 2 0;  
+      lost-column: 1/1 1 0;  
       margin-bottom: 0em;
       margin-top: 0em;
     }
