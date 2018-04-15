@@ -4,9 +4,9 @@
 <% end %>
 <%= form_for @employee do |f| %>  
 	<div class="topSectAv">
-		<div class="avatarSect1">
+		<div class="avatarSect1" style="background-image: url('<%= @employee.avatar.tiny.url %>')">
 			
-		  <%= image_tag(@employee.avatar.tiny) if @employee.avatar? %> 
+		   
 		  <% unless @employee.avatar? %>
 			  <%= f.file_field :avatar %>
 			  <%= f.hidden_field :avatar_cache %> 

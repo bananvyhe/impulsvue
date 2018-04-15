@@ -58,8 +58,8 @@ p {
   text-indent: 1.8em;
   padding-left: 1.2em;
   padding-right: 1.2em;
-  margin-top: spacing(0);
-  margin-bottom: spacing(1);
+  margin-top: spacing(0.5);
+  margin-bottom: spacing(0.5);
 }
 img {
    margin-right: 4vw;
@@ -93,9 +93,9 @@ ul a, ol a {
 }
 li {
   display: list-item;
-	padding-left: 0.5em;
+	padding-left: 2em;
 	padding-right: 0.5em;
-	margin-bottom: 0.2em;
+	margin-bottom: 0em;
 }
 code,
 pre {

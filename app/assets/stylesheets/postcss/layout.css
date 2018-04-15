@@ -39,7 +39,7 @@ End Hamster setup*/
     --font-size: 18px;
     --line-height: 1.4;
     --to-font-size: 16px;
-    --to-line-height: 1.2;
+    --to-line-height: 1.3;
     --viewport: 320px 800px;
     --unit: vw;
   }
@@ -49,9 +49,9 @@ End Hamster setup*/
 @media (--only-medium-screen) {
   @ihamster {
     --font-size: 16px;
-    --line-height: 1.2;
+    --line-height: 1.3;
     --to-font-size: 18px;
-    --to-line-height: 1.30;
+    --to-line-height: 1.4;
     --viewport: 800px 1919px;
     --unit: vw;
   }
@@ -61,9 +61,9 @@ End Hamster setup*/
 @media (--only-big-screen){
   @ihamster {
     --font-size: 18px;
-    --line-height: 1.30; 
+    --line-height: 1.4; 
     --to-font-size: 22px;
-    --to-line-height: 1.4;
+    --to-line-height: 1.45;
     --viewport: 1920px 3840px;
     --unit: vw;
   }
@@ -148,12 +148,13 @@ body {
   height:  20vw;
   display: flex;
   overflow: hidden;
-  margin-bottom: 1em;
+  margin-top: 1em;
+  margin-bottom: 2em;
   @media (--only-small-screen) {
     height:  18vw;
   }
   @media (--only-medium-screen) {
-    height:  22vw;
+    height:  20vw;
   }
   @media (--only-big-screen) {
     height:  300px;
@@ -174,7 +175,6 @@ body {
     }
   }
   .avatarSect2 {
-    
     lost-column: 4/5 2 0 ;
     display: flex;
     flex-direction: column;
@@ -186,18 +186,20 @@ body {
       font-family: 'UbuntuR';
     }
     p {
-       margin-bottom: 0px;
+       margin-bottom: 0em;
+       margin-top: 0em;
     }
     background-color: $whitesmoke;
     @media (--only-small-screen) {
+      padding: 1em;
       h2 {
         adjust-font-size: fs xlarge;
         margin-bottom: spacing(0.1);
 
       }  
       p {
-          adjust-font-size: fs s;
-          line-height: 1.2em;
+        adjust-font-size: fs s;
+        line-height: 1.2em;
       }
       lost-column: 1/1 1 0;  
       margin-bottom: 0em;
@@ -210,4 +212,25 @@ body {
       background-color: #faf;
     }
   }
+}
+.empDesc {
+  padding-left: 2em;
+  margin-bottom: 1em;
+  p {
+    margin-bottom: spacing(0);
+    text-indent: 0em;
+  }
+  ul, ol {
+    margin-top: 0.2em;
+  }
+  @media (--only-small-screen) {
+    padding-left: 1em;
+    ul, ol {
+      padding-left: 1em;
+    }
+    p {
+      margin-bottom: 0em;
+    }
+  }
+
 }
