@@ -186,8 +186,9 @@ body {
       font-family: 'UbuntuR';
     }
     p {
-       margin-bottom: 0em;
-       margin-top: 0em;
+      text-align: center;
+      margin-bottom: 0em;
+      margin-top: 0em;
     }
     background-color: $whitesmoke;
     @media (--only-small-screen) {

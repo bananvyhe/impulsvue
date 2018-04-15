@@ -4,7 +4,9 @@
 	</div>
 	<div class="avatarSect2">
 		<h2><%= @employee.name.mb_chars.titleize %></h2>
-		<%= @employee.spec.html_safe %>
+		<p>
+			<%= @employee.spec %>
+		</p>
 	</div>
 </div>
 <div class="empDesc">

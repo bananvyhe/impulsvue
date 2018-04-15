@@ -2,11 +2,11 @@
 <% if @employee.avatar.url == nil %>
 	Загрузите фото сотрудника
 <% end %>
-<%= form_for @employee do |f| %>  
+<%= form_for @employee do |f| %> 
+	<label for="">Ф.И.О.</label>
+	<%= f.text_field :name %> 
 	<div class="topSectAv">
 		<div class="avatarSect1" style="background-image: url('<%= @employee.avatar.tiny.url %>')">
-			
-		   
 		  <% unless @employee.avatar? %>
 			  <%= f.file_field :avatar %>
 			  <%= f.hidden_field :avatar_cache %> 
@@ -15,17 +15,13 @@
 				<% if @employee.avatar? %>  
 					<label><%= f.check_box :remove_avatar %>Удалить</label>
 				<% end %>
-
 			</div> 
-			
 		</div>
 		<div class="avatarSect2">
-			<%= f.cktext_area :spec %> 
-			 
+			<%= f.text_area :spec, rows: 3  %> 
 		</div>
 	</div>
-	<%= f.text_field :name %>
-	<%= f.cktext_area :desc, cols: 40, rows: 10  %> 
+	<%= f.cktext_area :desc   %> 
   <%= f.submit "Сохранить" %>
 <% end %>
 

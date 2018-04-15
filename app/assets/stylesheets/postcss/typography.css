@@ -25,8 +25,8 @@ h2 {
 }
 h3 {
   adjust-font-size: fs xlarge;
-  margin-top: spacing(0.6);
-  margin-bottom: spacing(0.4);
+  margin-top: spacing(0.8);
+  margin-bottom: spacing(0.6);
   padding-left: spacing(1);
   padding-right: spacing(1);
   line-height: 1.1em;
