@@ -144,18 +144,32 @@ body {
   background-color: #dad;
   clear: both;
 }
+.empflow { 
+  padding: 2em 0 0 1em;
+  z-index: -5;
+  position: relative;
+  background-image: url(empflow.jpg);
+  background-repeat: no-repeat;
+  background-position: center left;
+  background-size: contain;
+  height: 25vw;
+  @media (--only-small-screen) {
+    background-image: url();
+  }
+  @media (--only-1600more-screen) {
+     height: 23em;
+  }
+}
 .topSectAv {
   height:  20vw;
   display: flex;
-  margin-top: 1em;
-  margin-bottom: 2em;
   @media (--only-small-screen) {
     height:  15vw;
   }
   @media (--only-medium-screen) {
     height:  15vw;
   }
-  @media (--only-big-screen) {
+  @media (--only-1600more-screen) {
     height:  250px;
   }
   .avatarSect1 {
