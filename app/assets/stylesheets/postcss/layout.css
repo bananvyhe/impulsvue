@@ -144,27 +144,9 @@ body {
   background-color: #dad;
   clear: both;
 }
-.empflow { 
-  padding: 2em 0 0 1em;
-  z-index: -5;
-  position: relative;
-  background-image: url(empflow.jpg);
-  background-repeat: no-repeat;
-  background-position: center left;
-  background-size: contain;
-  height: 25vw;
-  @media (--only-small-screen) {
-    background-image: url();
-  }
-  @media (--only-1600more-screen) {
-     height: 23em;
-  }
-}
 .topSectAv {
-  height:  20vw;
   display: flex;
   @media (--only-small-screen) {
-    height:  15vw;
   }
   @media (--only-medium-screen) {
     height:  15vw;
@@ -206,8 +188,8 @@ body {
     margin-bottom: 2.5em;
     margin-top: 2.5em;
     .fioSpec {
-      background-color: $teagreen;
-      border-radius: 0.6em;
+      background-color: $green1;
+      border-radius: 0.3em;
       h2 {
         background-color: #fff;
         padding: 0.2em  ;
@@ -288,7 +270,7 @@ body {
 .effect2 {
   position: relative;
 }
-.effect2:before, .effect2:after {
+.effect2:before    {
   z-index: -1;
   position: absolute;
   content: "";
@@ -307,13 +289,5 @@ body {
   -ms-transform: rotate(-3deg);
   transform: rotate(-3deg);
 }
-.effect2:after {
-  -webkit-transform: rotate(3deg);
-  -moz-transform: rotate(3deg);
-  -o-transform: rotate(3deg);
-  -ms-transform: rotate(3deg);
-  transform: rotate(3deg);
-  right: 10px;
-  left: auto;
-}
+ 
 /*--------*/

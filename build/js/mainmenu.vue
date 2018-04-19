@@ -304,7 +304,7 @@
   
 	background-image: url(../../app/assets/images/grass.jpg);
 	border-bottom: 2px solid #fff;
-
+  filter: saturate(70%);
 }
 .greedy-nav {
   height: 2.4em;
@@ -423,7 +423,9 @@
     :first-child {
       border-left: 0px;
     }
-    li { 
+    li {
+      padding-left: 0em; 
+      padding-right: 0em;
       vertical-align: middle;
       display: table-cell;
       border-left: 1px solid $color-1;
