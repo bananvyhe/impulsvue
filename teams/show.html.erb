@@ -4,11 +4,25 @@
   <strong>Name:</strong>
   <%= @team.name %>
 </p>
-
-<h4>Players</h4>
-<% @team.players.each do |player| %>
-  <div><%= player.name %></div>
+<table>
+	<% @team.players.each do |player| %>
+		<tr>
+			<td>
+				<%= player.name %>
+			</td>
+			<td>
+				<%= player.graph %>
+			</td>
+			<td>
+				<%= player.group %>
+			</td>
+			<td>
+				<%= player.ind %>
+			</td>
+		</tr>	
 <% end %>
+</table>
+
 
 <hr />
 

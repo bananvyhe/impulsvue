@@ -1,38 +1,61 @@
 <template>
   <div id="telpanel">
-    <label>Team Name</label>
+    <label>Название категории:</label>
     <input type="text" v-model="team.name" />
-    <h4>Players</h4>
-    {{team}}<br><hr> 
+    <h4>Предпросмотр:</h4>
+    <label>Название категории:</label>
     {{team.name}}<br><hr>
-    {{team.players_attributes}}<br><hr>
-     
   <div v-for="(player, index) in team.players_attributes">
     <div v-if="player._destroy == '1'">
       {{ player.name }} will be removed. <button v-on:click="undoRemove(index)">Undo</button>
     </div>
     <div v-else>
-      <label>Player Name</label>
-       
-      <input type="text" v-model="player.name" />
-      <button v-on:click="removePlayer(index)">Remove</button>
+      <table>
+        <tr>
+          <td>
+            Наименование услуги
+          </td>
+          <td>
+            График занятий
+          </td>
+          <td>
+            Стоимость групповых занятий (цена за месяц)
+          </td>
+          <td>
+            Стоимость индивидуального занятия
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input type="text" v-model="player.name" />
+          </td>
+          <td>
+            <input type="text" v-model="player.graph" />
+          </td>
+          <td>
+            <input type="text" v-model="player.group" />
+          </td>
+          <td>
+            <input type="text" v-model="player.ind" />
+          </td>
+          <td>
+             <button v-on:click="removePlayer(index)">Remove</button>
+          </td>
+        </tr>
+      </table>
     </div>
     <hr />
   </div>
-  <button v-on:click="addPlayer">Add Player</button>
+  <button v-on:click="addPlayer">Добавить позицию</button>
   <br />
-  <button v-on:click="saveTeam">Save Team</button>
+  <button v-on:click="saveTeam">Сохранить категорию</button>
   </div>
 </template>
-
 <script>
 // setTimeout(function(){
 //       $('.tel').css('visibility', 'visible').addClass('slideUpReturn');
 // }, 1300);
 import axios from 'axios'
- 
-console.log('telpanel');
-
 var element = document.getElementById("team-form")
 if (element != null) {
   console.log(element);
@@ -43,7 +66,6 @@ if (element != null) {
   team.players_attributes = players_attributes 
 }
 export default {
-   
   data: function () {
     return {
       id: id, 
@@ -70,7 +92,10 @@ export default {
       this.team.players_attributes.push({
         id: null,
         name: "",
-        //position: "",
+        graph: "",
+        group: "",
+        ind: "",
+        //position: " ",
         _destroy: null
       })
       console.log(this.team.players_attributes)

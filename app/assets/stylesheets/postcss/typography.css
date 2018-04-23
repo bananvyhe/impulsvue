@@ -100,9 +100,12 @@ li {
 
 td {
   padding: 0.2em;
+  &:after {
+    
+  }
 }
 td:first-of-type {
-  padding: 1em;
+  padding-right: 1em;
 }
 code,
 pre {
