@@ -97,6 +97,13 @@ li {
 	padding-right: 0.5em;
 	margin-bottom: 0em;
 }
+
+td {
+  padding: 0.2em;
+}
+td:first-of-type {
+  padding: 1em;
+}
 code,
 pre {
   font-family: "Roboto Mono", Inconsolata, monospace;

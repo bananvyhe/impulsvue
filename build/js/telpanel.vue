@@ -13,7 +13,7 @@
     </div>
     <div v-else>
       <label>Player Name</label>
-      {{ player.name }}
+       
       <input type="text" v-model="player.name" />
       <button v-on:click="removePlayer(index)">Remove</button>
     </div>

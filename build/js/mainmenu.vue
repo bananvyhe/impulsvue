@@ -71,7 +71,7 @@
         menuitems: [
           { title: 'главная', url: '/'},
           { title: 'специалисты', url: '/employees'},
-          { title: 'стоимость', url: ''},
+          { title: 'стоимость', url: '/teams'},
           { title: 'отзывы', urs: ''},
           { title: 'библиотека', url: ''},
           { title: 'программы', url: '/programms'},
