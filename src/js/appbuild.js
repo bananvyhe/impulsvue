@@ -3,6 +3,9 @@ import { Carousel, CarouselItem } from 'element-ui'
 
 import axios from 'axios'
 import Vue from 'vue/dist/vue.esm'
+import Buefy from 'buefy'
+import 'buefy/lib/buefy.css'
+
 import Footer from './footer.vue'
 import App from './telpanel.vue' 
 import Head from './head.vue' 
@@ -10,11 +13,12 @@ import Mainmenu from './mainmenu.vue'
 import Sliderapp from './sliderapp.vue'
 import Child from './child.vue'
 import Adult from './adult.vue'
+
 // import Programm from './programms.vue'
 // import Employee from './employees.vue'
 Vue.use(Carousel)
 Vue.use(CarouselItem) 
-
+Vue.use(Buefy)
 // Vue.use(TurbolinksAdapter)
 document.addEventListener('DOMContentLoaded', () => {
   Vue.directive('scroll', {

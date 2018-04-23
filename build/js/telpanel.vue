@@ -5,46 +5,20 @@
     <h4>Предпросмотр:</h4>
     <label>Название категории:</label>
     {{team.name}}<br><hr>
+    {{team.players_attributes}}
   <div v-for="(player, index) in team.players_attributes">
     <div v-if="player._destroy == '1'">
       {{ player.name }} will be removed. <button v-on:click="undoRemove(index)">Undo</button>
     </div>
     <div v-else>
-      <table>
-        <tr>
-          <td>
-            Наименование услуги
-          </td>
-          <td>
-            График занятий
-          </td>
-          <td>
-            Стоимость групповых занятий (цена за месяц)
-          </td>
-          <td>
-            Стоимость индивидуального занятия
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <input type="text" v-model="player.name" />
-          </td>
-          <td>
-            <input type="text" v-model="player.graph" />
-          </td>
-          <td>
-            <input type="text" v-model="player.group" />
-          </td>
-          <td>
-            <input type="text" v-model="player.ind" />
-          </td>
-          <td>
-             <button v-on:click="removePlayer(index)">Remove</button>
-          </td>
-        </tr>
-      </table>
+      <b-field horizontal>
+        <b-input  placeholder="Наименование услуги" v-model="player.name" ></b-input>
+        <b-input  placeholder="График занятий" v-model="player.graph" ></b-input>
+        <b-input  placeholder="Стоимоять групповых" v-model="player.group"></b-input>
+        <b-input  placeholder="Стоимость индивидуального" v-model="player.ind"></b-input>
+        <button class="button" v-on:click="removePlayer(index)">Remove</button>
+      </b-field>
     </div>
-    <hr />
   </div>
   <button v-on:click="addPlayer">Добавить позицию</button>
   <br />
