@@ -2,18 +2,17 @@
   <div id="telpanel">
     <label>Название категории:</label>
     <input type="text" v-model="team.name" />
-    <h4>Предпросмотр:</h4>
-    {{team.players_attributes}}
+    <br>
 
+     
+    <h3>{{team.name}}</h3><br> 
     <b-table 
       :data = "team.players_attributes" 
       :columns = "columns">
       <b-table-column field="name" label="name" width="40" >
       </b-table-column>
     </b-table>
-    
-    <label>Название категории:</label>
-    {{team.name}}<br> 
+
   <div v-for="(player, index) in team.players_attributes">
     <div v-if="player._destroy == '1'">
       {{ player.name }} will be removed. <button v-on:click="undoRemove(index)">Undo</button>
@@ -56,27 +55,22 @@ export default {
       errors: [],
       columns: [
         {
-            field: 'id',
-            label: 'ID',
-            width: '40',
-            numeric: true
+            field: 'name',
+            label: 'Наименование услуги',
         },
         {
-            field: 'first_name',
-            label: 'First Name',
-        },
-        {
-            field: 'last_name',
-            label: 'Last Name',
-        },
-        {
-            field: 'date',
-            label: 'Date',
+            field: 'graph',
+            label: 'График занятий',
             centered: true
         },
         {
-            field: 'gender',
-            label: 'Gender',
+            field: 'group',
+            label: 'Стоимость групповых занятий',
+            
+        },
+        {
+            field: 'ind',
+            label: 'Стоимость индивидуального занятия',
         }
       ]
     }

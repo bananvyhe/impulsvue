@@ -206,6 +206,16 @@ gulp.task('scripts', function() {
   .pipe(gulp.dest(path.build.js));
 });
 
+gulp.task('script2', function() {
+
+   
+      gulp.src("src/js/last.js").pipe(babel()) 
+     
+  
+ 
+  .pipe(gulp.dest(path.build.js));
+});
+
 
 gulp.task('css', function () {
   var plugins = [
@@ -276,6 +286,7 @@ gulp.task('watch', function () {
   gulp.watch('app/assets/stylesheets/fonts/*.ttf', ['ttf2woff2']); 
 
   gulp.watch(path.watch.js, ['scripts']);
+  gulp.watch(path.watch.js, ['script2']);
 
 });
 

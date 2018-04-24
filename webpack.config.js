@@ -3,7 +3,7 @@ const path = require('path');
 module.exports = {
   watch: true,      
   entry: {
-  
+    last: './build/js/last.js',
     application1: './build/js/app.js'
   },
   output: {

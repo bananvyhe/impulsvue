@@ -4,7 +4,7 @@
     <title>Impulsvue Rails 5 User Registration With Devise, Vue.js, and Axios</title>
     <%= csrf_meta_tags %> 
 		
-    <%= stylesheet_link_tag 'application', 'layout', media: "all"%>
+    <%= stylesheet_link_tag 'application',  media: "all"%>
     <%= javascript_include_tag 'jquery', 'jquery_ujs','application' %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
@@ -32,6 +32,7 @@
         <div id="footer"></div>          
       </div>
     </div>    
-      <%= javascript_include_tag  'application1', 'TweenMax', 'TimelineMax' %>
+    <%= javascript_include_tag 'last', 'application1', 'TweenMax', 'TimelineMax' %>
+    <%= stylesheet_link_tag   'layout', media: "all"%>
   </body>
 </html>

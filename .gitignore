@@ -34,3 +34,6 @@ app/assets/stylesheets/application.css.map
 app/assets/stylesheets/layout.css
 app/assets/stylesheets/layout.css.map
 app/assets/stylesheets/layout.css.map
+build/js/last.js.map
+build/js/last.js
+app/assets/javascripts/last.js
