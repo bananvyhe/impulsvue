@@ -3,8 +3,10 @@
 	Загрузите фото сотрудника
 <% end %>
 <%= form_for @employee do |f| %> 
-	<label for="">Ф.И.О.</label>
-	<%= f.text_field :name %> 
+	<h5>Как зовут сотрудника:</h5>
+	<p style= "text-indent: 0em;">
+		<%= f.text_field :name  %> 
+	</p>
 	<div class="topSectAv">
 		<div class="avatarSect1" style="background-image: url('<%= @employee.avatar.tiny.url %>')">
 		  <% unless @employee.avatar? %>
@@ -18,12 +20,17 @@
 			</div> 
 		</div>
 		<div class="avatarSect2" style="padding:0 0 0 1em;">
-			<%= f.text_area :spec, rows: 3  %> 
+			<h5>Специализация:</h5>
+			<%= f.text_area :spec %> 
 		</div>
 	</div>
-	<label for="">Основная информация:</label>
+	<h5>Основная информация:</h5>
 	<%= f.cktext_area :desc   %> 
-  <%= f.submit "Сохранить" %>
+ 
+ 	  <%= f.submit "Сохранить", :class => "button" %>	
+ 
+ 
+
 <% end %>
 
 

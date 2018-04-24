@@ -4,7 +4,6 @@ import { Carousel, CarouselItem } from 'element-ui'
 import axios from 'axios'
 import Vue from 'vue/dist/vue.esm'
 import Buefy from 'buefy'
-import 'buefy/lib/buefy.css'
 
 import Footer from './footer.vue'
 import App from './telpanel.vue' 

@@ -26,7 +26,7 @@ class ProgrammsController < ApplicationController
 
     respond_to do |format|
       if @programm.save
-        format.html { redirect_to @programm, notice: 'Programm was successfully created.' }
+        format.html { redirect_to @programm, notice: 'Раздел был успешно обновлен.' }
         format.json { render :show, status: :created, location: @programm }
       else
         format.html { render :new }
@@ -40,7 +40,7 @@ class ProgrammsController < ApplicationController
   def update
     respond_to do |format|
       if @programm.update(programm_params)
-        format.html { redirect_to @programm, notice: 'Team was successfully updated.' }
+        format.html { redirect_to @programm, notice: 'Раздел был успешно обновлен.' }
         format.json { render :show, status: :ok, location: @programm }
       else
         format.html { render :edit }
@@ -54,7 +54,7 @@ class ProgrammsController < ApplicationController
   def destroy
     @programm.destroy
     respond_to do |format|
-      format.html { redirect_to programms_url, notice: 'Team was successfully destroyed.' }
+      format.html { redirect_to programms_url, notice: 'Раздел был успешно удален.' }
       format.json { head :no_content }
     end
   end

@@ -1,16 +1,15 @@
-	<div class="topSectAv">
-		<div class="avatarSect1"  style="background-image: url('<%= @employee.avatar.tiny.url %>')">
+<div class="topSectAv">
+	<div class="avatarSect1"  style="background-image: url('<%= @employee.avatar.tiny.url %>')">
+	</div>
+	<div class="avatarSect2">
+		<div class="fioSpec  effect2">
+			<h2><%= @employee.name.mb_chars.titleize %></h2>
+			<p>
+				<%= @employee.spec %>
+			</p>
 		</div>
-		<div class="avatarSect2">
-			<div class="fioSpec  effect2">
-				<h2><%= @employee.name.mb_chars.titleize %></h2>
-				<p>
-					<%= @employee.spec %>
-				</p>
-			</div>
-
-		</div>
-	</div>	
+	</div>
+</div>	
 <div class="empDesc">
 	<% if @employee.desc %> 
 		<%= @employee.desc.html_safe %>
