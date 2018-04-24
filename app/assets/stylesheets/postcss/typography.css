@@ -97,7 +97,7 @@ li {
 	padding-right: 0.5em;
 	margin-bottom: 0em;
 }
-
+ 
 td {
   padding: 0.2em;
   &:after {
@@ -107,6 +107,21 @@ td {
 td:first-of-type {
   padding-right: 1em;
 }
+.table {
+  padding-bottom: 1em;
+}
+.field {
+   
+}
+.input {
+  margin-bottom: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+.button {
+   
+  margin-bottom: 0.5em;
+} 
 code,
 pre {
   font-family: "Roboto Mono", Inconsolata, monospace;
@@ -118,5 +133,5 @@ pre {
   @forcewrap;
 }
 b-field {
-  padding: 0.5em;
+   
  }

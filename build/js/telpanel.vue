@@ -1,35 +1,31 @@
 <template>
   <div id="telpanel">
-    <label>Название категории:</label>
-    <input type="text" v-model="team.name" />
-    <br>
-
-     
-    <h3>{{team.name}}</h3><br> 
+    <h5>{{team.name}}</h5>
     <b-table 
       :data = "team.players_attributes" 
       :columns = "columns">
-      <b-table-column field="name" label="name" width="40" >
+      <b-table-column field="name" label="name"   >
       </b-table-column>
     </b-table>
-
-  <div v-for="(player, index) in team.players_attributes">
-    <div v-if="player._destroy == '1'">
-      {{ player.name }} will be removed. <button v-on:click="undoRemove(index)">Undo</button>
+    <h4>Редактор:</h4>
+    <b-input  placeholder="Название категории" type="text" v-model="team.name" />
+    <div v-for="(player, index) in team.players_attributes">
+      <div v-if="player._destroy == '1'">
+        Строка "{{ player.name }}" &ndash;  удалена. <button class="button is-small" v-on:click="undoRemove(index)">Восстановить</button>
+      </div>
+      <div v-else>
+        <b-field grouped>
+          <b-input  placeholder="Наименование услуги" v-model="player.name" ></b-input>
+          <b-input  placeholder="График занятий" v-model="player.graph" ></b-input>
+          <b-input  placeholder="Стоимоять групповых" v-model="player.group"></b-input>
+          <b-input  placeholder="Стоимость индивидуального" v-model="player.ind"></b-input>
+          <button class="button" v-on:click="removePlayer(index)">Удалить</button>
+        </b-field>
+      </div>
     </div>
-    <div v-else>
-      <b-field grouped>
-        <b-input  placeholder="Наименование услуги" v-model="player.name" ></b-input>
-        <b-input  placeholder="График занятий" v-model="player.graph" ></b-input>
-        <b-input  placeholder="Стоимоять групповых" v-model="player.group"></b-input>
-        <b-input  placeholder="Стоимость индивидуального" v-model="player.ind"></b-input>
-        <button class="button" v-on:click="removePlayer(index)">Remove</button>
-      </b-field>
-    </div>
-  </div>
-  <button v-on:click="addPlayer">Добавить позицию</button>
-  <br />
-  <button v-on:click="saveTeam">Сохранить категорию</button>
+    <button class="button" v-on:click="addPlayer">Добавить позицию</button>
+ 
+    <button class="button" v-on:click="saveTeam">Сохранить категорию</button>
   </div>
 </template>
 <script>
@@ -65,7 +61,8 @@ export default {
         },
         {
             field: 'group',
-            label: 'Стоимость групповых занятий',
+            label: 'Стоимость групповых занятий (цена за месяц)',
+            centered: true
             
         },
         {
