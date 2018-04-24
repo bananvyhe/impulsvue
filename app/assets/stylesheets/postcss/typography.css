@@ -104,12 +104,16 @@ td:first-of-type {
 .table {
   padding-bottom: 1em;
 }
-.field {
-   
+.is-grouped {
+  height: 2.7em;
 }
+
 .input {
   padding-left: 0.8em;
   margin: 0.25em;
+}
+.inputShort {
+  max-width: 500px;
 }
 .button {
  margin: 0.25em;
@@ -124,6 +128,4 @@ pre {
   hyphens: none;
   @forcewrap;
 }
-.erbInputArea {
-
-}
+ 

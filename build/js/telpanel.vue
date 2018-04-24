@@ -8,24 +8,40 @@
       </b-table-column>
     </b-table>
     <h4>Редактор:</h4>
-    <b-input  placeholder="Название категории" type="text" v-model="team.name" />
+    <div class="inputShort">
+      <b-input  placeholder="Название категории" type="text" v-model="team.name" />
+    </div>
+
     <div v-for="(player, index) in team.players_attributes">
       <div v-if="player._destroy == '1'">
         Строка "{{ player.name }}" &ndash;  удалена. <button class="button is-small" v-on:click="undoRemove(index)">Восстановить</button>
       </div>
       <div v-else>
-        <b-field grouped>
-          <b-input  placeholder="Наименование услуги" v-model="player.name" ></b-input>
-          <b-input  placeholder="График занятий" v-model="player.graph" ></b-input>
-          <b-input  placeholder="Стоимоять групповых" v-model="player.group"></b-input>
-          <b-input  placeholder="Стоимость индивидуального" v-model="player.ind"></b-input>
-          <button class="button" v-on:click="removePlayer(index)">Удалить</button>
+        <b-field grouped >
+          <b-field expanded>
+            <b-input  placeholder="Наименование услуги" v-model="player.name" ></b-input>
+          </b-field>
+          <b-field expanded><b-input  placeholder="График занятий" v-model="player.graph" ></b-input></b-field>
+          <b-field expanded><b-input  placeholder="Стоимоять групповых" v-model="player.group"></b-input></b-field>
+          <b-field expanded><b-input  placeholder="Стоимость индивидуального" v-model="player.ind"></b-input></b-field>
+          <b-field expanded><button class="button is-danger is-inverted" v-on:click="removePlayer(index)">Удалить</button></b-field>
         </b-field>
       </div>
     </div>
-    <button class="button" v-on:click="addPlayer">Добавить позицию</button>
+    <a  v-on:click="addPlayer" class="button is-info is-outlined">
+    <span class="icon is-small">
+      <i class="fas fa-check"></i>
+    </span>
+    <span>Добавить позицию</span>
+    </a>
+     
+    <a  v-on:click="saveTeam" class="button is-success is-outlined">
+    <span class="icon is-small">
+      <i class="fas fa-check"></i>
+    </span>
+    <span>Сохранить</span>
+    </a>
  
-    <button class="button" v-on:click="saveTeam">Сохранить категорию</button>
   </div>
 </template>
 <script>
