@@ -15,16 +15,16 @@
     <% @programms.each do |programm| %>
       <tr data-item_id="<%= programm.id %>">
         <td><%= programm.name %></td>
-        <td><%= link_to 'Show', programm %></td>
-        <td><%= link_to 'Edit', edit_programm_path(programm) %></td>
-        <td><span class="deleteAction">Destroy</span></td>
+        <td><%= link_to 'Посмотреть', programm %></td>
+        <td><%= link_to 'Редактировать', edit_programm_path(programm) %></td>
+        <td><span class="deleteAction">Удалить</span></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <p>
-  <%= link_to 'New programm', new_programm_path %>
+  <%= link_to 'Новая публикация', new_programm_path %>
 </p>
 
 <h1>отношения с супругом</h1>
