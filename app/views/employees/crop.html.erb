@@ -1,19 +1,19 @@
-<div class='row'>
-  <div class='col-xs-8'>
+<div>
+  <div>
 
-    <div class="panel panel-primary">
-      <div class="panel-heading">
-        <h3 class="panel-title">Вырежьте часть при необходимости:</h3>
+    <div>
+      <div>
+        <h3>Вырежьте часть при необходимости:</h3>
       </div>
-      <div class="panel-body">
+      <div>
         <%= image_tag @employee.avatar_url , id: "cropbox" %>
         <br>
         <%= simple_form_for(@employee) do |f| %>
           <% %w[x y w h].each do |attribute| %>
-            <%= f.input "crop_#{attribute}", as: :hidden  %>
+            <%= f.text_field "crop_#{attribute}", type: :hidden  %>
           <% end %>
 
-          <div class="form-actions">
+          <div>
             <%= f.button :submit %>
           </div>
         <% end %>
@@ -22,7 +22,7 @@
     </div>
   </div>
 
-  <div class='col-xs-4'>
+  <div>
 
     <div  >
       <div  >
