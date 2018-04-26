@@ -1,6 +1,8 @@
+
+//hhhddаss
 var start = "hello45 ";
 console.log(start);
-//hhhddаss
+//crop carrierware plugin functional
 var AvatarCrop,
   bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
 
@@ -35,7 +37,8 @@ AvatarCrop = (function() {
     var rx, ry;
     rx = 90 / coords.w;
     ry = 100 / coords.h;
-    return $('#preview').css({
+    return $('#prev').css({
+      maxWidth: "initial",
       width: Math.round(rx * $('#cropbox').width()) + 'px',
       height: Math.round(ry * $('#cropbox').height()) + 'px',
       marginLeft: '-' + Math.round(rx * coords.x) + 'px',
