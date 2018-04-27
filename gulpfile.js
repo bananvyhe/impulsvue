@@ -210,10 +210,12 @@ gulp.task('script2', function() {
 
    
       gulp.src("src/js/last.js").pipe(babel()) 
-     
+      .pipe(sourcemaps.init())
+   .pipe(concat("last.js")) 
+  .pipe(sourcemaps.write("."))
   
  
-  .pipe(gulp.dest(path.build.js));
+  .pipe(gulp.dest('app/assets/javascripts'));
 });
 
 

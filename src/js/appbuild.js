@@ -21,7 +21,7 @@ Vue.use(Buefy)
 // Vue.use(TurbolinksAdapter)
 document.addEventListener('DOMContentLoaded', () => {
   Vue.directive('scroll', {
-    // Когда привязанный элемент вставляется в DOM......... 
+    // Когда привязанный элемент вставляется в DOM............ss 
     inserted: function(el, binding) {
       let f = function(evt) {
         if (binding.value(evt, el)) {
