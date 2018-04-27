@@ -2,6 +2,8 @@
   <div id="telpanel">
     <h5>{{team.name}}</h5>
     <b-table 
+      :striped = "true"
+      :narrowed = "true"
       :data = "team.players_attributes" 
       :columns = "columns">
       <b-table-column field="name" label="name"   >
@@ -13,8 +15,8 @@
     </div>
 
     <div v-for="(player, index) in team.players_attributes">
-      <div v-if="player._destroy == '1'">
-        Строка "{{ player.name }}" &ndash;  удалена. <button class="button is-small" v-on:click="undoRemove(index)">Восстановить</button>
+      <div v-if="player._destroy == '1'" class="delMessage"> Строка "{{ player.name }}" &ndash;  удалена.  <button class="button is-small is-info is-inverted" v-on:click="undoRemove(index)">Восстановить</button>
+       
       </div>
       <div v-else>
         <b-field grouped >
@@ -67,23 +69,23 @@ export default {
       errors: [],
       columns: [
         {
-            field: 'name',
-            label: 'Наименование услуги',
+          field: 'name',
+          label: 'Наименование услуги'
         },
         {
-            field: 'graph',
-            label: 'График занятий',
-            centered: true
+          field: 'graph',
+          label: 'График занятий',
+          centered: true
         },
         {
-            field: 'group',
-            label: 'Стоимость групповых занятий (цена за месяц)',
-            centered: true
+          field: 'group',
+          label: 'Стоимость групповых занятий (цена за месяц)',
+          centered: true
             
         },
         {
-            field: 'ind',
-            label: 'Стоимость индивидуального занятия',
+          field: 'ind',
+          label: 'Стоимость индивидуального занятия'
         }
       ]
     }

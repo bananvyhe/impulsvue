@@ -118,6 +118,13 @@ td:first-of-type {
 .button {
  margin: 0.5em 0 0.5em 0;
 } 
+.delMessage {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  padding-left: 1em;
+  justify-content: center;
+}
 code,
 pre { 
   font-family: "Roboto Mono", Inconsolata, monospace;
