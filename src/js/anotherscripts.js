@@ -34,9 +34,10 @@ AvatarCrop = (function() {
   };
 
   AvatarCrop.prototype.updatePreview = function(coords) {
-    var rx, ry;
-    rx = 90 / coords.w;
-    ry = 100 / coords.h;
+    var rx = $('#previewPic').width();
+    var ry = $('#previewPic').height();;
+    rx = rx / coords.w;
+    ry = ry / coords.h;
     return $('#prev').css({
       maxWidth: "initial",
       width: Math.round(rx * $('#cropbox').width()) + 'px',
