@@ -8,15 +8,15 @@ class NewspicUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
 
   storage :file
-  process resize_to_limit: [600, 900]
+  process resize_to_limit: [1200, 800]
 
   version :thumb do
     process :crop
-    resize_to_fill(300, 450)
+    resize_to_fill(450, 300)
   end
   def crop
     if model.crop_x.present?
-      resize_to_limit(600, 900)
+      resize_to_limit(1200, 800)
       manipulate! do |img|
         x = model.crop_x.to_i
         y = model.crop_y.to_i

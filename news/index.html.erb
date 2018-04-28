@@ -5,12 +5,12 @@
  
   <tbody>
     <% @news.each do |news| %>
-      <tr>
+      <tr data-item_id="<%= news.id %>">
         <td><%= news.image %></td>
         <td><%= news.desc %></td>
         <td><%= link_to 'Показать', news %></td>
         <td><%= link_to 'Редактировать', edit_news_path(news) %></td>
-        <td><%= link_to 'Удалить', news, method: :delete, data: { confirm: 'Вы уверены?' } %></td>
+        <td><span class="deleteAction">Удалить</span></td>
       </tr>
     <% end %>
   </tbody>
