@@ -271,6 +271,11 @@ body {
   }
 
 }
+.newspic {
+  height: 350px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
 
 /*--------*/
 /* стиль эффекта тени блока с 2х сторон */

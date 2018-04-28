@@ -1,4 +1,4 @@
-
+console.log(document.location.pathname);
 //hhhddаss
 var start = "hello45 ";
 console.log(start);
@@ -17,19 +17,30 @@ AvatarCrop = (function() {
     var height, width;
     width = parseInt($('#cropbox').width());
     height = parseInt($('#cropbox').height());
-    $('#cropbox').Jcrop({
-      aspectRatio: 9 / 10,
-      setSelect: [0, 0, width, height],
-      onSelect: this.update,
-      onChange: this.update
-    });
+    
+    if (document.location.pathname == '/news') {
+      $('#cropbox').Jcrop({
+        aspectRatio: 9/6,
+        setSelect: [0, 0, width, height],
+        onSelect: this.update,
+        onChange: this.update
+      });
+    }else if(document.location.pathname == '/employees'){
+      $('#cropbox').Jcrop({
+        aspectRatio: 9/10,
+        setSelect: [0, 0, width, height],
+        onSelect: this.update,
+        onChange: this.update
+      });
+    }
+
   }
 
   AvatarCrop.prototype.update = function(coords) {
-    $('#employee_crop_x').val(coords.x);
-    $('#employee_crop_y').val(coords.y);
-    $('#employee_crop_w').val(coords.w);
-    $('#employee_crop_h').val(coords.h);
+    $('[id$=_crop_x').val(coords.x);
+    $('[id$=_crop_y').val(coords.y);
+    $('[id$=_crop_w').val(coords.w);
+    $("[id$=_crop_h]").val(coords.h);
     return this.updatePreview(coords);
   };
 

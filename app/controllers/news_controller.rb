@@ -1,5 +1,5 @@
 class NewsController < ApplicationController
-  before_action :set_news, only: [:show, :edit, :update, :destroy]
+  before_action :set_news, only: [:show, :edit, :update, :destroy, :crop]
 
   # GET /news
   # GET /news.json
@@ -28,7 +28,7 @@ class NewsController < ApplicationController
 
     respond_to do |format|
       if @news.save
-        format.html { redirect_to @news, notice: 'News was successfully created.' }
+        format.html { render :crop, notice: 'News was successfully created.' }
         format.json { render :show, status: :created, location: @news }
       else
         format.html { render :new }
@@ -45,7 +45,7 @@ class NewsController < ApplicationController
         format.html { redirect_to @news, notice: 'News was successfully updated.' }
         format.json { render :show, status: :ok, location: @news }
       else
-        format.html { render :edit }
+        format.html { render :crop }
         format.json { render json: @news.errors, status: :unprocessable_entity }
       end
     end
@@ -69,6 +69,6 @@ class NewsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def news_params
-      params.require(:news).permit(:image, :desc)
+      params.require(:news).permit(:image, :desc, :newspic, :newspic_cache, :remove_newspic, :crop_x, :crop_y, :crop_w, :crop_h)
     end
 end
