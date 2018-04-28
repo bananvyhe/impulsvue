@@ -4,9 +4,7 @@
 	<div class="avatarSect2">
 		<div class="fioSpec  effect4">
 			<h2><%= @employee.name.mb_chars.titleize %></h2>
-			<p>
-				<%= @employee.spec %>
-			</p>
+				<%= @employee.spec.html_safe %>
 		</div>
 	</div>
 </div>	

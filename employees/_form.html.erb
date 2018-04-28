@@ -1,36 +1,38 @@
 
 <% if @employee.avatar.url == nil %>
-	Загрузите фото сотрудника
+	
 <% end %>
+ 
 <%= form_for @employee do |f| %> 
-	<h5>Как зовут сотрудника:</h5>
-	<p style= "text-indent: 0em;">
-		<%= f.text_field :name  %> 
-	</p>
-	<div class="topSectAv">
-		<div class="avatarSect1" style="background-image: url('<%= @employee.avatar.tiny.url %>')">
+	<div style="float: left">
+		<h5>Как зовут сотрудника:</h5>
+		<p style= "text-indent: 0em;">
+			<%= f.text_field :name  %> 
+		</p>
+		Загрузите фото сотрудника
+		<div  style="background-image: url('<%= @employee.avatar.tiny.url %>'); height:250px; width:225px"></div>
+		<div>
 		  <% unless @employee.avatar? %>
 			  <%= f.file_field :avatar %>
 			  <%= f.hidden_field :avatar_cache %> 
 			<% end %>
 			<div class="fotoEdit">
 				<% if @employee.avatar? %>  
-					<label><%= f.check_box :remove_avatar %>Удалить</label>
+					<label><%= f.check_box :remove_avatar %>Удалить фото</label>
 				<% end %>
 			</div> 
-		</div>
-		<div class="avatarSect2" style="padding:0 0 0 1em;">
-			<h5>Специализация:</h5>
-			<%= f.text_area :spec %> 
-		</div>
+		</div>		
 	</div>
-	<h5>Основная информация:</h5>
-	<%= f.cktext_area :desc   %> 
- 
- 	  <%= f.submit "Сохранить", :class => "button" %>	
- 
- 
 
+	<div style="padding:1em 0 0 250px;">
+		<h5>Специализация:</h5>
+		<%= f.cktext_area :spec, ckeditor: {toolbar: 'micro' } %> 
+	</div>
+ 	<div style="clear: both; padding-top: 0.1em; ">
+ 		<h5>Основная информация:</h5>
+		<%= f.cktext_area :desc   %> 
+ 	  <%= f.submit "Сохранить", :class => "button" %>	
+ 	</div>
 <% end %>
 
 
