@@ -73,7 +73,9 @@ End Hamster setup*/
 html {
   height: 100%;
 }
-body {
+body {background-image: url(SW-028.jpg);
+  background-repeat: no-repeat;
+  background-position: center 0;
   position:relative;
   height: 100%;
   font-family: "Arial";
@@ -98,6 +100,17 @@ body {
   position: relative;
   overflow:hidden;  
    /* footer height bufferdffgdfg */ 
+}
+/* от размеров div'а maincontent идет зависимость - обсчет ширины меню, футера;  считается высота для определения sicky или realativ position футера s */
+.maincontent {
+  /* min-height: 100%;*/ 
+  lost-center: $lcenter;
+  position:relative; 
+  .railsblock {
+    position: absolute;
+    background-color: #ada;
+    right:0;
+  }
 }
  
 #leftsheet {
@@ -142,18 +155,6 @@ body {
   height:150px; 
   background-size: contain;
   background-repeat: no-repeat;
-}
-
-/* от размеров div'а maincontent идет зависимость - обсчет ширины меню, футера;  считается высота для определения sicky или realativ position футера s */
-.maincontent {
-  /* min-height: 100%;*/ 
-	lost-center: $lcenter;
-	position:relative; 
-	.railsblock {
-		position: absolute;
-		background-color: #ada;
-		right:0;
-	}
 }
 #falign {
  position: relative;
