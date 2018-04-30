@@ -12,7 +12,7 @@ class NewspicUploader < CarrierWave::Uploader::Base
 
   version :thumb do
     process :crop
-    resize_to_fill(450, 300)
+    resize_to_fill(225, 150)
   end
   def crop
     if model.crop_x.present?

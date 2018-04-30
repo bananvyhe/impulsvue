@@ -48,10 +48,10 @@
   function resize() {
     if (window.matchMedia('only screen and (max-width: 600px)').matches) {
       console.log('under 600 pixels');
-      vis.value = '130';
+      vis.value = '300';
     } else if (window.matchMedia('only screen and (min-width: 601px) and ' + '(max-width: 1423px)').matches) {
       console.log('between 601 and 1024 pixels');
-      vis.value = '220';                      
+      vis.value = '250';                      
     } else {
       console.log('higher than 1024 pixels');
       vis.value = '300'; 
