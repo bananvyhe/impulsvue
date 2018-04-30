@@ -114,11 +114,24 @@ body {
     lost-column: 1/1;
   }
 } 
+.cleared {
+  lost-utility: clearfix;
+}
 #rightsheet {
   margin-top: 1em;
 	lost-column: 2/7 3 1.5em; background-color: #dad;
   @media (--only-small-screen) {
     lost-column: 1/1;
+  }
+}
+.newsBlock { background-color: #dad;
+  margin-top: 1em;
+  lost-center: 1150px;
+  div { height: 100px; padding: 1em;
+    lost-column: 1/3 0 0;
+    @media (--only-small-screen) {
+      lost-column: 1/1 0 0;
+    }
   }
 }
 /* от размеров div'а maincontent идет зависимость - обсчет ширины меню, футера;  считается высота для определения sicky или realativ position футера s */
@@ -278,6 +291,10 @@ body {
   background-size: contain;
   background-repeat: no-repeat;
 }
+
+
+ 
+ 
 
 /*--------*/
 /* стиль эффекта тени блока с 2х сторон */
