@@ -158,7 +158,9 @@ body {
   @media (--only-1600more-screen) {
     height:  250px;
   }
-  .avatarSect1 {z-index: 10;
+  .avatarSect1 {
+    z-index: 10;
+    background-color: #fff;
     box-shadow: 0px 2px 10px 0px #5c5c5c;
     border: 0.3em solid $isabelline;
     border-radius: 0em;

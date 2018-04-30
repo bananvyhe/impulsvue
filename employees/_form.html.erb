@@ -9,20 +9,18 @@
 		<p style= "text-indent: 0em;">
 			<%= f.text_field :name  %> 
 		</p>
-		Загрузите фото сотрудника
+
+
 		<% if @employee.avatar? %>
 			<div  style="background-image: url('<%= @employee.avatar.tiny.url %>'); height:250px; width:225px"></div>
 		<% end %>
 		<div>
 		  <% unless @employee.avatar? %>
+		  	Загрузите фото сотрудника
 			  <%= f.file_field :avatar %>
 			  <%= f.hidden_field :avatar_cache %> 
 			<% end %>
-			<div class="fotoEdit">
-				<% if @employee.avatar? %>  
-					<label><%= f.check_box :remove_avatar %>Удалить фото</label>
-				<% end %>
-			</div> 
+ 
 		</div>		
 	</div>
 

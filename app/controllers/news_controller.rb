@@ -29,7 +29,7 @@ class NewsController < ApplicationController
     respond_to do |format|
       if @news.save
         format.html { render :crop, notice: 'News was successfully created.' }
-        format.json { render :show, status: :created, location: @news }
+        format.json { render :index, status: :created, location: @news }
       else
         format.html { render :new }
         format.json { render json: @news.errors, status: :unprocessable_entity }
@@ -42,8 +42,8 @@ class NewsController < ApplicationController
   def update
     respond_to do |format|
       if @news.update(news_params)
-        format.html { redirect_to @news, notice: 'News was successfully updated.' }
-        format.json { render :show, status: :ok, location: @news }
+        format.html { redirect_to action: :index, notice: 'News was successfully updated.' }
+        format.json { render :index, status: :ok, location: @news }
       else
         format.html { render :crop }
         format.json { render json: @news.errors, status: :unprocessable_entity }
