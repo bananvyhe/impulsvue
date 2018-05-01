@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  slide: MyString
+  caption1: MyString
+  caption2: MyString
+
+two:
+  slide: MyString
+  caption1: MyString
+  caption2: MyString

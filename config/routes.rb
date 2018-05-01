@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :sliders
   resources :news
   mount Ckeditor::Engine => '/ckeditor'
   devise_for :users

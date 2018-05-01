@@ -1,0 +1,14 @@
+
+<%= simple_form_for(@slider) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :slide %>
+    <%= f.input :caption1 %>
+    <%= f.input :caption2 %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
