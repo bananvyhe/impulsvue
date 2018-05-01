@@ -164,6 +164,9 @@ body {
   height:300px; 
   background-size: contain;
   background-repeat: no-repeat;
+  p {
+    text-indent: 0em;
+  }
 }
 #falign {
  position: relative;

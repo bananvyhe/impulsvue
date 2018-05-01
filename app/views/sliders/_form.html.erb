@@ -7,18 +7,20 @@
 
   <div>
   	<% unless @slider.slide? %>
+  		<h5>Картинка слайда:</h5>
     	<%= f.file_field :slide, :class => "button" %>
     	<%= f.hidden_field :slide_cache %> 
     <% end %>
-    <h5>Основная информация:</h5>
+    <h5>Заголовок слайда:</h5>
     <div>
     	 <%= f.cktext_area :caption1, ckeditor: {toolbar: 'micro', height: 100  } %>
     </div>
+    <h5>Текст слайда:</h5>
     <div>
     	 <%= f.cktext_area :caption2, ckeditor: {toolbar: 'micro', height: 100  } %>
     </div>
   </div>  
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.submit "Сохранить",  :class => "button" %>
   </div>
 <% end %>
