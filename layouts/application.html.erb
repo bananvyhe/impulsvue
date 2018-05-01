@@ -1,0 +1,39 @@
+<!DOCTYPE html><meta name="viewport" content="width=device-width,initial-scale=1">
+<html>
+  <head>
+    <title>Impulsvue Rails 5 User Registration With Devise, Vue.js, and Axios</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+
+
+    <%= csrf_meta_tags %> 
+		
+    <%= stylesheet_link_tag 'application'%>
+    <%= javascript_include_tag 'jquery', 'jquery_ujs','application' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body class="body"> 
+    <div class="maincontent">
+      <div class="railsblock">1<br>1<br>
+        <% if user_signed_in? %>
+        <% end %>
+        <% if user_signed_in? %>
+          <%= link_to current_user.email, edit_user_registration_path %>
+          <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+        <% else %>
+          <%= link_to "Sign Up", new_user_registration_path %>
+          <%= link_to "LogIn", new_user_session_path %>
+        <% end %>
+      </div>
+      <div id="head" class="head"></div> 
+      <div id="mainmenu"></div> 
+      <div id="main" >
+        <%= yield  %> 
+      </div>
+      <div id="falign">
+        <div id="footer"></div>          
+      </div>
+    </div>    
+    <%= stylesheet_link_tag   'layout' %>
+    <%= javascript_include_tag  'application1','last', 'TweenMax', 'TimelineMax' %>
+  </body>
+</html>
