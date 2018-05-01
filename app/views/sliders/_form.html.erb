@@ -1,14 +1,22 @@
 
 <%= simple_form_for(@slider) do |f| %>
   <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :slide %>
-    <%= f.input :caption1 %>
-    <%= f.input :caption2 %>
-  </div>
-
+	<% if @slider.slide? %>
+		<div  style="background-image: url('<%= @sliders.slider.thumb.url %>');" class="slidepic"></div>
+	<% end %>
   <div class="form-actions">
     <%= f.button :submit %>
   </div>
+  <div>
+  	<% unless @slider.slide? %>
+    	<%= f.file_field :slide, :class => "button" %>
+    <% end %>
+    <h5>Основная информация:</h5>
+    <div>
+    	 <%= f.cktext_area :caption1, ckeditor: {toolbar: 'micro', height: 100  } %>
+    </div>
+    <div>
+    	 <%= f.cktext_area :caption2, ckeditor: {toolbar: 'micro', height: 100  } %>
+    </div>
+  </div>  
 <% end %>
