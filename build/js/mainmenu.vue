@@ -72,10 +72,10 @@
           { title: 'главная', url: '/'},
           { title: 'специалисты', url: '/employees'},
           { title: 'стоимость', url: '/teams'},
-          { title: 'отзывы', urs: ''},
+          { title: 'отзывы', url: '/reviews'},
           { title: 'библиотека', url: ''},
           { title: 'программы', url: '/programms'},
-          { title: 'контакты', url: ''}
+          { title: 'контакты', url: '/contacts'}
         ],
         menuitemsHide: [],
         styleObject: {},
