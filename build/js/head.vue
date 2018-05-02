@@ -2,10 +2,10 @@
   <div class="head">
 		<transition name="fade" appear>
       <div class="first">
-       <nobr>секция 1</nobr>
       </div>    
     </transition>
-    <div class="second">секция 2
+    <div class="second">
+      
     </div>
     <div class="third">
       <nobr>секция 3</nobr>
@@ -22,14 +22,19 @@ export default {
 }
 </script>
 <style scoped>
-.head {  
-	
+.head { 
+  display: flex;
 	background-position: center left;
 	height: 160px; 
 }
 .first {
+  background-image: url(../../app/assets/images/logo.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  margin: 3em 1em -1em 1em;
 	lost-column: 1/2 2 0.5em;
-  background-color: #dad;
+   
 }
 .second {lost-column: 1/4 4 0.5em;
  background-color: #ada;
