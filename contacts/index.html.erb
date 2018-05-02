@@ -3,7 +3,7 @@
 <% @contacts.each do |contact| %>
 <div class="contacts">
   <div class="map">
-    <iframe src="https://yandex.ru/map-widget/v1/-/CBqnq2WNsA"  frameborder="0"></iframe>
+    <%= contact.map.html_safe %>
   </div>
 
   <div class="contactInfo">
