@@ -73,7 +73,7 @@
           { title: 'специалисты', url: '/employees'},
           { title: 'стоимость', url: '/teams'},
           { title: 'отзывы', url: '/reviews'},
-          { title: 'библиотека', url: ''},
+          { title: 'библиотека', url: '/libraries'},
           { title: 'программы', url: '/programms'},
           { title: 'контакты', url: '/contacts'}
         ],
