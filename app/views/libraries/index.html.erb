@@ -15,13 +15,13 @@
 
   <tbody>
     <% @libraries.each do |library| %>
-      <tr>
+      <tr data-item_id="<%= library.id %>">
         <td><%= library.name %></td>
         <td><%= library.desc %></td>
-        <td><a href="<%= library.file %>">@</a></td>
+        <td><a href="<%= library.file %>"><%= File.extname(library.file.to_s)%>  </a></td>
         <td><%= link_to 'Show', library %></td>
         <td><%= link_to 'Edit', edit_library_path(library) %></td>
-        <td><%= link_to 'Destroy', library, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><span class="deleteAction">Удалить</span></td>
       </tr>
     <% end %>
   </tbody>
