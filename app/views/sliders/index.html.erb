@@ -13,8 +13,8 @@
     <% @sliders.each do |slider| %>
       <tr  data-item_id="<%= slider.id %>">
         <td class="slidepic" style="background-image: url('<%= slider.slide.thumb.url %>');"></td>
-        <td><%= slider.caption1.html_safe %></td>
-        <td><%= slider.caption2.html_safe %></td>
+        <td><%= strip_tags(slider.caption1.html_safe) %></td>
+        <td><%= strip_tags(slider.caption2.html_safe) %></td>
         <td><%= link_to 'Редактировать', edit_slider_path(slider) %></td>
         <td><%= link_to 'Удалить', slider, method: :delete, data: { confirm: 'Точно удалить?' } %></td>
       </tr>

@@ -1,0 +1,10 @@
+$ORIGIN impuls-psy.ru.
+$TTL 1800
+impuls-psy.ru. IN SOA ns1.digitalocean.com. hostmaster.impuls-psy.ru. 1437387026 10800 3600 604800 1800
+impuls-psy.ru. 1800 IN NS ns1.digitalocean.com.
+impuls-psy.ru. 1800 IN NS ns2.digitalocean.com.
+impuls-psy.ru. 1800 IN NS ns3.digitalocean.com.
+impuls-psy.ru. 1800 IN A 188.166.76.9
+www.impuls-psy.ru. 1800 IN CNAME impuls-psy.ru.
+*.impuls-psy.ru. 1800 IN CNAME impuls-psy.ru.
+www.impuls-psy.ru.impuls-psy.ru. 1800 IN CNAME impuls-psy.ru.
