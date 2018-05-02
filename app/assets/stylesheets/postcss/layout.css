@@ -168,6 +168,37 @@ body {
     text-indent: 0em;
   }
 }
+.contacts {
+  display: flex;
+  lost-utility: clearfix; 
+  div { 
+    lost-column: 1/2 0 1em;
+  }
+}
+.map {
+  height: 20em;
+  iframe {
+    height: 100%;
+    width: 100%;
+  }
+}
+.contactInfo {
+  div {
+    lost-row: 1/3 0 1em; 
+  }
+}
+.contactInfobd { 
+  div {
+    lost-column: 1/2 0 1em; 
+  }
+}
+.infoLast {
+  div {
+    lost-row: 1/2 0 1em;
+  }
+}
+.feedback {background-color: #ada; 
+}
 #falign {
  position: relative;
 } 

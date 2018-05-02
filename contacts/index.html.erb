@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+<h5>Контакты</h5>
+<% @contacts.each do |contact| %>
+<div class="contacts">
+  <div class="map">
+    <iframe src="https://yandex.ru/map-widget/v1/-/CBqnq2WNsA"  frameborder="0"></iframe>
+  </div>
+
+  <div class="contactInfo">
+    <div>
+      <div>
+        <h5>Психологический центр &laquo;Импульc&raquo; </h5>
+      </div>
+      <div>
+        Психологическая помощь взрослым и детям
+      </div>      
+    </div>
+
+    <div class="contactInfobd">
+      <div>
+        <%= contact.adress %>
+      </div>
+      <div>
+        Тел.<%= contact.tel %>
+      </div>
+    </div>
+
+    <div class="infoLast">
+      <div>
+        Тел:<%= contact.tel %>
+      </div>
+      <div>
+        Е-майл:<%= contact.tel %>
+      </div>
+    </div>
+  </div>
+  
+</div>
+
+<div>
+  <%= link_to 'Редактировать', edit_contact_path(contact) %>
+</div>
+
+<% end %>
+<div class="feedback">1</div>
