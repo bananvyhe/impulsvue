@@ -113,13 +113,13 @@ body {
   position:relative; 
   .railsblock {
     position: absolute;
-    background-color: #ada;
+    background-color: #fff;
+    opacity: 0.8;
     right:0;
+    padding: 0.2em 0.9em 0.2em 0.9em;
+    border-radius: 0.7em;
   }
 }
-.first {
-}
- 
 #leftsheet {
   margin-top: 1em;
 	lost-column: 2/7 3 1em ; background-color: #dad;
