@@ -2,7 +2,7 @@
 <%= simple_form_for(@slider) do |f| %>
   <%= f.error_notification %>
 	<% if @slider.slide? %>
-		<div  style="background-image: url('<%= @sliders.slider.thumb.url %>');" class="slidepic"></div>
+		<div  style="background-image: url('<%= @slider.slide.thumb.url %>');" class="slidepic"></div>
 	<% end %>
 
   <div>
@@ -13,11 +13,11 @@
     <% end %>
     <h5>Заголовок слайда:</h5>
     <div>
-    	 <%= f.cktext_area :caption1, ckeditor: {toolbar: 'micro', height: 100  } %>
+    	 <%= f.input :caption1 , as: :text, label: false %>
     </div>
     <h5>Текст слайда:</h5>
     <div>
-    	 <%= f.cktext_area :caption2, ckeditor: {toolbar: 'micro', height: 100  } %>
+    	 <%= f.input :caption2 , as: :text, label: false  %>
     </div>
   </div>  
   <div class="form-actions">

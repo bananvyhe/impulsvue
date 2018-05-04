@@ -7,15 +7,15 @@
       @change="change" 
       v-bind="{height: visota.value + 'px', 
       'indicator-position': hider}">
-      <el-carousel-item  class="sliderText" v-for="(item, index) in items" :key='index'>
-          <div :class="item.class" class="mainFormat">
+      <el-carousel-item  class="sliderText" v-for="(item, index) in sliders" :key='index'>
+          <div class="mainFormat" style="background-image: url('/uploads/slider/slide/10/img6.jpg');">
             <div class ="infoBlock">
                 <transition name='slide' appear>
                   <div 
                     :key='index' 
                     class="titlefirst" 
                     v-show="slideAnimRestart"
-                    @click="slideAnimRestart = false">{{item.title}}
+                    @click="slideAnimRestart = false"><span v-html="item.caption1"></span>
                   </div> 
                 </transition>
                 <transition name='fade' :duration="4000" appear> 
@@ -23,7 +23,7 @@
                     :key='item.title' 
                     class="titlesecond" 
                     v-show="slideAnimRestart2"
-                    @click="slideAnimRestart2 = false">{{item.text}}
+                    @click="slideAnimRestart2 = false"><span v-html="item.caption2"></span>
                   </div>
                 </transition>
             </div>
@@ -38,12 +38,12 @@
       <br>slideAnimRestart: {{slideAnimRestart}} 
       <br>slideAnimRestart2: {{slideAnimRestart2}}
        <br>hideind: {{hideind}}
-    </div>
+    </div> 
   </div>
 </template>
  
 <script>
-
+  import axios from 'axios'
   let vis = {value: '30'};
   function resize() {
     if (window.matchMedia('only screen and (max-width: 600px)').matches) {
@@ -65,6 +65,7 @@
   export default {
     data: function () {
       return {
+        sliders: [],
         firsttitledelay: 0.8,
         secondtitledelay: 0.65,
         divHeight: divHeight,
@@ -84,6 +85,16 @@
           { title: 'Деятельность лицензирована', text: 'Деятельность лицензирована Министерством Российской Федерации по делам гражданской обороны, чрезвычайным ситуациям и ликвидации последствий стихийных бедствий за №66-Б/00124 от 23 июня 2009 года ', class: 'fivediv' }  
         ] 
       }
+    },
+    created() {
+      axios.get('/sliders')
+      .then(response => {
+        this.sliders = response.data
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      }); 
     },
     mounted() { 
        window.addEventListener('resize', _.throttle(resize, 100));
@@ -208,13 +219,18 @@
     }
   }
   .mainFormat {
-    display: flex;
+    display: flex; 
+    background-repeat: no-repeat;
+    background-size: cover;
   }
   .infoBlock {
     display: flex;
     flex-direction: column;
     width: 50%;
     align-self: center;
+  }
+  .sliderText {
+    display: flex;
   }
   .onediv, .twodiv, .threediv, .fourdiv, .fivediv {
     height: 100%;
