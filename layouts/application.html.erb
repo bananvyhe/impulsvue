@@ -13,15 +13,17 @@
   </head>
   <body class="body"> 
     <div class="maincontent">
-      <div class="railsblock">1<br>1<br>
+      <div class="railsblock">
         <% if user_signed_in? %>
         <% end %>
         <% if user_signed_in? %>
           <%= link_to current_user.email, edit_user_registration_path %>
-          <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+          <%= link_to "Выйти", destroy_user_session_path, method: :delete %>
         <% else %>
-          <%= link_to "Sign Up", new_user_registration_path %>
-          <%= link_to "LogIn", new_user_session_path %>
+          <!--
+            <%= link_to "Sign Up", new_user_registration_path %> 
+          -->
+          <%= link_to "Войти", new_user_session_path %>
         <% end %>
       </div>
       <div id="head" class="head" ></div> 

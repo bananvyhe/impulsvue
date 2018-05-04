@@ -86,7 +86,9 @@ body {
   background-repeat: no-repeat;
   background-position: center 0;
 }
-
+.railsblock {
+  margin: 0.5em;
+}
 .deleteAction {
   color: blue;
   border-bottom: solid 1px;
