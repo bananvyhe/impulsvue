@@ -6,11 +6,13 @@
     </transition>
     <div class="second" v-if="contacts && contacts.length">
       <div v-for="contact of contacts">
+        <h5>Адрес электронной почты:</h5>
         {{contact.mail}}
       </div>
     </div>
     <div class="third" v-if="contacts && contacts.length">
       <div v-for="contact of contacts">
+        <h5>Контакты:</h5>
         {{contact.adress}}
       </div>
     </div>
@@ -37,6 +39,7 @@ export default {
 }
 </script>
 <style scoped>
+@import "../../app/assets/stylesheets/postcss/variables";
 .head { 
   display: flex;
 	background-position: center left;
@@ -48,21 +51,37 @@ export default {
   background-position: center;
   background-size: contain;
   margin: 3em 1em -1em 1em;
-	lost-column: 1/2 2 0.5em;
+	lost-column: 1/2 4 0.5em;
+  @media (--only-small-screen) {
+    lost-column: 1/3;
+  }
 }
-.second { border-right: 1px solid black;
+.second {
   display: flex;
   lost-column: 1/4 4 1em;
   justify-content: flex-end;
+  text-align: right;
   align-self: center;
-  margin-top: 4em;
+  margin-top: 5em;
   padding: 0.5em;
+  @media (--only-small-screen) {
+    lost-column: 1/3;
+    margin-top: 2em;
+    padding: 0.2em;
+  }
 }
 .third {
+  z-index: 10;
   display: flex;
   align-self: center;
   lost-column: 1/4 4 1em;
-  margin-top: 4em;
+  line-height: 1.2;
+  @media (--only-small-screen) {
+    lost-column: 1/3;
+    margin-top: 2em;
+    padding: 0.2em;
+  }
+  margin-top: 5em;
   padding: 0.5em;
 }
 .fade-enter {

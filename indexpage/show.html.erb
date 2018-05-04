@@ -6,7 +6,12 @@
 <% end %>
 -->
 <div id="leftsheet"><div id="child"></div></div>
-<div id="slider"><div id="sliderapp"></div></div>
+
+<div id="slider"><% if user_signed_in? %>
+	<a class="button is-success is-outlined" href="/sliders">
+		 редактор слайдов 
+	</a>
+<% end %><div id="sliderapp"></div></div>
 <div id="rightsheet"><div id="adult"></div></div>
 <div class="cleared"></div>
 <div class="newsHead"><h5>Новости:</h5></div>
