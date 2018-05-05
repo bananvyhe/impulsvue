@@ -8,7 +8,7 @@
       v-bind="{height: visota.value + 'px', 
       'indicator-position': hider}">
       <el-carousel-item  class="sliderText" v-for="(item, index) in sliders" :key='index'>
-          <div class="mainFormat" :style="{backgroundImage: 'url(' + item.slide.url   }">
+          <div class="mainFormat" :style="{backgroundImage: 'url(' + item.slide.url}">
             <div class ="infoBlock">
                 <transition name='slide' appear>
                   <div 
@@ -20,7 +20,7 @@
                 </transition>
                 <transition name='fade' :duration="4000" appear> 
                   <div 
-                    :key='item.title' 
+                    :key='item.id' 
                     class="titlesecond" 
                     v-show="slideAnimRestart2"
                     @click="slideAnimRestart2 = false"><span v-html="item.caption2"></span>
@@ -41,7 +41,6 @@
     </div> 
   </div>
 </template>
- 
 <script>
   import axios from 'axios'
   let vis = {value: '30'};
@@ -58,9 +57,6 @@
     }
   }
   window.addEventListener('load', resize );
- 
- 
-  
   let divHeight = {value:  ''};
   export default {
     data: function () {
@@ -77,14 +73,7 @@
         animfade: 'fade',
         switcher: false,
         visota: vis,
-        hider: '',
-        items: [
-          { title: 'Комплексные системы безопасности для вашей недвижимости', text: 'Монтаж, обслуживание, проектирование, ремонт, испытание, обучение.', class: 'onediv' },
-          { title: 'Пожарная безопасность', text: 'Разработка, установка, обслуживание, ремонт, обучение, испытание и пусконал­­адка.', class: 'twodiv' },
-          { title: 'Видеонаблюдение', text: 'Монтаж, обслуживание, проектирование, ремонт.', class: 'threediv' },
-          { title: 'Системы контроля и управления доступом', text: 'Монтаж, обслуживание, проектирование, ремонт.', class: 'fourdiv' },
-          { title: 'Деятельность лицензирована', text: 'Деятельность лицензирована Министерством Российской Федерации по делам гражданской обороны, чрезвычайным ситуациям и ликвидации последствий стихийных бедствий за №66-Б/00124 от 23 июня 2009 года ', class: 'fivediv' }  
-        ] 
+        hider: ''
       }
     },
     created() {
@@ -221,6 +210,8 @@
   }
   .mainFormat {
     display: flex; 
+    width: 100%; 
+    height: 100%;
     background-repeat: no-repeat;
     background-size: cover;
   }
@@ -232,11 +223,6 @@
   }
   .sliderText {
     display: flex;
-  }
-  .onediv, .twodiv, .threediv, .fourdiv, .fivediv {
-    height: 100%;
-    background-repeat:no-repeat;
-    background-size: cover;
   }
   .onediv {
     background-position: right center;
