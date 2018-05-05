@@ -8,7 +8,7 @@
       v-bind="{height: visota.value + 'px', 
       'indicator-position': hider}">
       <el-carousel-item  class="sliderText" v-for="(item, index) in sliders" :key='index'>
-          <div class="mainFormat" style="background-image: url('/uploads/slider/slide/10/img6.jpg');">
+          <div class="mainFormat" :style="{backgroundImage: 'url(' + item.slide.url   }">
             <div class ="infoBlock">
                 <transition name='slide' appear>
                   <div 
@@ -65,6 +65,7 @@
   export default {
     data: function () {
       return {
+        slide: '/uploads/slider/slide/10/img6.jpg',
         sliders: [],
         firsttitledelay: 0.8,
         secondtitledelay: 0.65,
