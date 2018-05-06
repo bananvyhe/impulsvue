@@ -153,64 +153,6 @@
 
 <style scoped>
 @import "../../app/assets/stylesheets/postcss/variables";
-  .switcher {
-    padding-left: 10em;
-  }
-  .slide-enter-active {
-  animation: slide-in-blurred-left 0.25s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
-  }
-  @keyframes slide-in-blurred-left {
-    0% {
-      transform: translateX(-1000px) scaleX(2.5) scaleY(0.2);
-      transform-origin: 100% 50%;
-      filter: blur(40px);
-      opacity: 0;
-    }
-    100% {
-      transform: translateX(0) scaleY(1) scaleX(1);
-      transform-origin: 50% 50%;
-      filter: blur(0);
-      opacity: 1;
-    }
-  }
-  .slide-leave-active {
-    animation: slide-out-blurred-right 0.25s cubic-bezier(0.755, 0.050, 0.855, 0.060) both;
-  }
-  @keyframes slide-out-blurred-right {
-    0% {
-      transform: translateX(0) scaleY(1) scaleX(1);
-      transform-origin: 50% 50%;
-      filter: blur(0);
-      opacity: 1;
-    }
-    100% {
-      transform: translateX(1000px) scaleX(2) scaleY(0.2);
-      transform-origin: 0% 50%;
-      filter: blur(40px);
-      opacity: 0;
-    }
-  }
-  .fade-enter {
-    opacity: 0;
-  }
-  .fade-enter-active {
-    animation: fade 1.5s;
-  }
-  .fade-leave-active {
-    transition: opacity 1.8s;
-    opacity: 0;
-  }
-  @keyframes fade {
-    0% {
-      opacity: 0;
-    }
-    40% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
   .mainFormat {
     display: flex; 
     width: 100%; 
@@ -344,5 +286,63 @@
   }
   .el-carousel__item:nth-child(2n+1) {
     background-color: #d3dce6;
+  }
+    .switcher {
+    padding-left: 10em;
+  }
+  .slide-enter-active {
+  animation: slide-in-blurred-left 0.25s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+  }
+  @keyframes slide-in-blurred-left {
+    0% {
+      transform: translateX(-1000px) scaleX(2.5) scaleY(0.2);
+      transform-origin: 100% 50%;
+      filter: blur(40px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0) scaleY(1) scaleX(1);
+      transform-origin: 50% 50%;
+      filter: blur(0);
+      opacity: 1;
+    }
+  }
+  .slide-leave-active {
+    animation: slide-out-blurred-right 0.25s cubic-bezier(0.755, 0.050, 0.855, 0.060) both;
+  }
+  @keyframes slide-out-blurred-right {
+    0% {
+      transform: translateX(0) scaleY(1) scaleX(1);
+      transform-origin: 50% 50%;
+      filter: blur(0);
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(1000px) scaleX(2) scaleY(0.2);
+      transform-origin: 0% 50%;
+      filter: blur(40px);
+      opacity: 0;
+    }
+  }
+  .fade-enter {
+    opacity: 0;
+  }
+  .fade-enter-active {
+    animation: fade 1.5s;
+  }
+  .fade-leave-active {
+    transition: opacity 1.8s;
+    opacity: 0;
+  }
+  @keyframes fade {
+    0% {
+      opacity: 0;
+    }
+    40% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
   }
 </style>

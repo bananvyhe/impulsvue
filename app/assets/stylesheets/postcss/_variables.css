@@ -95,9 +95,9 @@ $str: #23a5e6;
 
 @define-mixin roundbgstr {
   background-color: #fff;
-
+	background: rgba(255, 255, 255, 0.9);
   border-radius: 0.2em;
-  padding: 0.15em 0.6em 0.15em 0.8em;
+  padding: 0.1em 0.6em 0.1em 0.8em;
 }
 @define-mixin bgstring {
   background-color: $str3;
@@ -106,6 +106,6 @@ $str: #23a5e6;
   border-radius: 0.4em;
   padding: 0.3em 0.5em 0.3em 0.5em;
   color: $str5;
-   
+
 }
 
