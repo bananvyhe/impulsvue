@@ -90,7 +90,7 @@ $str2: #1c860a;
 $str3: #d4f88e;
 $str4: #279c1d;
 $str5: #35701e;
-$str: #23a5e6;
+$str6: #23a5e6;
 
 
 @define-mixin roundbgstr {
@@ -107,5 +107,11 @@ $str: #23a5e6;
   padding: 0.3em 0.5em 0.3em 0.5em;
   color: $str5;
 
+}
+@define-mixin hrline {
+  height: 2px;
+  border-radius: 0.2em;
+  
+  
 }
 

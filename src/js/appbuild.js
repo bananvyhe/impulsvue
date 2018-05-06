@@ -12,7 +12,7 @@ import Mainmenu from './mainmenu.vue'
 import Sliderapp from './sliderapp.vue'
 import Child from './child.vue'
 import Adult from './adult.vue'
-
+import News from './news.vue'
 // import Programm from './programms.vue'
 // import Employee from './employees.vue'
 Vue.use(Carousel)
@@ -47,6 +47,10 @@ document.addEventListener('DOMContentLoaded', () => {
   var head = new Vue({
     el: '#head',
     render: h => h(Head)
+  }) 
+  new Vue({
+    el: '#news',
+    render: h => h(News)
   }) 
   new Vue({
     el: '#mainmenu',

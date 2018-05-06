@@ -1,14 +1,25 @@
 <template>
-  <div class="child">
-  	<div>
-      <h5>Детям и подросткам</h5>
-      <div class="hrline scale-in-hor-right"></div>
-  	</div>
- 		<div v-for="(item, index) in items">
-      <div class="bgstring">
-        {{item.title}}        
-      </div>
- 		</div>
+  <div class="news">
+		<div class="newsHead">
+			<h5>Наши новости:</h5>
+			<div class="hrline scale-in-hor-center"></div>
+		</div>
+		
+		<div class="newsBlock">
+			<div>1</div>
+			<div>2</div>
+			<div>3</div>
+			<div>4</div>
+			<div>5</div>
+			<div>6</div>
+			<div>1</div>
+			<div>2</div>
+			<div>3</div>
+			<div>4</div>
+			<div>5</div>
+			<div>6</div>
+		</div>
+
   </div>
 </template>
 
@@ -36,39 +47,54 @@ export default {
 
 <style scoped>
 @import "../../app/assets/stylesheets/postcss/variables";
-.hrline {
-  @mixin hrline;
-  margin: 0.1em 0 0.3em -0.3em;
-  background-color: $str1;
+.news {
+
 }
+.newsHead {
+	display: flex;
+  flex-direction: column;
+  align-items: center; 
+	h5 {
+    color: $str6;
+    margin: 0 0 0em 0;
+  }
+}
+.hrline { width: 12em; 
+	@mixin hrline;
+	margin: 0.1em 0 0.3em -0.3em;
+	background-color: $str6;
+}
+
+.newsBlock { background-color: #dad;
+  lost-center: 1150px;
+  div { height: 100px; padding: 1em;
+    lost-column: 1/3 0 0;
+    @media (--only-small-screen) {
+      lost-column: 1/1 0 0;
+    }
+  }
+}
+
 .child {
 	display: flex;
   flex-direction: column;
   align-items: flex-end;
-  h5 {
-    color: $str4;
-    margin: 0 0 0em 0;
-  }
 }
 .bgstring {
   @mixin bgstring;
 }
 
-.scale-in-hor-right {
-  animation: scale-in-hor-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+.scale-in-hor-center {
+	animation: scale-in-hor-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
-@keyframes scale-in-hor-right {
+@keyframes scale-in-hor-center {
   0% {
     transform: scaleX(0);
-    transform-origin: 100% 100%;
     opacity: 1;
   }
   100% {
     transform: scaleX(1);
-    transform-origin: 100% 100%;
     opacity: 1;
   }
 }
-
- 
 </style>

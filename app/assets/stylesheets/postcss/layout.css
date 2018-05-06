@@ -142,18 +142,7 @@ body {
     lost-column: 1/1;
   }
 }
-.newsHead {
-  text-align: center;
-}
-.newsBlock { background-color: #dad;
-  lost-center: 1150px;
-  div { height: 100px; padding: 1em;
-    lost-column: 1/3 0 0;
-    @media (--only-small-screen) {
-      lost-column: 1/1 0 0;
-    }
-  }
-}
+
 .newspic {
   width:225px; 
   height:150px; 
