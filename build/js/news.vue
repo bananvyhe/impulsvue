@@ -4,23 +4,14 @@
 			<h5>Наши новости:</h5>
 			<div class="hrline scale-in-hor-center"></div>
 		</div>
-		
 		<div class="newsBlock">
-      {{news}}
-			<div>1</div>
-			<div>2</div>
-			<div>3</div>
-			<div>4</div>
-			<div>5</div>
-			<div>6</div>
-			<div>1</div>
-			<div>2</div>
-			<div>3</div>
-			<div>4</div>
-			<div>5</div>
-			<div>6</div>
+    <div v-for="(item, index) in news">
+       
+        {{item.desc}}        
+       
+    </div>
+		
 		</div>
-
   </div>
 </template>
 

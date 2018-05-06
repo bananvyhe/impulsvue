@@ -47,11 +47,14 @@ document.addEventListener('DOMContentLoaded', () => {
   var head = new Vue({
     el: '#head',
     render: h => h(Head)
-  }) 
-  new Vue({
-    el: '#news',
-    render: h => h(News)
-  }) 
+  })
+  var news = document.getElementById("news") 
+  if (news != null) {
+    new Vue({
+      el: '#news',
+      render: h => h(News)
+    }) 
+  }
   new Vue({
     el: '#mainmenu',
     render: h => h(Mainmenu)
