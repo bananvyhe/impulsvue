@@ -19,12 +19,15 @@
                   </div> 
                 </transition>
                 <transition name='fade' :duration="4000" appear> 
-                  <div 
-                    :key='item.id' 
-                    class="titlesecond" 
-                    v-show="slideAnimRestart2"
-                    @click="slideAnimRestart2 = false"><span v-html="item.caption2"></span>
-                  </div>
+ 
+                    <div 
+                      :key='item.id' 
+                      class="titlesecond" 
+                      v-show="slideAnimRestart2"
+                      @click="slideAnimRestart2 = false"><span v-html="item.caption2"></span>
+                    </div>                    
+               
+
                 </transition>
             </div>
             <br>
@@ -191,7 +194,7 @@
     opacity: 0;
   }
   .fade-enter-active {
-    animation: fade 3.2s;
+    animation: fade 1.5s;
   }
   .fade-leave-active {
     transition: opacity 1.8s;
@@ -227,10 +230,12 @@
 
   }
   .titlefirst {
+    margin-bottom: 0.1em;
     h3 {
-       
+      font-weight: bold;
+      margin: 0 0.1em 0.2em 0;
       opacity: 0.75;
-      text-align: center;
+      text-align: right;
       color: #000;
       text-shadow: 
         -0   -1px 0   #FFFFFF,
@@ -251,10 +256,17 @@
          1px  1px 0   #FFFFFF;
       }
   }
+    .bgcap2 {
+  
+    }
   .titlesecond {
-    padding:0 0.5em 0 0.5em;
-    background: rgba(255,255,255,0.6);
+    @mixin roundbgstr;
+    
 
+
+  }
+  .sliderapp { overflow: hidden;
+    border-radius: 0.6em;
   }
   .sliderText {
     display: flex;

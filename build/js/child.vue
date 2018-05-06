@@ -1,10 +1,13 @@
 <template>
   <div class="child">
   	<div class="ubuntu">
-  		Детям и подросткам
+      <h5>Детям и подросткам</h5>
   	</div>
  		<div v-for="(item, index) in items">
- 			{{item.title}}
+      <div class="bgstring">
+        {{item.title}}        
+      </div>
+
  		</div>
   </div>
 </template>
@@ -32,10 +35,15 @@ export default {
 </script>
 
 <style scoped>
+@import "../../app/assets/stylesheets/postcss/variables";
 .child {
 	display: flex;
   flex-direction: column;
   align-items: flex-end;
+}
+.bgstring {
+  
+  @mixin bgstring;
 }
  
 </style>

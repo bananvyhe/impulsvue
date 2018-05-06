@@ -304,7 +304,7 @@
   
 	background-image: url(../../app/assets/images/grass.jpg);
 	border-bottom: 2px solid #fff;
-  filter: saturate(70%);
+  filter: saturate(90%);
 }
 .greedy-nav {
   height: 2.4em;
