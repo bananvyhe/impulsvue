@@ -104,14 +104,12 @@ $str6: #23a5e6;
 	margin: 0.1em 0 0.1em 0;
   line-height: 1.2; 
   border-radius: 0.4em;
-  padding: 0.3em 0.5em 0.3em 0.5em;
+  padding: 0.2em 0.5em 0.2em 0.5em;
   color: $str5;
 
 }
 @define-mixin hrline {
   height: 2px;
   border-radius: 0.2em;
-  
-  
 }
 

@@ -8,11 +8,8 @@
       <div v-for="(item, index) in news">
         <div class="newsitem">
           <img :src="item.newspic.thumb.url">
-           
- 
-            <span>{{item.created_at}}</span>
+            <span>{{item.created_at.substr(0,10).split("-").reverse().join(".")}}</span>
             <span v-html="item.desc"></span>  
-          
         </div>
       </div>
 		</div>

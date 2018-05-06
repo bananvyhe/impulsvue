@@ -52,6 +52,10 @@ export default {
 }
 .bgstring {
   @mixin bgstring;
+  &:hover {
+    color: #fff;
+    background-color: $str4;
+  }
 }
 
 .scale-in-hor-right {
