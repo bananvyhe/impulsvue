@@ -5,12 +5,16 @@
 			<div class="hrline scale-in-hor-center"></div>
 		</div>
 		<div class="newsBlock">
-    <div v-for="(item, index) in news">
-       
-        {{item.desc}}        
-       
-    </div>
-		
+      <div v-for="(item, index) in news">
+        <div class="newsitem">
+          <img :src="item.newspic.thumb.url">
+           
+ 
+            <span>{{item.created_at}}</span>
+            <span v-html="item.desc"></span>  
+          
+        </div>
+      </div>
 		</div>
   </div>
 </template>
@@ -38,13 +42,24 @@ export default {
 
 <style scoped>
 @import "../../app/assets/stylesheets/postcss/variables";
-.news {
-
+.newsitem {
+  img {
+    margin: 0 1em 0 0;
+    float: left;
+    padding: 0 0 1em 0;
+  }
+}
+.newspic {
+  float: left; 
+}
+.newsdesc {
+  lost-column: 1/2 ;
 }
 .newsHead {
 	display: flex;
   flex-direction: column;
   align-items: center; 
+  padding: 0.5em;
 	h5 {
     color: $str6;
     margin: 0 0 0em 0;
@@ -56,10 +71,10 @@ export default {
 	background-color: $str6;
 }
 
-.newsBlock { background-color: #dad;
+.newsBlock {
   lost-center: 1150px;
-  div { height: 100px; padding: 1em;
-    lost-column: 1/3 0 0;
+  div {
+    lost-column: 1/1 0 1em;
     @media (--only-small-screen) {
       lost-column: 1/1 0 0;
     }
