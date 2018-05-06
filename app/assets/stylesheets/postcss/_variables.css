@@ -85,5 +85,9 @@ $lcenter: 1366px;
 
 @custom-media --only-big-screen (width >= 1920px);
 
-
+@define-mixin roundbgstr {
+  background: rgba(255,255,255,0.8);
+  border-radius: 0.5em;
+  padding: 0.15em 0.6em 0.15em 0.6em;
+}
 

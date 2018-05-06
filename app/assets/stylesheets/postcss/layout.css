@@ -86,14 +86,13 @@ body {
   background-repeat: no-repeat;
   background-position: center 0;
 }
+
 .railsblock {
   z-index: 9999;
   margin: 0.5em;
   position: absolute;
-  background: rgba(255,255,255,0.8);
   right:0;
-  padding: 0.15em 0.6em 0.15em 0.6em;
-  border-radius: 0.6em;
+  @mixin roundbgstr;
 }
 .deleteAction {
   color: blue;

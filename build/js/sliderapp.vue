@@ -8,14 +8,14 @@
       v-bind="{height: visota.value + 'px', 
       'indicator-position': hider}">
       <el-carousel-item  class="sliderText" v-for="(item, index) in sliders" :key='index'>
-          <div class="mainFormat" :style="{backgroundImage: 'url(' + item.slide.url}">
+          <div class="mainFormat" :style="{backgroundImage: 'url(' + item.slide.thumb.url}">
             <div class ="infoBlock">
                 <transition name='slide' appear>
                   <div 
                     :key='index' 
                     class="titlefirst" 
                     v-show="slideAnimRestart"
-                    @click="slideAnimRestart = false"><span v-html="item.caption1"></span>
+                    @click="slideAnimRestart = false"><h3><span v-html="item.caption1"></span></h3>
                   </div> 
                 </transition>
                 <transition name='fade' :duration="4000" appear> 
@@ -214,12 +214,47 @@
     height: 100%;
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
   }
   .infoBlock {
+    padding-left: 7%;
+    padding-right: 7%;
     display: flex;
     flex-direction: column;
-    width: 50%;
+     
     align-self: center;
+
+
+  }
+  .titlefirst {
+    h3 {
+       
+      opacity: 0.75;
+      text-align: center;
+      color: #000;
+      text-shadow: 
+        -0   -1px 0   #FFFFFF,
+         0   -1px 0   #FFFFFF,
+        -0    1px 0   #FFFFFF,
+         0    1px 0   #FFFFFF,
+        -1px -0   0   #FFFFFF,
+         1px -0   0   #FFFFFF,
+        -1px  0   0   #FFFFFF,
+         1px  0   0   #FFFFFF,
+        -1px -1px 0   #FFFFFF,
+         1px -1px 0   #FFFFFF,
+        -1px  1px 0   #FFFFFF,
+         1px  1px 0   #FFFFFF,
+        -1px -1px 0   #FFFFFF,
+         1px -1px 0   #FFFFFF,
+        -1px  1px 0   #FFFFFF,
+         1px  1px 0   #FFFFFF;
+      }
+  }
+  .titlesecond {
+    padding:0 0.5em 0 0.5em;
+    background: rgba(255,255,255,0.6);
+
   }
   .sliderText {
     display: flex;
@@ -291,13 +326,7 @@
          1px  1px 0   #FFFFFF;
     }
   }   
-  .el-carousel__item h3 {
-    color: #475669;
-    font-size: 18px;
-    opacity: 0.75;
-    line-height: 2em;
-    margin: 0;
-  }
+ 
   .el-carousel__item:nth-child(2n) {
     background-color: #99a9bf;
   }
