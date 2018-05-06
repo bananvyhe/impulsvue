@@ -6,6 +6,7 @@
 		</div>
 		
 		<div class="newsBlock">
+      {{news}}
 			<div>1</div>
 			<div>2</div>
 			<div>3</div>
@@ -24,24 +25,23 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
   data: function () {
     return {
-    	items: [
-        { title: 'Детский психолог', url: '#'},
-        { title: 'Нейропсихологическая диагностика и коррекция', url: '#'},
-        { title: 'Группы развития для детей (от 1 года до 7 лет)', url: '#'},
-        { title: 'Развитие памяти и внимания (7-10 лет)', url: '#'},
-        { title: 'Нейрограмматика (коррекция чтения и письма) (7-10 лет)', url: '#'},
-        { title: 'Нейроматематика (7-10 лет)', url: '#'},
-        { title: 'Нейробика (11-13 лет)', url: '#'},
-        { title: 'Тренинги для детей и подростков (7-14 лет)', url: '#'},
-        { title: 'Психодиагностика', url: '#'},
-        { title: 'Профориентирование', url: '#'},
-        { title: 'Логопед-дефектолог', url: '#'}     
-      ] 
+      news: []
     }
-  }
+  },
+  created() {
+    axios.get('/news')
+    .then(response => {
+      this.news = response.data
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    }); 
+  },
 }
 </script>
 
