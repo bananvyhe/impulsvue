@@ -55,9 +55,7 @@ export default {
   }
 }
 </script>
-
 <style scoped>
-
 @import "../../app/assets/stylesheets/postcss/variables";
 .hrline {
   @mixin hrline;

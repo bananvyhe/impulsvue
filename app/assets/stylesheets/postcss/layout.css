@@ -86,6 +86,9 @@ body {
   background-repeat: no-repeat;
   background-position: center 0;
 }
+.head {
+  adjust-font-size: fs small;
+}
 .el-input {
   margin-bottom: 0.6em;
 }
