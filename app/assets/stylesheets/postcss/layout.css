@@ -89,6 +89,9 @@ body {
 .el-input {
   margin-bottom: 0.6em;
 }
+.el-textarea {
+  margin-bottom: 0.6em;
+}
 .railsblock {
   z-index: 9999;
   margin: 0.5em;

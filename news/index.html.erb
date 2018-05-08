@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Новости</h1>
+<div class="newsBlock">
+  
+</div>
+
+
+
+<table>
+  <tbody>
+    <% @news.each do |news| %>
+      <tr data-item_id="<%= news.id %>">
+        <td class="newspic" style="background-image: url('<%= news.newspic.thumb.url %>');">
+        </td>
+        <td>
+          <h5><%= news.created_at %></h5>
+          <%= news.desc.html_safe %>
+        </td>
+        <td style="vertical-align: middle;"><%= link_to 'Редактировать', edit_news_path(news) %></td>
+        <td style="vertical-align: middle;"><span class="deleteAction">Удалить</span></td>
+      </tr>
+      <tr>
+        <td style="height: 1em;"></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table> 
+
+<%= link_to 'Добавить новость', new_news_path, class: "button" %>

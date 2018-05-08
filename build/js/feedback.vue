@@ -1,7 +1,6 @@
 <template>
   <div class="feedback">
   	<div><h4>Отправьте нам сообщение:</h4></div>
-  	<div class="hrline scale-in-hor-left"></div>
   	<el-input placeholder="Как к вам обращаться?" v-model="name"></el-input>
   	<el-input placeholder="Контактная информация (тел, е-майл, ...)" v-model="contact"></el-input>
   	<el-input
@@ -10,7 +9,7 @@
 		  placeholder="Введите сообщение"
 		  v-model="message">
 		</el-input>
-		<el-button type="success" plain>Success</el-button>
+		<el-button type="success" plain>Отправить</el-button>
   </div>
 </template>
 
@@ -30,7 +29,7 @@ export default {
 @import "../../app/assets/stylesheets/postcss/variables";
 h4 {
   color: $str4;
-  margin: 0 0 0 0;
+  margin: 0 0 0.5em 0;
 }
 .hrline { 
 	width: 16em; 
