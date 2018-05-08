@@ -1,7 +1,7 @@
 <template>
   <div class="child">
   	<div>
-      <h5>Детям и подросткам</h5>
+      <h4>Детям и подросткам</h4>
       <div class="hrline scale-in-hor-right"></div>
   	</div>
  		<div v-for="(item, index) in items">
@@ -38,16 +38,16 @@ export default {
 @import "../../app/assets/stylesheets/postcss/variables";
 .hrline {
   @mixin hrline;
-  margin: 0.1em 0 0.3em -0.3em;
+  margin: 0.1em 0 0.5em -1em;
   background-color: $str1;
-}
+} 
 .child {
 	display: flex;
   flex-direction: column;
   align-items: flex-end;
-  h5 {
+  h4 {
     color: $str4;
-    margin: 0 0 0em 0;
+    margin: 0 0 0 0;
   }
 }
 .bgstring {
@@ -58,21 +58,6 @@ export default {
   }
 }
 
-.scale-in-hor-right {
-  animation: scale-in-hor-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-}
-@keyframes scale-in-hor-right {
-  0% {
-    transform: scaleX(0);
-    transform-origin: 100% 100%;
-    opacity: 1;
-  }
-  100% {
-    transform: scaleX(1);
-    transform-origin: 100% 100%;
-    opacity: 1;
-  }
-}
 
  
 </style>

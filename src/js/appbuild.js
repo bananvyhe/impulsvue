@@ -1,5 +1,5 @@
 // import TurbolinksAdapter from 'vue-turbolinks';
-import { Carousel, CarouselItem } from 'element-ui'
+import { Carousel, CarouselItem, Input, Button } from 'element-ui'
 
 import axios from 'axios'
 import Vue from 'vue/dist/vue.esm'
@@ -13,11 +13,15 @@ import Sliderapp from './sliderapp.vue'
 import Child from './child.vue'
 import Adult from './adult.vue'
 import News from './news.vue'
+import Feedback from './feedback.vue'
 // import Programm from './programms.vue'
 // import Employee from './employees.vue'
 Vue.use(Carousel)
 Vue.use(CarouselItem) 
+Vue.use(Input) 
+Vue.use(Button) 
 Vue.use(Buefy)
+
 // Vue.use(TurbolinksAdapter)
 document.addEventListener('DOMContentLoaded', () => {
   Vue.directive('scroll', {
@@ -53,6 +57,13 @@ document.addEventListener('DOMContentLoaded', () => {
     new Vue({
       el: '#news',
       render: h => h(News)
+    }) 
+  }
+  var feedback = document.getElementById("feedback") 
+  if (feedback != null) {
+    new Vue({
+      el: '#feedback',
+      render: h => h(Feedback)
     }) 
   }
   new Vue({

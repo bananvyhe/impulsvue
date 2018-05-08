@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-<h5>Контакты</h5>
+<h4>Контакты</h4>
 <% @contacts.each do |contact| %>
 <div class="contacts">
   <div class="map">
@@ -38,8 +38,8 @@
 </div>
 
 <div>
-  <%= link_to 'Редактировать', edit_contact_path(contact) %>
+  <%= link_to 'Редактировать', edit_contact_path(contact), class: "button is-info is-outlined" %>
 </div>
 
 <% end %>
-<div class="feedback">1</div>
+<div id="feedback"></div>

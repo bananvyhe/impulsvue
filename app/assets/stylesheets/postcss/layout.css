@@ -36,9 +36,9 @@ End Hamster setup*/
 @paste full;
 @media (--only-small-screen) {
   @ihamster {
-    --font-size: 18px;
+    --font-size: 16px;
     --line-height: 1.3;
-    --to-font-size: 16px;
+    --to-font-size: 14px;
     --to-line-height: 1.2;
     --viewport: 320px 800px;
     --unit: vw;
@@ -48,9 +48,9 @@ End Hamster setup*/
 }
 @media (--only-medium-screen) {
   @ihamster {
-    --font-size: 16px;
+    --font-size: 14px;
     --line-height: 1.2;
-    --to-font-size: 18px;
+    --to-font-size: 16px;
     --to-line-height: 1.3;
     --viewport: 800px 1919px;
     --unit: vw;
@@ -60,9 +60,9 @@ End Hamster setup*/
 }
 @media (--only-big-screen){
   @ihamster {
-    --font-size: 18px;
+    --font-size: 16px;
     --line-height: 1.3; 
-    --to-font-size: 22px;
+    --to-font-size: 18px;
     --to-line-height: 1.45;
     --viewport: 1920px 3840px;
     --unit: vw;
@@ -86,7 +86,9 @@ body {
   background-repeat: no-repeat;
   background-position: center 0;
 }
-
+.el-input {
+  margin-bottom: 0.6em;
+}
 .railsblock {
   z-index: 9999;
   margin: 0.5em;
@@ -117,6 +119,7 @@ body {
   lost-center: $lcenter;
   position:relative; 
 }
+
 #leftsheet {
   margin-top: 1em;
 	lost-column: 2/7 3 1em ;
@@ -160,6 +163,7 @@ body {
 }
 .contacts {
   display: flex;
+  padding-bottom: 0.3em;
   lost-utility: clearfix; 
   div { 
     lost-column: 1/2 0 1em;
@@ -186,8 +190,6 @@ body {
   div {
     lost-row: 1/2 0 1em;
   }
-}
-.feedback {background-color: #ada; 
 }
 #falign {
  position: relative;

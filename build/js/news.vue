@@ -1,18 +1,17 @@
 <template>
   <div class="news">
 		<div class="newsHead">
-			<h5>Наши новости:</h5>
+			<h4>Наши новости:</h4>
 			<div class="hrline scale-in-hor-center"></div>
 		</div>
 		<div class="newsBlock">
-      <div v-for="(item, index) in news">
-        <div class="newsitem">
+      <div v-for="(item, index) in news" class="newsitem">
           <img :src="item.newspic.thumb.url">
-            <span>{{item.created_at.substr(0,10).split("-").reverse().join(".")}}</span>
-            <span v-html="item.desc"></span>  
-        </div>
+          <span>{{item.created_at.substr(0,10).split("-").reverse().join(".")}}</span>
+          <span v-html="item.desc"></span>  
       </div>
 		</div>
+    <el-button type="success" plain onclick="location.href = '/news/'">Редактор новостей</el-button>
   </div>
 </template>
 
@@ -39,25 +38,27 @@ export default {
 
 <style scoped>
 @import "../../app/assets/stylesheets/postcss/variables";
-.newsitem {
+.newsBlock {
+  lost-center: 1150px;
+} 
+.newsitem { 
+  lost-column: 1/2;
+  margin-bottom: 1em; 
+  @media (--only-small-screen) {
+    lost-column: 1/1 0 0;
+  }
   img {
+    border-radius: 0.2em;
     margin: 0 1em 0 0;
     float: left;
-    padding: 0 0 1em 0;
   }
-}
-.newspic {
-  float: left; 
-}
-.newsdesc {
-  lost-column: 1/2 ;
 }
 .newsHead {
 	display: flex;
   flex-direction: column;
   align-items: center; 
-  padding: 0.5em;
-	h5 {
+  padding: 1em 0 1em 0;
+	h4 {
     color: $str6;
     margin: 0 0 0em 0;
   }
@@ -67,17 +68,6 @@ export default {
 	margin: 0.1em 0 0.3em -0.3em;
 	background-color: $str6;
 }
-
-.newsBlock {
-  lost-center: 1150px;
-  div {
-    lost-column: 1/1 0 1em;
-    @media (--only-small-screen) {
-      lost-column: 1/1 0 0;
-    }
-  }
-}
-
 .child {
 	display: flex;
   flex-direction: column;

@@ -47,12 +47,10 @@ strong {
 }
 
 p { 
-  margin-top: 0;
   adjust-font-size: fs b;
   display: block;
   text-indent: 1.8em;
- 
-  margin-top: spacing(0.5);
+  margin-top: spacing(0.2);
   margin-bottom: spacing(0.5);
 }
 img {

@@ -11,6 +11,7 @@
     </b-table>
     <h4>Редактор:</h4>
     <div class="inputShort">
+      <h5>Название категории:</h5>
       <b-input  placeholder="Название категории" type="text" v-model="team.name" />
     </div>
 
