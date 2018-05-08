@@ -44,6 +44,38 @@ var fonts = require('postcss-font-magician')({
         }
       }
     },
+    'PTSerif': {
+      variants: {
+        regular: {
+           400: {
+              url: {
+                 woff2: 'fonts/PT_Serif-Web-Regular.woff2'
+              }
+           }
+        },
+        italic: {
+           400: {
+              url: {
+                 woff2: 'fonts/PT_Serif-Web-Italic.woff2'
+              }
+           }
+        },
+        bold: {
+          700: {
+            url: {
+               woff2: 'fonts/PT_Serif-Web-Bold.woff2'
+            }
+          }
+        },
+        bolditalic: {
+          700: {
+            url: {
+               woff2: 'fonts/PT_Serif-Web-BoldItalic.woff2'
+            }
+          }
+        }
+      }
+    },
     'UbuntuR': {
       variants: {
         normal: {
@@ -196,7 +228,7 @@ var path = {
 gulp.task('scripts', function() {
 
   return streamqueue({ objectMode: true },
-      gulp.src("src/js/first.js").pipe(babel()),
+    gulp.src("src/js/first.js").pipe(babel()),
     gulp.src("src/js/appbuild.js").pipe(babel()),
     gulp.src("src/js/anotherscripts.js")
   )

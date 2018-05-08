@@ -301,7 +301,6 @@
 @import "../../app/assets/stylesheets/postcss/variables";
 .grass {
 	height: 48px;
-  
 	background-image: url(../../app/assets/images/grass.jpg);
 	border-bottom: 2px solid #fff;
   filter: saturate(90%);
@@ -430,7 +429,7 @@
       display: table-cell;
       border-left: 1px solid $color-1;
       line-height: 0.2em;
-      font-size: 0.8em;
+      font-size: 1em;
     }
   }
   .hidden-links {
@@ -451,7 +450,7 @@
       background-color: $color-5;
       padding: 0px;
       margin: 2px;
-      font-size: 0.8em;
+      font-size: 1em;
     }
   }
   .visible-links li:first-child {

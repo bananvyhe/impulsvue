@@ -59,7 +59,7 @@ export default {
 @import "../../app/assets/stylesheets/postcss/variables";
 .hrline {
   @mixin hrline;
-  margin: 0.1em 0 0.5em -1em;
+  margin: 0.2em 0 0.5em -0.2em;
   background-color: $str1;
 } 
 .child {
