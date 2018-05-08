@@ -56,31 +56,25 @@ export default {
     lost-column: 1/3;
   }
 }
-.second {
-  display: flex;
+.third, .second {
   lost-column: 1/4 4 1em;
-  justify-content: flex-end;
-  text-align: right;
-  align-self: center;
-  margin-top: 5em;
-  padding: 0.5em;
-  @media (--only-small-screen) {
-    lost-column: 1/3;
-    margin-top: 2em;
-    padding: 0.2em;
-  }
-}
-.third {
-  z-index: 10;
   display: flex;
   align-self: center;
-  lost-column: 1/4 4 1em;
   line-height: 1.2;
   @media (--only-small-screen) {
     lost-column: 1/3;
     margin-top: 2em;
     padding: 0.2em;
   }
+}
+.second {
+  justify-content: flex-end;
+  text-align: right;
+  margin-top: 5em;
+  padding: 0.5em;
+}
+.third {
+  z-index: 10;
   margin-top: 5em;
   padding: 0.5em;
 }
