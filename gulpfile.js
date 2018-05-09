@@ -25,7 +25,39 @@ var fonts = require('postcss-font-magician')({
         }
       }
     },
- 
+    'Lora': {
+      variants: {
+        regular: {
+           400: {
+              url: {
+                 woff2: 'fonts/Lora-Regular.woff2'
+              }
+           }
+        },
+        italic: {
+           400: {
+              url: {
+                 woff2: 'fonts/Lora-Italic.woff2'
+              }
+           }
+        },
+        bold: {
+          700: {
+            url: {
+               woff2: 'fonts/Lora-Bold.woff2'
+            }
+          }
+        },
+        bitalic: {
+          800: {
+            url: {
+               woff2: 'fonts/Lora-BoldItalic.woff2'
+            }
+          }
+        }
+
+      }
+    }, 
     'PTSansNar': {
       variants: {
         regular: {

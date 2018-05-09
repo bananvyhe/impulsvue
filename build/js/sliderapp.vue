@@ -174,6 +174,7 @@
   .titlefirst {
     margin-bottom: 0.1em;
     h3 {
+      font-size: 1.5em;
       font-weight: bold;
       margin: 0 0.1em 0.2em 0;
       opacity: 0.75;
