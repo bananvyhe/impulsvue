@@ -41,7 +41,7 @@ h4 {
 h5 {
   adjust-font-size: fs medium;
   margin-top: spacing(0.5);
-  margin-bottom: spacing(0.2);
+  margin-bottom: spacing(0.5);
  
 }
 
@@ -109,16 +109,11 @@ td:first-of-type {
   height: 2.7em;
 }
 
-.input {
-  padding-left: 0.8em;
-  margin: 0.25em;
-}
+ 
 .inputShort {
   max-width: 500px;
 }
-.button {
- margin: 0.5em 0 0.5em 0;
-} 
+ 
 .delMessage {
   text-align: center;
   display: flex;
