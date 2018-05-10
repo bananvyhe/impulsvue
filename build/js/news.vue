@@ -1,5 +1,11 @@
 <template>
   <div class="news">
+ <el-pagination
+  :page-size="20"
+  :pager-count="11"
+  layout="prev, pager, next"
+  :total="1000">
+</el-pagination>
 		<div class="newsHead">
 			<h4>Наши новости:</h4>
 			<div class="hrline scale-in-hor-center"></div>
@@ -20,18 +26,31 @@ import axios from 'axios'
 export default {
   data: function () {
     return {
-      news: []
+      news: [],
+      totalNews: 0,
+      perPage: 6,
+      currentPage: 1
+    }
+  },
+  methods: {
+    fetchNews: function(page) {
+      axios.get('/news', {
+        params: {
+          data: this.perPage
+
+        }
+      })
+      .then(response => {
+        this.news = response.data
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      }); 
     }
   },
   created() {
-    axios.get('/news')
-    .then(response => {
-      this.news = response.data
-      console.log(response);
-    })
-    .catch(function (error) {
-      console.log(error);
-    }); 
+    this.fetchNews(this.currentPage)
   },
 }
 </script>

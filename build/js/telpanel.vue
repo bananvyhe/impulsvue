@@ -1,18 +1,20 @@
 <template>
   <div id="telpanel">
     <h5>{{team.name}}</h5>
-    <b-table 
-      :striped = "true"
-      :narrowed = "true"
-      :data = "team.players_attributes" 
-      :columns = "columns">
-      <b-table-column field="name" label="name"   >
-      </b-table-column>
-    </b-table>
+
+    <el-table 
+      :data = "team.players_attributes" style="width: 100%"
+      >
+      <el-table-column prop="name" label="Наименование услуги"></el-table-column>
+      <el-table-column prop="graph" label="График занятий"></el-table-column>
+      <el-table-column prop="group" label="Стоимость групповых занятий (за мес)"></el-table-column>
+      <el-table-column prop="ind" label="Стоимость индивидуального занятия"></el-table-column>
+    </el-table>
+
     <h4>Редактор:</h4>
     <div class="inputShort">
       <h5>Название категории:</h5>
-      <b-input  placeholder="Название категории" type="text" v-model="team.name" />
+      <el-input  placeholder="Название категории" type="text" v-model="team.name" /></el-input>
     </div>
 
     <div v-for="(player, index) in team.players_attributes">
@@ -20,31 +22,34 @@
        
       </div>
       <div v-else>
-        <b-field grouped >
-          <b-field expanded>
-            <b-input  placeholder="Наименование услуги" v-model="player.name" ></b-input>
-          </b-field>
-          <b-field expanded><b-input  placeholder="График занятий" v-model="player.graph" ></b-input></b-field>
-          <b-field expanded><b-input  placeholder="Стоимоять групповых" v-model="player.group"></b-input></b-field>
-          <b-field expanded><b-input  placeholder="Стоимость индивидуального" v-model="player.ind"></b-input></b-field>
-          <b-field expanded><button class="button is-danger is-inverted" v-on:click="removePlayer(index)">Удалить</button></b-field>
-        </b-field>
+        <el-form>
+          <el-form-item>
+            <el-col :span="5">
+              <el-input v-model="player.name" placeholder="Наименование услуги"></el-input>
+            </el-col>
+            <el-col :span="5">
+              <el-input v-model="player.graph" placeholder="График занятий"></el-input>
+            </el-col>
+            <el-col :span="5">
+              <el-input v-model="player.group" placeholder="Стоимость групповых занятий (за мес)"></el-input>    
+            </el-col>
+            <el-col :span="5">
+              <el-input v-model="player.ind" placeholder="Стоимость индивидуального занятия"></el-input> 
+            </el-col>
+            <el-col :span="3">
+              <el-button   type="danger" plain v-on:click="removePlayer(index)">Удалить
+              </el-button> 
+            </el-col>
+          </el-form-item>
+        </el-form>
       </div>
     </div>
-    <a  v-on:click="addPlayer" class="button is-info is-outlined">
-    <span class="icon is-small">
-      <i class="fas fa-check"></i>
-    </span>
-    <span>Добавить позицию</span>
-    </a>
-     
-    <a  v-on:click="saveTeam" class="button is-success is-outlined">
-    <span class="icon is-small">
-      <i class="fas fa-check"></i>
-    </span>
-    <span>Сохранить</span>
-    </a>
- 
+    <el-button v-on:click="addPlayer" type="primary" plain>
+      Добавить позицию
+    </el-button> 
+    <el-button v-on:click="saveTeam" type="success" plain>
+      Сохранить
+    </el-button> 
   </div>
 </template>
 <script>
@@ -68,27 +73,6 @@ export default {
       team: team, 
       postBody: '',
       errors: [],
-      columns: [
-        {
-          field: 'name',
-          label: 'Наименование услуги'
-        },
-        {
-          field: 'graph',
-          label: 'График занятий',
-          centered: true
-        },
-        {
-          field: 'group',
-          label: 'Стоимость групповых занятий (цена за месяц)',
-          centered: true
-            
-        },
-        {
-          field: 'ind',
-          label: 'Стоимость индивидуального занятия'
-        }
-      ]
     }
   },
   created() {

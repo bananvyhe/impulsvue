@@ -1,9 +1,9 @@
 // import TurbolinksAdapter from 'vue-turbolinks';
-import { Carousel, CarouselItem, Input, Button } from 'element-ui'
+import { Carousel, CarouselItem, Input, Button, Table, TableColumn, Col, Form, FormItem, Pagination } from 'element-ui'
 
 import axios from 'axios'
 import Vue from 'vue/dist/vue.esm'
-import Buefy from 'buefy'
+ 
 
 import Footer from './footer.vue'
 import App from './telpanel.vue' 
@@ -20,7 +20,13 @@ Vue.use(Carousel)
 Vue.use(CarouselItem) 
 Vue.use(Input) 
 Vue.use(Button) 
-Vue.use(Buefy)
+Vue.use(Pagination)
+Vue.use(Table)
+Vue.use(TableColumn)
+Vue.use(Col) 
+Vue.use(Form)
+Vue.use(FormItem)
+ 
 
 // Vue.use(TurbolinksAdapter)
 document.addEventListener('DOMContentLoaded', () => {
