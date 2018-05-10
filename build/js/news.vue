@@ -1,11 +1,12 @@
 <template>
   <div class="news">
- <el-pagination
-  :page-size="20"
-  :pager-count="11"
+ <el-pagination  @current-change="handleCurrentChange"
+  :page-size="perPage" 
+  :current-page="currentPage"
   layout="prev, pager, next"
-  :total="1000">
+  :total="20">
 </el-pagination>
+ 
 		<div class="newsHead">
 			<h4>Наши новости:</h4>
 			<div class="hrline scale-in-hor-center"></div>
@@ -35,22 +36,29 @@ export default {
   methods: {
     fetchNews: function(page) {
       axios.get('/news', {
-        params: {
-          data: this.perPage
+      params: {
+        per_page: this.perPage,
+        current_page: this.currentPage
+      }
+    })
+      .then((data) => {
+        this.news = data.data
 
-        }
-      })
-      .then(response => {
-        this.news = response.data
-        console.log(response);
+        console.log(data);  
+         
+         
       })
       .catch(function (error) {
         console.log(error);
       }); 
+    },
+    handleCurrentChange(val) {
+      this.currentPage = val;
+      console.log(`current page: ${val}`);
     }
   },
   created() {
-    this.fetchNews(this.currentPage)
+    this.fetchNews()
   },
 }
 </script>
