@@ -4,9 +4,9 @@
  
 h1, h2, h3, h4, h5 {
   color: #555;
-  font-family: "Lora";
+  font-family: "UbuntuR";
   font-style: bold;
-  font-weight: 700;
+  font-weight: 400;
 }
 h1 {
   @extend %strong;

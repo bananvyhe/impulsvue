@@ -1,23 +1,25 @@
 <template>
   <div class="news">
- <el-pagination  @current-change="handleCurrentChange"
-  :page-size="perPage" 
-  :current-page="currentPage"
-  layout="prev, pager, next"
-  :total="20">
-</el-pagination>
- 
-		<div class="newsHead">
+ 	<div class="newsHead">
 			<h4>Наши новости:</h4>
 			<div class="hrline scale-in-hor-center"></div>
 		</div>
 		<div class="newsBlock">
-      <div v-for="(item, index) in news" class="newsitem">
+      <div v-for="(item, index) in viewedNews" class="newsitem">
           <img :src="item.newspic.thumb.url">
           <span>{{item.created_at.substr(0,10).split("-").reverse().join(".")}}</span>
           <span v-html="item.desc"></span>  
       </div>
 		</div>
+    <div class="pag">
+      <el-pagination  
+        @current-change="handleCurrentChange"
+        :page-size="perPage" 
+        :current-page="currentPage"
+        layout="prev, pager, next"
+        :total="totalNews">
+      </el-pagination>
+    </div>
     <el-button type="success" plain onclick="location.href = '/news/'">Редактор новостей</el-button>
   </div>
 </template>
@@ -29,32 +31,42 @@ export default {
     return {
       news: [],
       totalNews: 0,
-      perPage: 6,
-      currentPage: 1
+      perPage: 4,
+      currentPage: 1,
+      viewedNews: ''
     }
   },
   methods: {
     fetchNews: function(page) {
       axios.get('/news', {
-      params: {
-        per_page: this.perPage,
-        current_page: this.currentPage
-      }
-    })
+        params: {
+          per_page: this.perPage,
+          current_page: this.currentPage
+        }
+      })
       .then((data) => {
         this.news = data.data
-
-        console.log(data);  
-         
-         
+        this.totalNews = this.news.length*1
+        if (this.currentPage>1) {
+          var start = this.perPage*this.currentPage-this.perPage
+        }else{
+          var start = 0
+        }
+        this.viewedNews = this.news.slice(start, this.perPage)
       })
       .catch(function (error) {
         console.log(error);
       }); 
+       this.totalNews = this.news.length*1
     },
     handleCurrentChange(val) {
       this.currentPage = val;
-      console.log(`current page: ${val}`);
+      if (this.currentPage>1) {
+        var start = this.perPage*val-this.perPage
+      }else{
+        var start = 0
+      }
+      this.viewedNews = this.news.slice(start, this.perPage*this.currentPage)
     }
   },
   created() {
@@ -65,6 +77,10 @@ export default {
 
 <style scoped>
 @import "../../app/assets/stylesheets/postcss/variables";
+.pag {
+  display: flex;
+  justify-content: center;
+}
 .newsBlock {
   lost-center: 1150px;
 } 
@@ -84,7 +100,7 @@ export default {
 	display: flex;
   flex-direction: column;
   align-items: center; 
-  padding: 1em 0 1em 0;
+  padding: 1em 0 2em 0;
 	h4 {
     color: $str6;
     margin: 0 0 0em 0;

@@ -4,11 +4,10 @@ class NewsController < ApplicationController
   # GET /news
   # GET /news.json
   def index
-    # @news = News.all.order(id: :desc)
-    @news = News.limit(params[:per_page])
-    @total = News.all 
- 
-
+    @news = News.all.order(created_at: :desc)
+    # @news = News.limit(params[:per_page])
+    # if params[:current_page] == "activated"
+    # @total = News.all 
   end
 
   # GET /news/1
@@ -73,6 +72,6 @@ class NewsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def news_params
-      params.require(:news).permit(:image, :desc, :newspic, :newspic_cache, :remove_newspic, :crop_x, :crop_y, :crop_w, :crop_h, :per_page)
+      params.require(:news).permit(:image, :desc, :newspic, :newspic_cache, :remove_newspic, :crop_x, :crop_y, :crop_w, :crop_h, :per_page, :current_page)
     end
 end
