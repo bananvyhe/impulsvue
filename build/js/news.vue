@@ -5,11 +5,13 @@
 			<div class="hrline scale-in-hor-center"></div>
 		</div>
 		<div class="newsBlock">
-      <div v-for="(item, index) in viewedNews" class="newsitem">
+      <transition-group name="fade" mode="out-in" appear>
+      <div v-for="(item, index) in viewedNews" class="newsitem" v-bind:key="item.created_at">
           <img :src="item.newspic.thumb.url">
           <span>{{item.created_at.substr(0,10).split("-").reverse().join(".")}}</span>
           <span v-html="item.desc"></span>  
-      </div>
+      </div>        
+      </transition-group>
 		</div>
     <div class="pag">
       <el-pagination  
@@ -57,7 +59,7 @@ export default {
       .catch(function (error) {
         console.log(error);
       }); 
-       this.totalNews = this.news.length*1
+      this.totalNews = this.news.length*1
     },
     handleCurrentChange(val) {
       this.currentPage = val;
@@ -132,5 +134,14 @@ export default {
     transform: scaleX(1);
     opacity: 1;
   }
+}
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 1.5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active до версии 2.1.8 */ {
+  opacity: 0;
+} 
+.fade-move {
+  transition: transform 1s;
 }
 </style>
