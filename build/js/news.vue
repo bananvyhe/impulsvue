@@ -67,13 +67,9 @@ export default {
         console.log(error);
       }); 
       this.totalNews = this.news.length*1
-
- 
     },
     handleCurrentChange(val) {
-
       this.currentPage = val;
-
       if (this.currentPage>1) {
         var start = this.perPage*val-this.perPage
       }else{
@@ -84,17 +80,17 @@ export default {
         self.viewedNews = self.news.slice(start, self.perPage*self.currentPage);
       }
       setTimeout(doSomething, 500);
-    
     },
     newsTween() {
       var duration = .3;
       var oddnews = $('.newsItem:odd').toArray();
-        TweenLite.to($(".newsItem"), duration, 
-          {delay: 1, left: 0, opacity: 1, ease:Linear.easeInOut });
-        console.log(oddnews);
-    },
+      var evennews = $('.newsItem:even').toArray();
+      TweenMax.staggerTo(oddnews, duration, 
+        {delay: 1, left: 0, opacity: 1, ease:Linear.easeInOut },.25) 
+      TweenMax.staggerTo(evennews, duration, 
+        {delay:  0.75, left: 0, opacity: 1, ease:Linear.easeInOut },.25);
+      },
     newsOutTween(){
-
       var duration = .2;
       var jqn = $('.newsItem').toArray();
       TweenLite.to($(".newsItem"), duration, 
@@ -123,20 +119,13 @@ export default {
   display: flex;
   justify-content: center;
 }
-.news {
-  
-}
-.newsBlock { background-color: #dad; 
+.newsBlock { 
   lost-center: 1150px;
 } 
- 
 .newsItem:nth-child(odd) {
-   
-    
   left: -20%;
 }
 .newsItem:nth-child(even) {
- 
   right: -20%;
 }
 .newsItem { 
