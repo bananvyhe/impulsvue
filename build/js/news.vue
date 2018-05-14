@@ -1,20 +1,24 @@
 <template>
   <div class="news">
- 	<div class="newsHead">
+ 	  <div class="newsHead">
+      {{currentPage}}
 			<h4>Наши новости:</h4>
-			<div class="hrline scale-in-hor-center"></div>
+     	<div class="hrline scale-in-hor-center"></div>
 		</div>
 		<div class="newsBlock">
-      <transition-group name="fade" mode="out-in" appear>
-      <div v-for="(item, index) in viewedNews" class="newsitem" v-bind:key="item.created_at">
-          <img :src="item.newspic.thumb.url">
-          <span>{{item.created_at.substr(0,10).split("-").reverse().join(".")}}</span>
-          <span v-html="item.desc"></span>  
+       
+      <div v-for="(item, index) in viewedNews" class="newsItem" v-bind:key="item.created_at">
+          <div class="newsanim">
+            <img :src="item.newspic.thumb.url">
+            <span>{{item.created_at.substr(0,10).split("-").reverse().join(".")}}</span>
+            <span v-html="item.desc"></span>  
+          </div>
+
       </div>        
-      </transition-group>
+      
 		</div>
     <div class="pag">
-      <el-pagination  
+      <el-pagination 
         @current-change="handleCurrentChange"
         :page-size="perPage" 
         :current-page="currentPage"
@@ -28,6 +32,7 @@
 
 <script>
 import axios from 'axios'
+
 export default {
   data: function () {
     return {
@@ -38,14 +43,16 @@ export default {
       viewedNews: ''
     }
   },
+  watch: {
+    currentPage: function (val) {
+       
+        this.newsOutTween();
+       
+    }
+  },
   methods: {
     fetchNews: function(page) {
-      axios.get('/news', {
-        params: {
-          per_page: this.perPage,
-          current_page: this.currentPage
-        }
-      })
+      axios.get('/news')
       .then((data) => {
         this.news = data.data
         this.totalNews = this.news.length*1
@@ -60,21 +67,54 @@ export default {
         console.log(error);
       }); 
       this.totalNews = this.news.length*1
+
+ 
     },
     handleCurrentChange(val) {
+
       this.currentPage = val;
+
       if (this.currentPage>1) {
         var start = this.perPage*val-this.perPage
       }else{
         var start = 0
       }
-      this.viewedNews = this.news.slice(start, this.perPage*this.currentPage)
+      var self = this;
+      function doSomething() {
+        self.viewedNews = self.news.slice(start, self.perPage*self.currentPage);
+      }
+      setTimeout(doSomething, 500);
+    
+    },
+    newsTween() {
+      var duration = .3;
+      var oddnews = $('.newsItem:odd').toArray();
+        TweenLite.to($(".newsItem"), duration, 
+          {delay: 1, left: 0, opacity: 1, ease:Linear.easeInOut });
+        console.log(oddnews);
+    },
+    newsOutTween(){
+
+      var duration = .2;
+      var jqn = $('.newsItem').toArray();
+      TweenLite.to($(".newsItem"), duration, 
+        {left: -100, opacity: 0, ease:Linear.easeInOut });
+      console.log(jqn);
     }
   },
   created() {
     this.fetchNews()
   },
-}
+  mounted() {
+
+  },
+  updated(){
+    this.newsTween()
+  },
+  beforeUpdate() {
+   
+  }
+} 
 </script>
 
 <style scoped>
@@ -83,10 +123,25 @@ export default {
   display: flex;
   justify-content: center;
 }
-.newsBlock {
+.news {
+  
+}
+.newsBlock { background-color: #dad; 
   lost-center: 1150px;
 } 
-.newsitem { 
+ 
+.newsItem:nth-child(odd) {
+   
+    
+  left: -20%;
+}
+.newsItem:nth-child(even) {
+ 
+  right: -20%;
+}
+.newsItem { 
+  position: relative;
+  opacity: 0;
   lost-column: 1/2;
   margin-bottom: 1em; 
   @media (--only-small-screen) {
@@ -135,13 +190,28 @@ export default {
     opacity: 1;
   }
 }
-.fade-enter-active, .fade-leave-active {
-  transition: opacity 1.5s;
+.fade-enter-active, .fade-leave-active { 
+  transition: opacity 5.5s;
 }
+
+.fade-enter-active { 
+  transition-delay: .8s;
+}
+ 
 .fade-enter, .fade-leave-to /* .fade-leave-active до версии 2.1.8 */ {
   opacity: 0;
+   
 } 
-.fade-move {
-  transition: transform 1s;
+.slide-fade-enter-active {
+  transition: all .3s ease;
 }
+.slide-fade-leave-active {
+  transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.slide-fade-enter, .slide-fade-leave-to
+/* .slide-fade-leave-active for <2.1.8 */ {
+  transform: translateX(500px);
+  opacity: 0;
+}
+ 
 </style>
