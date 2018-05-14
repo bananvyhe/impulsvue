@@ -82,20 +82,22 @@ export default {
       setTimeout(doSomething, 500);
     },
     newsTween() {
-      var duration = .3;
+      var duration = .2;
       var oddnews = $('.newsItem:odd').toArray();
       var evennews = $('.newsItem:even').toArray();
       TweenMax.staggerTo(oddnews, duration, 
-        {delay: 1, left: 0, opacity: 1, ease:Linear.easeInOut },.25) 
+        {delay: 0.75, left: 0, opacity: 1, ease:Linear.easeInOut },.25) 
       TweenMax.staggerTo(evennews, duration, 
-        {delay:  0.75, left: 0, opacity: 1, ease:Linear.easeInOut },.25);
+        {delay:  0.5, left: 0, opacity: 1, ease:Linear.easeInOut },.25);
       },
     newsOutTween(){
-      var duration = .2;
-      var jqn = $('.newsItem').toArray();
-      TweenLite.to($(".newsItem"), duration, 
-        {left: -100, opacity: 0, ease:Linear.easeInOut });
-      console.log(jqn);
+      var duration = .1;
+      var oddnews = $('.newsItem:odd').toArray();
+      var evennews = $('.newsItem:even').toArray();
+      TweenMax.staggerTo(oddnews, duration, 
+        {left: 200, opacity: 0, ease:Linear.easeInOut },.1) 
+      TweenMax.staggerTo(evennews, duration, 
+        {delay:  0.1, left: -200, opacity: 0, ease:Linear.easeInOut },.1);
     }
   },
   created() {
@@ -119,7 +121,7 @@ export default {
   display: flex;
   justify-content: center;
 }
-.newsBlock { 
+.newsBlock {
   lost-center: 1150px;
 } 
 .newsItem:nth-child(odd) {
