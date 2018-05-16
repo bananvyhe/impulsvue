@@ -1,21 +1,17 @@
 <template>
   <div class="news">
  	  <div class="newsHead">
-      {{currentPage}}
 			<h4>Наши новости:</h4>
      	<div class="hrline scale-in-hor-center"></div>
 		</div>
-		<div class="newsBlock">
-       
-      <div v-for="(item, index) in viewedNews" class="newsItem" v-bind:key="item.created_at">
-          <div class="newsanim">
-            <img :src="item.newspic.thumb.url">
-            <span>{{item.created_at.substr(0,10).split("-").reverse().join(".")}}</span>
-            <span v-html="item.desc"></span>  
-          </div>
-
-      </div>        
-      
+		<div class="newsBlock Y" id="Y">
+      <div class="newsh">
+        <div v-for="(item, index) in viewedNews" class="newsItem" v-bind:key="item.created_at" tag="div">
+          <img :src="item.newspic.thumb.url">
+          <span>{{item.created_at.substr(0,10).split("-").reverse().join(".")}}</span>
+          <span v-html="item.desc"></span>  
+        </div>      
+      </div>
 		</div>
     <div class="pag">
       <el-pagination 
@@ -45,9 +41,14 @@ export default {
   },
   watch: {
     currentPage: function (val) {
-       
-        this.newsOutTween();
-       
+      this.newsOutTween();
+    },
+    viewedNews: function () {
+      var self = this;
+      function ntween() {
+        self.newsTween();
+      } 
+      setTimeout(ntween, 50);
     }
   },
   methods: {
@@ -62,6 +63,7 @@ export default {
           var start = 0
         }
         this.viewedNews = this.news.slice(start, this.perPage)
+        this.newsTween();
       })
       .catch(function (error) {
         console.log(error);
@@ -85,52 +87,66 @@ export default {
       var duration = .2;
       var oddnews = $('.newsItem:odd').toArray();
       var evennews = $('.newsItem:even').toArray();
+      var newsh = $('.newsh').height();
+      console.log(newsh);
+         TweenLite.to($('.newsBlock'),0.1,{height: $('.newsh').height()});
       TweenMax.staggerTo(oddnews, duration, 
-        {delay: 0.75, left: 0, opacity: 1, ease:Linear.easeInOut },.25) 
+        {scale:1, delay: 0.75, left: 0, opacity: 1, ease:Linear.easeInOut },.25) 
       TweenMax.staggerTo(evennews, duration, 
-        {delay:  0.5, left: 0, opacity: 1, ease:Linear.easeInOut },.25);
-      },
+        {scale:1, delay:  0.5, left: 0, opacity: 1, ease:Linear.easeInOut},.25);
+    },
     newsOutTween(){
       var duration = .1;
       var oddnews = $('.newsItem:odd').toArray();
       var evennews = $('.newsItem:even').toArray();
       TweenMax.staggerTo(oddnews, duration, 
-        {left: 200, opacity: 0, ease:Linear.easeInOut },.1) 
+        {scale: 0.1, left: 200, opacity: 0, ease:Linear.easeInOut },.1) 
       TweenMax.staggerTo(evennews, duration, 
-        {delay:  0.1, left: -200, opacity: 0, ease:Linear.easeInOut },.1);
+        {scale: 0.1, delay:  0.1, left: -200, opacity: 0, ease:Linear.easeInOut},.1);
     }
   },
   created() {
     this.fetchNews()
   },
   mounted() {
-
   },
   updated(){
-    this.newsTween()
   },
   beforeUpdate() {
-   
   }
 } 
 </script>
 
 <style scoped>
 @import "../../app/assets/stylesheets/postcss/variables";
+.Y {
+    transition: all 1s;
+    border: black 1px solid;
+     
+    height: auto;
+}
+.newsh {
+  lost-column: 1/1;
+} 
+.last{
+
+}
 .pag {
-  display: flex;
+   
   justify-content: center;
 }
-.newsBlock {
-  lost-center: 1150px;
+.newsBlock { background-color: #ada; 
+   lost-center: 1150px;
 } 
 .newsItem:nth-child(odd) {
   left: -20%;
+  transform: scale(0,0);
 }
 .newsItem:nth-child(even) {
   right: -20%;
+  transform: scale(0,0);
 }
-.newsItem { 
+.newsItem { background-color: #dad; display: block;
   position: relative;
   opacity: 0;
   lost-column: 1/2;
@@ -144,6 +160,7 @@ export default {
     float: left;
   }
 }
+
 .newsHead {
 	display: flex;
   flex-direction: column;
