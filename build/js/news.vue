@@ -82,6 +82,7 @@ export default {
         self.viewedNews = self.news.slice(start, self.perPage*self.currentPage);
       }
       setTimeout(doSomething, 500);
+       TweenLite.to($('.newsBlock'),0.1,{height: $('.newsh').height()});
     },
     newsTween() {
       var duration = .2;
@@ -89,11 +90,15 @@ export default {
       var evennews = $('.newsItem:even').toArray();
       var newsh = $('.newsh').height();
       console.log(newsh);
-         TweenLite.to($('.newsBlock'),0.1,{height: $('.newsh').height()});
+      TweenLite.to($('.newsBlock'),0.1,{height: $('.newsh').height()});
       TweenMax.staggerTo(oddnews, duration, 
         {scale:1, delay: 0.75, left: 0, opacity: 1, ease:Linear.easeInOut },.25) 
       TweenMax.staggerTo(evennews, duration, 
         {scale:1, delay:  0.5, left: 0, opacity: 1, ease:Linear.easeInOut},.25);
+      function returnToNormal() {
+         $('.newsBlock').attr('style', '');
+      }
+      setTimeout(returnToNormal, 2000);
     },
     newsOutTween(){
       var duration = .1;
