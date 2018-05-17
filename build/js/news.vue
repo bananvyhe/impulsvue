@@ -82,7 +82,7 @@ export default {
         self.viewedNews = self.news.slice(start, self.perPage*self.currentPage);
       }
       setTimeout(doSomething, 500);
-       TweenLite.to($('.newsBlock'),0.1,{height: $('.newsh').height()});
+       TweenLite.to($('.newsBlock'),0.4,{height: $('.newsh').height()});
     },
     newsTween() {
       var duration = .2;
@@ -90,7 +90,7 @@ export default {
       var evennews = $('.newsItem:even').toArray();
       var newsh = $('.newsh').height();
       console.log(newsh);
-      TweenLite.to($('.newsBlock'),0.1,{height: $('.newsh').height()});
+      TweenLite.to($('.newsBlock'),0.4,{height: $('.newsh').height()});
       TweenMax.staggerTo(oddnews, duration, 
         {scale:1, delay: 0.75, left: 0, opacity: 1, ease:Linear.easeInOut },.25) 
       TweenMax.staggerTo(evennews, duration, 
@@ -98,7 +98,7 @@ export default {
       function returnToNormal() {
          $('.newsBlock').attr('style', '');
       }
-      setTimeout(returnToNormal, 2000);
+      setTimeout(returnToNormal, 1000);
     },
     newsOutTween(){
       var duration = .1;
@@ -124,12 +124,21 @@ export default {
 
 <style scoped>
 @import "../../app/assets/stylesheets/postcss/variables";
-.Y {
-    transition: all 1s;
-    border: black 1px solid;
-     
-    height: auto;
+.newsHead {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  padding: 1em 0 1em 0;
+  h4 {
+    color: $str6;
+    margin: 0 0 0em 0;
+  }
 }
+.hrline { width: 12em; 
+  @mixin hrline;
+  margin: 0.1em 0 0.3em -0.3em;
+  background-color: $str6;
+} 
 .newsh {
   lost-column: 1/1;
 } 
@@ -137,11 +146,11 @@ export default {
 
 }
 .pag {
-   
+  display: flex;
   justify-content: center;
 }
-.newsBlock { background-color: #ada; 
-   lost-center: 1150px;
+.newsBlock {
+  lost-center: 1150px;
 } 
 .newsItem:nth-child(odd) {
   left: -20%;
@@ -151,7 +160,8 @@ export default {
   right: -20%;
   transform: scale(0,0);
 }
-.newsItem { background-color: #dad; display: block;
+.newsItem {
+  display: block;
   position: relative;
   opacity: 0;
   lost-column: 1/2;
@@ -164,22 +174,6 @@ export default {
     margin: 0 1em 0 0;
     float: left;
   }
-}
-
-.newsHead {
-	display: flex;
-  flex-direction: column;
-  align-items: center; 
-  padding: 1em 0 2em 0;
-	h4 {
-    color: $str6;
-    margin: 0 0 0em 0;
-  }
-}
-.hrline { width: 12em; 
-	@mixin hrline;
-	margin: 0.1em 0 0.3em -0.3em;
-	background-color: $str6;
 }
 .child {
 	display: flex;
